@@ -2,111 +2,101 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
+    <main className="w-screen h-screen overflow-hidden flex flex-col justify-center items-center max-w-[800px] mx-auto bg-black bg-opacity-30 px-8">
+      <div className="flex flex-col justify-center items-start gap-4 ">
+        <h1 className="text-6xl font-medium max-w-[80%] my-3">
+          DevmentorLive is no longer a thing, sorry!
+        </h1>
+        <p className="text-lg font-thin">
+          Hi 👋, my name is Mark Tellez and I have spent my life writing
+          software for every industry you can imagine and at least 15 more you
+          can&apos;t!
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+        <p className="text-lg font-thin">
+          I spent almost 10 years mentoring and training upcoming developers and
+          salaried programmers for a living. Meanwhile, slinging code for
+          entrepeneurs and startup companies. But all things must come to an
+          end, and my Artificial Intelligence work just gives me no time for
+          mentorship any longer.
+        </p>
+
+        <div className="bg-gray-900 bg-opacity-[50%] p-8 rounded my-4">
+          <p className="text-large font-semibold  my-2">Find me on the web:</p>
+          <ul className="flex items-center justify-center gap-4">
+            <li className="flex items-center justify-center h-10 aspect-square">
+              <a className="underline" href="https://github.com/marktellez">
+                <svg
+                  className="w-8 aspect-square"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <path
+                      d="M200,513c0-20.3,0-40.7,0-61c3.1,0.6,1.9,3.1,1.9,4.8c0.1,16.3,0.2,32.6,0,48.9c-0.1,4.1,1,5.4,5.2,5.4   c36.6-0.2,73.2-0.2,109.8,0c4.4,0,5.1-1.6,5.1-5.5c-0.2-25-0.1-49.9-0.1-74.9c0-9.3,0.2-18.6,0.2-27.9c2.8,1.2,1.6,3.8,1.6,5.7   c0.1,34.8,0.1,69.6,0.1,104.4C282.7,513,241.3,513,200,513z"
+                      fill="#D1D1D1"
+                    />
+                    <path
+                      d="M322.2,402.8c-0.1,9.3-0.2,18.6-0.2,27.9c0,25-0.1,49.9,0.1,74.9c0,3.9-0.7,5.5-5.1,5.5   c-36.6-0.2-73.2-0.2-109.8,0c-4.2,0-5.3-1.3-5.2-5.4c0.2-16.3,0.1-32.6,0-48.9c0-1.7,1.2-4.2-1.9-4.8c-9.7,0.9-19.3,3.2-29.2,2.8   c-33.5-1.3-59.5-15.4-74.7-45.8c-8.2-16.4-17.8-31.7-29.1-46c-3.1-3.9-7.9-5.5-11.5-8.7c-1.1-1-2.4-1.8-3.3-3   c-2.3-3.3-1.2-5.8,2.8-6.2c18.5-1.9,33.8,4.2,46.2,18.1c6.3,7.1,10.2,15.8,16.3,23.1c12.3,14.7,28,22.7,47,24.9   c11.5,1.3,22.4-0.9,33.3-4.2c2.2-0.6,3.1-2,3.3-4.3c0.7-10.3,2.8-20.3,6.8-29.9c1.8-4.3,4.7-7.9,6.9-12.3   c-10.3-2.6-20.7-3.4-30.5-6.4c-27.1-8.2-50.9-21.6-68.2-44.7c-8.3-11-14.1-23.3-17.4-36.5c-1.8-7.2-3.9-14.4-3.8-22   c0.1-13.3-0.5-26.7,0.3-40c0.9-16.8,3.1-33.5,9.2-49.2c3.8-9.7,9.3-18.6,17.1-25.9c2.4-2.3,3.3-4.1,1.8-7.9   c-7.4-19.7-8.1-39.8-1.8-60c0.2-0.6,0.3-1.3,0.4-2c2.2-10.3,4.5-11.3,14.3-7.4c19.2,7.5,33.3,21,45.3,37.3c3.4,4.6,2.7,6.6,10,1.9   c9.7-6.2,21-8.1,32.2-9.3c20.1-2.1,40.3-1.5,60.4-1.1c14.3,0.3,28.5,2.2,42,7.2c3.1,1.1,6,2.8,8.7,4.8c2.1,1.6,3.6,1.6,5.6-1.1   c9.1-12.8,19.5-24.4,33-32.6c6.6-4,13.4-7.7,21.4-8.6c3.3-0.4,4.7,0.7,5.6,3.3c8.3,22.9,9.5,45.7-0.2,68.5   c-1.2,2.8-0.8,4.6,1.3,6.5c16,15,21.8,34.5,24.8,55.5c2.5,17.7,3.2,35.5,2.7,53.3c-0.8,31.2-11.4,58.4-34.4,80.1   c-13.5,12.7-29.7,21.1-47.1,27.5c-12.4,4.6-25.5,5.8-38.5,9c1.3,3.1,3.7,5.4,4.3,8.5c-0.3,1.3,0.4,2,1.6,2.3   c0.1,0.6,0.3,1.1,0.4,1.7c0.3,2.1,0.1,4.3,2.5,5.4c0.5,2.2,1,4.5,1.4,6.7c-0.1,1.7-0.7,3.5,1.6,4.3c0,0.6,0.1,1.2,0.1,1.9   c-1.5,2.3-0.1,4.1,1.1,6C322.1,398.9,322.2,400.9,322.2,402.8z"
+                      fill="#A7A7A7"
+                    />
+                    <path
+                      d="M322,397c-1.1-1.9-2.6-3.7-1.1-6C322.1,392.9,323,394.8,322,397z"
+                      fill="#D1D1D1"
+                    />
+                    <path
+                      d="M317.7,378.2c-2.4-1.1-2.2-3.3-2.5-5.4C317.4,374,317.7,376,317.7,378.2z"
+                      fill="#D1D1D1"
+                    />
+                    <path
+                      d="M320.8,389.1c-2.3-0.8-1.7-2.6-1.6-4.3C321.5,385.6,321,387.5,320.8,389.1z"
+                      fill="#D1D1D1"
+                    />
+                    <path
+                      d="M314.8,371.1c-1.2-0.3-1.9-1-1.6-2.3C314.5,369.1,315.1,369.8,314.8,371.1z"
+                      fill="#D1D1D1"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li className="flex items-center justify-center h-10 aspect-square">
+              <a
+                className="underline"
+                href="https://www.youtube.com/channel/UCx4a8EMmXx-6RuJlyAKASoQ"
+              >
+                <svg
+                  className="w-10 aspect-square"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <path
+                      d="M256.4,74.2c22.7,0,45.3-0.4,68,0.1c28.8,0.6,57.6,1.7,86.3,3c11.9,0.6,24,0.9,35.8,3.2   c28.1,5.4,44.8,22.7,52.5,50c4.1,14.5,5.6,29.4,6.9,44.3c3.5,40.1,2.8,80.2,1.8,120.3c-0.6,23.7-1.6,47.6-7.6,70.8   c-2.5,9.5-5.4,19-10.9,27.3c-10,15.1-24.4,23.7-42,26.9c-15.1,2.8-30.4,3.1-45.7,3.8c-28.3,1.3-56.6,1.9-84.9,2.6   c-33.5,0.9-67,0.7-100.4,0.4c-27.1-0.3-54.3-0.9-81.4-2c-22.9-0.9-45.9-1.3-68.5-5.7c-12.5-2.4-23.6-7.6-33.2-16.2   c-9-8.2-13.6-18.8-17-30c-7.3-24-7.8-48.8-9.3-73.6c-1.7-29-1.2-58-0.5-86.9c0.6-24.4,1.7-48.9,6.8-72.9c3-14.2,7.1-28.3,17.4-39.2   c12.7-13.4,28.9-19.8,47.2-21.1c21.9-1.5,43.9-2.5,65.8-3.4C181.1,74.3,218.8,73.8,256.4,74.2z M339.5,245.4   c-0.4-1.2-1.5-1.4-2.3-1.8c-23.5-12.4-47.1-24.8-70.7-37.2c-18.7-9.8-37.4-19.7-56.1-29.6c-5.2-2.7-5.3-2.6-5.3,3.4   c0,43.1,0,86.2,0,129.4c0,0.8,0,1.7,0,2.5c-0.1,2.6,0.9,3.4,3.3,2.1c2.9-1.6,5.8-3.2,8.8-4.8c39.4-20.4,78.9-40.9,118.3-61.3   C336.9,247.3,338.7,247,339.5,245.4z"
+                      fill="#A7A7A7"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li className="flex items-center justify-center h-10 aspect-square">
+              <a className="underline" href="https://twitter.com/_MarkTellez">
+                <svg
+                  className="w-8 aspect-square"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g>
+                    <path
+                      d="M3.5,421.4c56,5.1,106.1-8.9,151.5-42.9c-7-1.6-13.4-1.6-19.5-3.1c-35.7-8.5-60.4-30-74.9-63.5   c-0.7-1.7-2.5-3.8-0.9-5.5c1.2-1.3,3.5-0.2,5.2,0c12.6,1.3,25.2,0.9,37.6-2c0.2-2.2-1.4-2-2.6-2.4c-30.7-8.2-53-26.5-67.4-54.8   c-6.6-13-10.2-26.6-10.6-41.2c-0.2-5.7,0.1-5.8,5.4-3.3c12.6,6,25.8,9.4,40.9,10.1c-6.9-5.6-13.1-10.5-18.4-16.4   c-16.1-17.9-25.1-38.8-27-62.9c-1.5-19.6,2.6-37.9,11.1-55.5c1.9-3.9,3.6-3.6,6-0.7C56.6,97.7,76.1,115,97.6,130   c16,11.2,33,20.5,50.9,28.4c23.6,10.3,48.1,17.2,73.5,21.3c8,1.3,16.2,1.6,24.3,2.4c4.1,0.4,5.2-0.8,4.4-5   c-4.1-21.6-1.3-42.6,8.1-62.3c16.1-33.6,43.1-54,79.8-59.4c32.6-4.8,61.9,4.5,86.2,27.4c3.7,3.5,7,4.4,12,3.1   c19.6-5,38.3-12.1,55.9-22.1c0.5-0.3,1.1-0.4,2.9-1.1c-8.2,24.1-22.7,41.9-43,55.5c4.7,0.9,18.6-1.6,28.2-4.6   c9.2-2.9,18.4-5.5,27.2-9.4c1.2,1.3,0.1,2-0.4,2.7c-11.7,16.5-25.1,31.4-41.1,43.8c-2.2,1.7-4.3,3.6-6.6,5.2   c-1.7,1.2-1.8,2.7-1.7,4.4c0.7,18.2-0.6,36.3-3.2,54.2c-2.7,18.3-7.3,36.1-13.4,53.6c-5,14.3-10.9,28.2-17.9,41.7   c-17.3,33.2-39.8,62.4-67.9,87.3c-29.9,26.4-63.9,45.4-101.9,57.2c-23.7,7.4-48,11.7-72.9,13c-19.2,1-38.3,0.7-57.3-1.7   c-27.2-3.3-53.4-10.7-78.6-21.5c-12.9-5.5-25.1-12.1-37.3-19C6.1,424.4,4.4,423.6,3.5,421.4z"
+                      fill="#A7A7A7"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
   );
