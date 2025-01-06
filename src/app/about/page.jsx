@@ -21,201 +21,156 @@ export default function AboutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
-      <div className="max-w-6xl mx-auto px-8 py-24">
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-12"
+          className="text-center mb-12"
         >
-          <h1 className="text-6xl font-bold text-white">About your Mentor</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">About your Mentor</h1>
         </motion.div>
 
-        <div className="mb-16">
+        <div className="mb-12">
           <Stats />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-          >
-            <motion.h2 variants={item} className="text-2xl font-bold text-white mb-6">
-              Professional Experience
-            </motion.h2>
-            <motion.p variants={item} className="text-white/70 text-lg mb-8">
-              I've been coding professionally since {FACTS.experience.year}, working with companies like{' '}
-              {FACTS.experience.companies.slice(0, -1).join(', ')} and {FACTS.experience.companies.slice(-1)}.
-            </motion.p>
-
-            <div className="grid gap-8">
-              <motion.div variants={item}>
-                <h3 className="text-[#ff3333] text-xl mb-4">Languages</h3>
-                <div className="flex flex-wrap gap-2">
-                  {FACTS.experience.languages.map((lang, index) => (
-                    <motion.span
-                      key={lang}
-                      variants={item}
-                      className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                    >
-                      {lang}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div variants={item}>
-                <h3 className="text-[#ff3333] text-xl mb-4">Frontend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {FACTS.experience.frontend.map((tech, index) => (
-                    <motion.span
-                      key={tech}
-                      variants={item}
-                      className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div variants={item}>
-                <h3 className="text-[#ff3333] text-xl mb-4">Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {FACTS.experience.backend.map((tech, index) => (
-                    <motion.span
-                      key={tech}
-                      variants={item}
-                      className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div variants={item}>
-                <h3 className="text-[#ff3333] text-xl mb-4">Databases</h3>
-                <div className="flex flex-wrap gap-2">
-                  {FACTS.experience.databases.map((db, index) => (
-                    <motion.span
-                      key={db}
-                      variants={item}
-                      className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                    >
-                      {db}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div variants={item}>
-                <h3 className="text-[#ff3333] text-xl mb-4">Cloud & DevOps</h3>
-                <div className="flex flex-wrap gap-2">
-                  {FACTS.experience.cloud.map((service, index) => (
-                    <motion.span
-                      key={service}
-                      variants={item}
-                      className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                    >
-                      {service}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div variants={item}>
-                <h3 className="text-[#ff3333] text-xl mb-4">AI & Machine Learning</h3>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-white/90 mb-2">Neural Architectures</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {FACTS.experience.ai_ml.architectures.map((arch, index) => (
-                        <motion.span
-                          key={arch}
-                          variants={item}
-                          className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                        >
-                          {arch}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-white/90 mb-2">Domains</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {FACTS.experience.ai_ml.domains.map((domain, index) => (
-                        <motion.span
-                          key={domain}
-                          variants={item}
-                          className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                        >
-                          {domain}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-white/90 mb-2">AI Specialties</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {FACTS.experience.ai_ml.specialties.map((specialty, index) => (
-                        <motion.span
-                          key={specialty}
-                          variants={item}
-                          className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                        >
-                          {specialty}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-          >
-            <motion.h2 variants={item} className="text-2xl font-bold text-white mb-6">
-              Specialties
-            </motion.h2>
-            <motion.div variants={item} className="flex flex-wrap gap-2 mb-12">
-              {FACTS.experience.specialties.map((specialty, index) => (
-                <motion.span
-                  key={specialty}
-                  variants={item}
-                  className="text-white/70 bg-white/5 px-3 py-1 rounded"
-                >
-                  {specialty}
-                </motion.span>
-              ))}
-            </motion.div>
-
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+          <div className="w-full md:w-2/3">
             <motion.div
-              variants={item}
-              className="aspect-square rounded-full overflow-hidden bg-[#ff3333] mb-8"
+              variants={container}
+              initial="hidden"
+              animate="show"
             >
-              <img
-                src="/marktellez.webp"
-                alt="Mark Tellez"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
+              <motion.h2 variants={item} className="text-2xl font-bold text-white mb-6">
+                Professional Experience
+              </motion.h2>
 
-            <motion.div variants={item} className="bg-white/5 rounded-lg p-6">
-              <h3 className="text-[#ff3333] text-xl mb-4">Current Focus</h3>
-              <p className="text-white/70">
-                DevmentorLive was discontinued in {FACTS.notice.year} so I could focus on {FACTS.notice.reason}.
-                I'm now leveraging my decades of development experience to help companies and developers
-                integrate AI into their workflows and applications.
-              </p>
+              <div className="space-y-8">
+                <motion.div variants={item}>
+                  <h3 className="text-accent text-xl mb-4">Languages</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {FACTS.experience.languages.map((lang) => (
+                      <span key={lang} className="text-white/70 bg-white/5 px-3 py-1 rounded">
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div variants={item}>
+                  <h3 className="text-accent text-xl mb-4">Frontend</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {FACTS.experience.frontend.map((tech) => (
+                      <span key={tech} className="text-white/70 bg-white/5 px-3 py-1 rounded">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div variants={item}>
+                  <h3 className="text-accent text-xl mb-4">Backend</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {FACTS.experience.backend.map((tech) => (
+                      <span key={tech} className="text-white/70 bg-white/5 px-3 py-1 rounded">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div variants={item}>
+                  <h3 className="text-accent text-xl mb-4">Databases</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {FACTS.experience.databases.map((db) => (
+                      <span key={db} className="text-white/70 bg-white/5 px-3 py-1 rounded">
+                        {db}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div variants={item}>
+                  <h3 className="text-accent text-xl mb-4">Cloud & DevOps</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {FACTS.experience.cloud.map((service) => (
+                      <span key={service} className="text-white/70 bg-white/5 px-3 py-1 rounded">
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div variants={item}>
+                  <h3 className="text-accent text-xl mb-4">AI & Machine Learning</h3>
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-white/90 mb-2">Neural Architectures</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {FACTS.experience.ai_ml.architectures.map((arch) => (
+                          <span key={arch} className="text-white/70 bg-white/5 px-3 py-1 rounded">
+                            {arch}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-white/90 mb-2">Domains</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {FACTS.experience.ai_ml.domains.map((domain) => (
+                          <span key={domain} className="text-white/70 bg-white/5 px-3 py-1 rounded">
+                            {domain}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-white/90 mb-2">AI Specialties</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {FACTS.experience.ai_ml.specialties.map((specialty) => (
+                          <span key={specialty} className="text-white/70 bg-white/5 px-3 py-1 rounded">
+                            {specialty}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
+
+          <div className="w-full md:w-1/3">
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="sticky top-24"
+            >
+              <motion.div
+                variants={item}
+                className="mx-auto md:mx-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden bg-accent mb-8"
+              >
+                <img
+                  src="https://marktellez.com/marktellez.jpg"
+                  alt="Mark Tellez"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              <motion.div variants={item} className="bg-white/5 rounded-lg p-6">
+                <h3 className="text-accent text-xl mb-4">Current Focus</h3>
+                <p className="text-white/70">
+                  I'm leveraging my decades of development experience to help developers
+                  master both modern web development and AI integration. At {FACTS.experience.companies[0]},
+                  I'm building {FACTS.experience.ai_ml.current_focus.voice.join(' and ')}, while teaching others how to become
+                  AI-powered developers.
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>

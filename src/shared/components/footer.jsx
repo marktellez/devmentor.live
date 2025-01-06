@@ -11,58 +11,58 @@ export default function Footer() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-[#ff2d55] py-12"
+        className="bg-accent/10 py-8 sm:py-12"
       >
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="flex items-center gap-8">
-
-            <div>
-              <h3 className="text-xl font-bold text-white mb-2"><a href="https://voxbird.ai" target="_blank" rel="noopener noreferrer">Voxbird</a></h3>
-              <p className="text-white text-lg font-medium">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+            <div className="w-16 h-16 rounded-full bg-accent" />
+            <a href="https://voxbird.ai" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 text-center sm:text-left">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Voxbird</h3>
+              <p className="text-base sm:text-lg font-medium text-white">
                 Train a voice model to speak for you, and then put it to work!
               </p>
-              <p className="text-white text-sm text-serif mt-2">Featuring technology built by Mark Tellez.</p>
-            </div>
+              <p className="text-sm text-white/80 mt-2">Featuring technology built by Mark Tellez.</p>
+            </a>
           </div>
         </div>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="container mx-auto px-4 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-white text-sm font-medium mb-4">About</h3>
             <p className="text-gray-400 text-sm">
-              DevmentorLive was a mentorship platform run by Mark Tellez from 2020-2023,
-              helping developers master React and JavaScript through 1-on-1 mentoring.
+              I help developers become AI-powered full-stack engineers through 1-on-1 mentoring.
+              Master modern web development while learning to leverage AI tools and ML to accelerate your career.
             </p>
           </div>
-          <div>
+          <div className="sm:text-center lg:text-left">
             <h3 className="text-white text-sm font-medium mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/privacy" className="text-gray-400 hover:text-red-500 text-sm">
+                <a href="/privacy" className="text-gray-400 hover:text-accent text-sm">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/cookies" className="text-gray-400 hover:text-red-500 text-sm">
+                <a href="/cookies" className="text-gray-400 hover:text-accent text-sm">
                   Cookie Policy
                 </a>
               </li>
               <li>
-                <a href="/terms" className="text-gray-400 hover:text-red-500 text-sm">
+                <a href="/terms" className="text-gray-400 hover:text-accent text-sm">
                   Terms of Service
                 </a>
               </li>
             </ul>
           </div>
-          <div>
+          <div className="sm:text-center lg:text-left">
             <h3 className="text-white text-sm font-medium mb-4">Connect</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="https://github.com/marktellez"
-                  className="text-gray-400 hover:text-red-500 text-sm flex items-center gap-2"
+                  className="text-gray-400 hover:text-accent text-sm flex items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -75,7 +75,7 @@ export default function Footer() {
               <li>
                 <a
                   href="https://x.com/agenticmark"
-                  className="text-gray-400 hover:text-red-500 text-sm flex items-center gap-2"
+                  className="text-gray-400 hover:text-accent text-sm flex items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -88,7 +88,7 @@ export default function Footer() {
               <li>
                 <a
                   href="https://marktellez.com"
-                  className="text-gray-400 hover:text-red-500 text-sm flex items-center gap-2"
+                  className="text-gray-400 hover:text-accent text-sm flex items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -101,7 +101,7 @@ export default function Footer() {
               <li>
                 <a
                   href="https://www.codementor.io/@marktellez"
-                  className="text-gray-400 hover:text-red-500 text-sm flex items-center gap-2"
+                  className="text-gray-400 hover:text-accent text-sm flex items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -114,7 +114,7 @@ export default function Footer() {
               <li>
                 <a
                   href="https://voxbird.ai"
-                  className="text-gray-400 hover:text-red-500 text-sm flex items-center gap-2"
+                  className="text-gray-400 hover:text-accent text-sm flex items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -129,7 +129,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-900 pt-8">
           <p className="text-gray-500 text-sm text-center">
-            © {currentYear} DevmentorLive Archive. All rights reserved.
+            © {currentYear} DevmentorLive. All rights reserved.
           </p>
         </div>
       </div>

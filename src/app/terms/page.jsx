@@ -1,6 +1,6 @@
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-black text-gray-300">
+    <div className="min-h-screen text-gray-300">
       <div className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-3xl font-light text-white mb-8">Terms of Service</h1>
         <div className="prose prose-invert prose-gray">

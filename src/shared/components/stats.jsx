@@ -22,36 +22,16 @@ export default function Stats() {
     { label: '5★ REVIEWS ON CODEMENTOR', value: FIVE_STAR_REVIEWS }
   ]
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  }
-
   return (
-    <div className="max-w-6xl mx-auto px-8">
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="flex justify-between items-center"
-      >
+    <div className="container mx-auto px-4">
+      <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-16 sm:gap-8 py-8 sm:py-0">
         {stats.map(stat => (
-          <motion.div key={stat.label} variants={item} className="text-center">
-            <div className="text-white text-5xl font-light mb-2">{stat.value}</div>
-            <div className="text-white/50 text-xs tracking-wider">{stat.label}</div>
-          </motion.div>
+          <div key={stat.label} className="text-center">
+            <div className="text-5xl sm:text-5xl lg:text-6xl font-light text-white mb-4 sm:mb-3">{stat.value}</div>
+            <div className="text-white/50 text-sm sm:text-xs tracking-wider">{stat.label}</div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   )
 } 
