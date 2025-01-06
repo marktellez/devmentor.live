@@ -23,14 +23,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">About your Mentor</h1>
-        </motion.div>
+
 
         <div className="mb-12">
           <Stats />

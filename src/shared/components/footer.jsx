@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -11,17 +12,53 @@ export default function Footer() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-accent/10 py-8 sm:py-12"
+        className="my-24 sm:my-32 bg-pink-500/5 py-12"
       >
         <div className="container mx-auto px-4">
-          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-            <div className="w-16 h-16 rounded-full bg-accent" />
-            <a href="https://voxbird.ai" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 text-center sm:text-left">
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex -space-x-4">
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background relative z-40">
+                <Image
+                  src="/snoop.png"
+                  alt="Snoop Voice AI Example"
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full"
+                  priority
+                  quality={100}
+                />
+              </div>
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background relative z-30">
+                <Image
+                  src="/taylor.png"
+                  alt="Taylor Voice AI Example"
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full"
+                  priority
+                  quality={100}
+                />
+              </div>
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background relative z-20">
+                <Image
+                  src="/elon.png"
+                  alt="Elon Voice AI Example"
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full"
+                  priority
+                  quality={100}
+                />
+              </div>
+              <div className="w-16 h-16 rounded-full bg-pink-500 border-2 border-background relative z-10" />
+            </div>
+
+            <a href="https://voxbird.ai" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 text-center">
               <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Voxbird</h3>
               <p className="text-base sm:text-lg font-medium text-white">
-                Train a voice model to speak for you, and then put it to work!
+                I built Voxbird to end the endless recording takes. Dont record, generate!
               </p>
-              <p className="text-sm text-white/80 mt-2">Featuring technology built by Mark Tellez.</p>
+              <p className="text-sm text-white/80 mt-2">Train a model of your own voice and then generate audio while you sleep!</p>
             </a>
           </div>
         </div>

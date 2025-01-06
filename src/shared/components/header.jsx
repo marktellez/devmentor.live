@@ -1,8 +1,6 @@
 export default function Header() {
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Reviews', href: '/reviews' },
     {
       name: 'AI Services',
       href: '/ai-services',
@@ -24,6 +22,8 @@ export default function Header() {
         },
       ],
     },
+    { name: 'About', href: '/about' },
+    { name: 'Reviews', href: '/reviews' },
   ]
 
   return (
