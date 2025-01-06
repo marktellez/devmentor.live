@@ -4,13 +4,17 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useToast } from '@/shared/components/toast'
 
-export default function CTA() {
+export default function CTA({
+  title = "Let's Find Your Path to AI-Powered Development",
+  context = '', // e.g., 'custom-models', 'voice-ai', etc.
+}) {
   const { showToast } = useToast()
   const [formData, setFormData] = useState({
     experience: '',
     interests: [],
     goals: '',
-    email: ''
+    email: '',
+    serviceContext: context // Track which service page the inquiry came from
   })
   const [verificationCode, setVerificationCode] = useState('')
   const [showVerification, setShowVerification] = useState(false)
@@ -166,6 +170,34 @@ export default function CTA() {
     )
   }
 
+  const getContextualPlaceholder = () => {
+    switch (context) {
+      case 'custom-models':
+        return "Tell me about the type of AI model you need and your data situation..."
+      case 'voice-ai':
+        return "Tell me about your voice AI needs (custom voices, text-to-speech, etc)..."
+      case 'integration':
+        return "Tell me about your existing systems and AI integration goals..."
+      case 'automation':
+        return "Tell me about the processes you'd like to automate with AI..."
+      default:
+        return "Tell me about what you'd like to achieve..."
+    }
+  }
+
+  const getContextualTitle = () => {
+    if (!context) return title
+
+    const titles = {
+      'custom-models': 'Ready to Build Your Custom AI Model?',
+      'voice-ai': 'Ready to Give Your Application a Voice?',
+      'integration': 'Ready to Integrate AI Into Your Systems?',
+      'automation': 'Ready to Automate with AI?'
+    }
+
+    return titles[context] || title
+  }
+
   return (
     <section className="py-24 sm:py-32">
       <div className="container mx-auto px-0 sm:px-4">
@@ -205,7 +237,7 @@ export default function CTA() {
           ) : (
             <>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 px-4 sm:px-0">
-                Let's Find Your Path to AI-Powered Development
+                {getContextualTitle()}
               </h2>
 
               {!showVerification ? (
@@ -267,7 +299,7 @@ export default function CTA() {
                       }}
                       className={`w-full bg-white/5 border ${errors.goals ? 'border-red-500' : 'border-white/10'} rounded-lg px-4 py-3 text-white`}
                       rows={4}
-                      placeholder="Tell me about what you'd like to achieve..."
+                      placeholder={getContextualPlaceholder()}
                       required
                     />
                     {errors.goals && (
