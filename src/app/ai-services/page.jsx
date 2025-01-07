@@ -15,17 +15,22 @@ export default function AIServicesPage() {
           className="mb-16"
         >
           <h1 className="text-5xl font-bold text-white mb-6">
-            Enterprise AI Development & Integration Services
+            AI Development & Integration Services
           </h1>
           <p className="text-xl text-white/70 mb-8">
-            Transform your business with custom AI solutions and expert implementation from a specialized AI Developer
+            Expert AI development and integration services for enterprise digital transformation. Custom solutions, seamless implementation.
           </p>
           <div className="prose prose-lg prose-invert">
             <p>
               As businesses race to adopt AI technologies, having an experienced AI Developer
               is crucial for successful implementation. With over {new Date().getFullYear() - 1999} years
-              of software development experience and a deep specialization in artificial intelligence,
+              of software development experience and deep specialization in artificial intelligence,
               I help companies integrate cutting-edge AI capabilities into their existing systems and workflows.
+            </p>
+            <p>
+              From custom model development to enterprise-wide AI integration, my services are designed
+              to deliver measurable business value through strategic AI implementation. I focus on
+              practical solutions that drive real results while ensuring seamless adoption across your organization.
             </p>
           </div>
         </motion.div>

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "AI Development & Integration Services | Expert AI Developer",
+  title: "AI Development Services | Enterprise Solutions | DevmentorLive",
   description:
     "Transform your business with custom AI solutions. Expert AI development, integration, and consulting services for enterprise-scale AI adoption.",
   keywords: [

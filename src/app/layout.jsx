@@ -36,7 +36,16 @@ export const metadata = {
     title: 'DevmentorLive - Learn Modern Web Development',
     description: 'Expert mentorship in React, JavaScript, and modern web development. Over 3000+ successful mentoring sessions and 500+ five-star reviews.',
     images: ['/marktellez.webp']
-  }
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/apple-touch-icon-precomposed.png',
+    },
+  },
 }
 
 export default function RootLayout({ children }) {
