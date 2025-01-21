@@ -82,7 +82,7 @@ export default function Hero() {
           >
             <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-[#ff2d55]">
               <img
-                src="https://marktellez.com/marktellez.jpg"
+                src="/mark.jpg"
                 alt="Mark Tellez"
                 className="w-full h-full object-cover"
               />

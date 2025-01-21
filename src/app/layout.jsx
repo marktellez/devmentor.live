@@ -22,7 +22,7 @@ export const metadata = {
     siteName: 'DevmentorLive',
     images: [
       {
-        url: '/marktellez.webp',
+        url: '/mark.jpg',
         width: 800,
         height: 800,
         alt: 'Mark Tellez - Web Development Mentor'
@@ -35,7 +35,7 @@ export const metadata = {
     creator: '@agenticmark',
     title: 'DevmentorLive - Learn Modern Web Development',
     description: 'Expert mentorship in React, JavaScript, and modern web development. Over 3000+ successful mentoring sessions and 500+ five-star reviews.',
-    images: ['/marktellez.webp']
+    images: ['/mark.jpg']
   },
   icons: {
     icon: '/favicon.ico',

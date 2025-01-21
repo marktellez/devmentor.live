@@ -147,7 +147,7 @@ export default function AboutPage() {
                 className="mx-auto md:mx-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden bg-accent mb-8"
               >
                 <img
-                  src="https://marktellez.com/marktellez.jpg"
+                  src="/mark.jpg"
                   alt="Mark Tellez"
                   className="w-full h-full object-cover"
                 />
