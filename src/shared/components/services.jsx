@@ -6,7 +6,7 @@ export default function Services() {
   const services = [
     {
       title: 'AI-Powered Development',
-      description: 'Learn to use AI tools like GPT-4, Claude, and DeepSeek to write better code faster and automate repetitive tasks'
+      description: 'Learn to use AI tools like Cursor, GPT-4, Claude, and DeepSeek to write better code faster and automate repetitive tasks'
     },
     {
       title: 'Machine Learning Fundamentals',
