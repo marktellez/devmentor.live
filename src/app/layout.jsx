@@ -8,16 +8,16 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   metadataBase: new URL('https://devmentor.live'),
-  title: 'DevmentorLive - Learn Modern Web Development with Mark Tellez',
-  description: 'Expert mentorship in React, JavaScript, and modern web development from Mark Tellez, with over 3000+ mentoring sessions and 500+ five-star reviews.',
-  keywords: ['web development', 'React', 'JavaScript', 'mentorship', 'coding', 'programming', 'software development', 'AI', 'machine learning'],
-  authors: [{ name: 'Mark Tellez', url: 'https://marktellez.com' }],
+  title: 'Mark Tellez - Expert Web Development & AI Mentor | 26+ Years Experience',
+  description: 'Transform your development career with personalized mentorship from an industry expert. Master JavaScript, React, Node.js, and AI-powered development. 5.0/5.0 rating from 450+ reviews.',
+  keywords: ['web development mentor', 'JavaScript mentor', 'AI programming', 'React.js', 'Node.js', 'TypeScript', 'NextJS', 'machine learning', 'coding mentor', 'AI development', 'software engineering', 'career coaching'],
+  authors: [{ name: 'Mark Tellez', url: 'https://devmentor.live' }],
   creator: 'Mark Tellez',
   publisher: 'DevmentorLive',
   openGraph: {
     type: 'website',
-    title: 'DevmentorLive - Learn Modern Web Development',
-    description: 'Expert mentorship in React, JavaScript, and modern web development. Over 3000+ successful mentoring sessions and 500+ five-star reviews.',
+    title: 'Mark Tellez - Expert Web Development & AI Mentor',
+    description: 'Master modern web development and AI-powered programming with personalized mentorship from an industry expert with 26+ years of experience.',
     url: 'https://devmentor.live',
     siteName: 'DevmentorLive',
     images: [
@@ -25,7 +25,7 @@ export const metadata = {
         url: '/mark.jpg',
         width: 800,
         height: 800,
-        alt: 'Mark Tellez - Web Development Mentor'
+        alt: 'Mark Tellez - Web Development & AI Mentor'
       }
     ]
   },
@@ -33,8 +33,8 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@agenticmark',
     creator: '@agenticmark',
-    title: 'DevmentorLive - Learn Modern Web Development',
-    description: 'Expert mentorship in React, JavaScript, and modern web development. Over 3000+ successful mentoring sessions and 500+ five-star reviews.',
+    title: 'Mark Tellez - Web Development & AI Mentor',
+    description: 'Learn AI-powered development from an expert with 26+ years of experience. 5.0/5.0 rating from 450+ reviews.',
     images: ['/mark.jpg']
   },
   icons: {
@@ -46,6 +46,42 @@ export const metadata = {
       url: '/apple-touch-icon-precomposed.png',
     },
   },
+  alternates: {
+    canonical: 'https://devmentor.live'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification',
+  },
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Devmentor.live - Mark Tellez",
+    "description": "Expert web development and AI mentorship services with 26+ years of experience. Offering personalized guidance in JavaScript, React, Node.js, and AI-powered development.",
+    "founder": {
+      "@type": "Person",
+      "name": "Mark Tellez",
+      "jobTitle": "AI Researcher and Sr. Software Engineer",
+      "sameAs": [
+        "https://www.codementor.io/@marktellez",
+        "https://mentorcruise.com/mentor/MarkTellez/"
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "450"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": ["Web Development Mentorship", "AI Programming Training", "Career Coaching"]
+  }
 }
 
 export default function RootLayout({ children }) {

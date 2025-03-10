@@ -3,18 +3,21 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useToast } from '@/shared/components/toast'
+import { usePathname } from 'next/navigation'
 
 export default function CTA({
   title = "Let's Find Your Path to AI-Powered Development",
   context = '', // e.g., 'custom-models', 'voice-ai', etc.
 }) {
   const { showToast } = useToast()
+  const pathname = usePathname()
   const [formData, setFormData] = useState({
     experience: '',
     interests: [],
     goals: '',
     email: '',
-    serviceContext: context // Track which service page the inquiry came from
+    serviceContext: context, // Track which service page the inquiry came from
+    sourcePage: pathname // Track which page the form was submitted from
   })
   const [verificationCode, setVerificationCode] = useState('')
   const [showVerification, setShowVerification] = useState(false)
@@ -142,7 +145,10 @@ export default function CTA({
         body: JSON.stringify({
           email: formData.email,
           code: verificationCode,
-          formData: verification.formData
+          formData: {
+            ...verification.formData,
+            sourcePage: pathname // Ensure we use the current page even if it changed
+          }
         }),
       })
 
@@ -199,7 +205,7 @@ export default function CTA({
   }
 
   return (
-    <section className="py-24 sm:py-32">
+    <section id="cta" className="py-24 sm:py-32">
       <div className="container mx-auto px-0 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -220,7 +226,7 @@ export default function CTA({
               </p>
               <div className="w-16 h-16 mx-auto mb-6">
                 <svg
-                  className="w-full h-full text-accent"
+                  className="w-full h-full text-green-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -250,12 +256,22 @@ export default function CTA({
                         setFormData({ ...formData, experience: e.target.value })
                         setErrors({ ...errors, experience: undefined })
                       }}
-                      className={`w-full bg-white/5 border ${errors.experience ? 'border-red-500' : 'border-white/10'} rounded-lg px-4 py-3 text-white`}
+                      className={`w-full appearance-none bg-[#121212] rounded-lg px-4 py-3 text-white 
+                        focus:outline-none 
+                        ${errors.experience ? 'ring-2 ring-red-500/50' : ''}
+                        [&>option]:border-0 [&>option]:outline-none [&>option]:bg-[#121212] [&>option]:text-white`}
+                      style={{ WebkitAppearance: 'none', MozAppearance: 'none' }}
                       required
                     >
-                      <option value="">Select your experience level</option>
+                      <option value="" className="border-0 outline-none bg-[#121212] text-white/50">Select your experience level</option>
                       {experienceLevels.map(level => (
-                        <option key={level} value={level}>{level}</option>
+                        <option 
+                          key={level} 
+                          value={level} 
+                          className="border-0 outline-none bg-[#121212] text-white"
+                        >
+                          {level}
+                        </option>
                       ))}
                     </select>
                     {errors.experience && (
@@ -328,7 +344,7 @@ export default function CTA({
                   <button
                     type="submit"
                     disabled={isSubmitting || !isFormValid()}
-                    className={`w-full bg-accent hover:bg-accent-dark text-white font-semibold py-4 rounded-lg transition-colors 
+                    className={`w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-lg transition-colors 
                       ${(isSubmitting || !isFormValid()) ? 'opacity-50 cursor-not-allowed bg-gray-500 hover:bg-gray-500' : ''}`}
                   >
                     {isSubmitting ? 'Sending...' : 'Start Your Journey'}
@@ -353,7 +369,7 @@ export default function CTA({
                   <button
                     type="submit"
                     disabled={isSubmitting || !verificationCode}
-                    className={`w-full bg-accent hover:bg-accent-dark text-white font-semibold py-4 rounded-lg transition-colors 
+                    className={`w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-lg transition-colors 
                       ${(isSubmitting || !verificationCode) ? 'opacity-50 cursor-not-allowed bg-gray-500 hover:bg-gray-500' : ''}`}
                   >
                     {isSubmitting ? 'Verifying...' : 'Verify Email'}

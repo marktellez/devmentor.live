@@ -12,7 +12,17 @@ export default function ReviewsPage() {
   const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE)
   const [showScrollTop, setShowScrollTop] = useState(false)
   const averageRating = reviews.reduce((acc, review) => acc + (review.rating || 5), 0) / reviews.length
-  const totalReviews = reviews.length
+
+  // Get more featured reviews - take top rated ones
+  const extendedFeaturedReviews = [...featuredReviews]
+  const additionalFeatured = reviews
+    .filter(review => 
+      review.rating === 5 && 
+      review.content.length > 100 &&
+      !featuredReviews.some(f => f.content === review.content)
+    )
+    .slice(0, 4)
+  extendedFeaturedReviews.push(...additionalFeatured)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,15 +78,15 @@ export default function ReviewsPage() {
           className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16"
         >
           <motion.div variants={item} className="text-center">
-            <div className="text-4xl font-light text-accent mb-2">{MENTORING_SESSIONS}</div>
+            <div className="text-4xl font-light text-green-400 mb-2">{MENTORING_SESSIONS}</div>
             <div className="text-zinc-500 text-sm">MENTORING SESSIONS</div>
           </motion.div>
           <motion.div variants={item} className="text-center">
-            <div className="text-4xl font-light text-accent mb-2">{FIVE_STAR_REVIEWS}</div>
+            <div className="text-4xl font-light text-green-400 mb-2">{FIVE_STAR_REVIEWS}</div>
             <div className="text-zinc-500 text-sm">5★ REVIEWS ON CODEMENTOR</div>
           </motion.div>
           <motion.div variants={item} className="text-center">
-            <div className="text-4xl font-light text-accent mb-2">{averageRating.toFixed(1)}</div>
+            <div className="text-4xl font-light text-green-400 mb-2">{averageRating.toFixed(1)}</div>
             <div className="text-zinc-500 text-sm">AVERAGE RATING</div>
           </motion.div>
         </motion.div>
@@ -90,21 +100,21 @@ export default function ReviewsPage() {
         >
           <h2 className="text-2xl font-bold text-white mb-12">Featured Reviews</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredReviews.map((review, index) => (
+            {extendedFeaturedReviews.map((review, index) => (
               <motion.div
                 key={index}
                 variants={item}
-                className="bg-accent/5 border border-accent/10 rounded-lg p-6"
+                className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                    <span className="text-accent font-semibold">
+                  <div className="w-12 h-12 rounded-full bg-purple-400/10 flex items-center justify-center">
+                    <span className="text-purple-400 font-semibold">
                       {review.writer.name.charAt(0)}
                     </span>
                   </div>
                   <div>
                     <h3 className="text-white font-semibold">{review.writer.name}</h3>
-                    <p className="text-accent/80 text-sm">
+                    <p className="text-purple-400/80 text-sm">
                       {new Date(review.created_at * 1000).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long'
@@ -112,7 +122,7 @@ export default function ReviewsPage() {
                     </p>
                   </div>
                 </div>
-                <p className="text-white/70">{review.content}</p>
+                <p className="text-zinc-400">{review.content}</p>
               </motion.div>
             ))}
           </div>
@@ -130,7 +140,7 @@ export default function ReviewsPage() {
               <motion.div
                 key={index}
                 variants={item}
-                className="border-l border-accent/20 pl-6"
+                className="border-l border-purple-400/20 pl-6"
               >
                 <div className="flex items-center gap-4 mb-4">
                   {review.writer.avatar_url && (
@@ -164,7 +174,7 @@ export default function ReviewsPage() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-accent hover:bg-accent-dark text-white flex items-center justify-center shadow-lg transition-colors"
+            className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-green-400 hover:bg-green-300 text-zinc-900 flex items-center justify-center shadow-lg transition-colors"
             aria-label="Scroll to top"
           >
             <svg

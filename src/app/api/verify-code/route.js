@@ -34,6 +34,8 @@ export async function POST(req) {
         HtmlBody: `
           <h2>New Mentorship Inquiry</h2>
           <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Source Page:</strong> ${verification.formData.sourcePage}</p>
+          ${verification.formData.serviceContext ? `<p><strong>Service Context:</strong> ${verification.formData.serviceContext}</p>` : ''}
           <p><strong>Experience:</strong> ${
             verification.formData.experience
           }</p>

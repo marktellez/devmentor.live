@@ -8,7 +8,8 @@ export async function POST(req) {
     const db = client.db();
     const { email, formData } = await req.json();
 
-    const verificationCode = crypto.randomBytes(3).toString("hex");
+    // Generate a 6-digit verification code
+    const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
 
     // Store in MongoDB
     await db.collection("verifications").insertOne({

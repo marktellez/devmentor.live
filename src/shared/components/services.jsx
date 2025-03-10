@@ -5,36 +5,36 @@ import { motion } from 'framer-motion'
 export default function Services() {
   const services = [
     {
+      title: 'Expert Web Development',
+      description: '26+ years of experience in JavaScript, TypeScript, React, and Node.js. Learn to write clean, functional, and maintainable code that scales.'
+    },
+    {
       title: 'AI-Powered Development',
-      description: 'Learn to use AI tools like Cursor, GPT-4, Claude, and DeepSeek to write better code faster and automate repetitive tasks'
+      description: 'Master modern AI tools and learn how to use them for 70% of your development work. From coding assistance to automation, become an AI-first developer.'
     },
     {
-      title: 'Machine Learning Fundamentals',
-      description: 'Master ML basics: supervised/unsupervised learning, reinforcement learning, and practical PyTorch/TensorFlow implementation'
+      title: '1-on-1 Mentorship',
+      description: 'Personalized guidance through live coding sessions, code reviews, and pair programming. Get immediate feedback and learn best practices in real-time.'
     },
     {
-      title: 'AI Consulting',
-      description: 'Help your company integrate AI into existing workflows, build custom AI solutions, and train development teams in AI best practices'
+      title: 'Modern Stack Mastery',
+      description: 'Expert guidance in Next.js, TailwindCSS, MongoDB, and modern web development tools. Build production-ready applications from scratch.'
     },
     {
-      title: 'AI Voice Systems',
-      description: 'Learn to build and deploy custom voice AI systems using cutting-edge ML models and real-time synthesis'
+      title: 'Machine Learning & AI',
+      description: 'Learn AI development from a top-ranked AI programmer. From basic ML concepts to advanced AI implementations in production systems.'
     },
     {
-      title: 'Learn by Doing',
-      description: 'One-on-one, side by side learning via Zoom, building real world applications'
+      title: 'Flexible Learning Path',
+      description: 'Custom-tailored mentorship to match your goals and schedule. Book sessions when you need them, with recorded sessions for later review.'
     },
     {
-      title: 'Cross-Platform Support',
-      description: 'Windows, Mac or Linux - daily experience on all three platforms'
+      title: 'Code Review & Architecture',
+      description: 'Get expert feedback on your code and learn how to structure large applications. Master clean architecture and SOLID principles.'
     },
     {
-      title: 'Recorded Sessions',
-      description: 'Sessions recorded for later review, creating your own screencast series'
-    },
-    {
-      title: 'Flexible Schedule',
-      description: 'No fixed classes - book what you need, when you need it'
+      title: 'Career Development',
+      description: 'Guidance on career growth, interview preparation, and building a strong portfolio. Learn from real-world industry experience.'
     }
   ]
 
@@ -56,6 +56,20 @@ export default function Services() {
   return (
     <section className="py-24 sm:py-32">
       <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Comprehensive Mentorship Services
+          </h2>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            From web development fundamentals to advanced AI integration, get personalized guidance
+            from an industry expert with over 1000 successful mentoring sessions.
+          </p>
+        </motion.div>
 
         <motion.div
           variants={container}
@@ -67,7 +81,7 @@ export default function Services() {
             <motion.div
               key={service.title}
               variants={item}
-              className="border border-white/10 p-8 rounded-lg bg-white/[0.02]"
+              className="border border-white/10 p-8 rounded-lg bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-200"
             >
               <h3 className="text-lg sm:text-xl font-semibold text-white mb-4">
                 {service.title}

@@ -33,9 +33,9 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#f97316", // Orange-500
-          light: "#fb923c", // Orange-400
-          dark: "#ea580c", // Orange-600
+          DEFAULT: "#a855f7", // Purple-500
+          light: "#c084fc", // Purple-400
+          dark: "#9333ea", // Purple-600
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

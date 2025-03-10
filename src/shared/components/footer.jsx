@@ -8,63 +8,9 @@ export default function Footer() {
 
   return (
     <footer>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="my-24 sm:my-32 bg-pink-500/5 py-12"
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center gap-6">
-            <div className="flex -space-x-4">
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background relative z-40">
-                <Image
-                  src="/snoop.png"
-                  alt="Snoop Voice AI Example"
-                  width={128}
-                  height={128}
-                  className="object-cover w-full h-full"
-                  priority
-                  quality={100}
-                />
-              </div>
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background relative z-30">
-                <Image
-                  src="/taylor.png"
-                  alt="Taylor Voice AI Example"
-                  width={128}
-                  height={128}
-                  className="object-cover w-full h-full"
-                  priority
-                  quality={100}
-                />
-              </div>
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background relative z-20">
-                <Image
-                  src="/elon.png"
-                  alt="Elon Voice AI Example"
-                  width={128}
-                  height={128}
-                  className="object-cover w-full h-full"
-                  priority
-                  quality={100}
-                />
-              </div>
-              <div className="w-16 h-16 rounded-full bg-pink-500 border-2 border-background relative z-10" />
-            </div>
+     
 
-            <a href="https://voxbird.ai" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 text-center">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Voxbird</h3>
-              <p className="text-base sm:text-lg font-medium text-white">
-                I built Voxbird to end the endless recording takes. Dont record, generate!
-              </p>
-              <p className="text-sm text-white/80 mt-2">Train a model of your own voice and then generate audio while you sleep!</p>
-            </a>
-          </div>
-        </div>
-      </motion.div>
-
-      <div className="container mx-auto px-4 py-8 sm:py-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12 border-t border-gray-900">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-white text-sm font-medium mb-4">About</h3>
@@ -122,19 +68,7 @@ export default function Footer() {
                   X (Twitter)
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://marktellez.com"
-                  className="text-gray-400 hover:text-accent text-sm flex items-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z" />
-                  </svg>
-                  Personal Website
-                </a>
-              </li>
+
               <li>
                 <a
                   href="https://www.codementor.io/@marktellez"

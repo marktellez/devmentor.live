@@ -46,3 +46,7 @@
                 radial-gradient(circle at bottom left, rgba(127, 29, 29, 0.05), transparent 50%);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

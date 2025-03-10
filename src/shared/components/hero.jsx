@@ -26,15 +26,26 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="flex flex-col justify-center order-2 lg:order-1 space-y-16"
           >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex items-center space-x-4"
+            >
+              <span className="bg-green-500/10 text-green-400 px-4 py-2 rounded-full text-sm font-medium">
+                5.0/5.0 Rating • 450+ Reviews
+              </span>
+            </motion.div>
+
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-4xl sm:text-6xl lg:text-8xl font-bold"
+              className="text-4xl sm:text-6xl lg:text-7xl font-bold"
             >
-              Become a<br />
-              10x Programmer<br />
-              Using AI
+              Master Modern<br />
+              Development with<br />
+              AI-Powered Skills
             </motion.h1>
 
             <motion.p
@@ -43,9 +54,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-lg sm:text-xl text-white/70"
             >
-              Learn to leverage cutting-edge AI tools like {FACTS.experience.ai_ml.tools.models.slice(0, 3).join(', ')} to
-              supercharge your development. From {FACTS.experience.ai_ml.tools.workflows[0]} to {FACTS.experience.ai_ml.current_focus.development[0]},
-              master the future of coding.
+              Join me for personalized mentorship in web development and AI integration. 
+              With {yearsOfCoding}+ years of experience, I'll help you master JavaScript, React, 
+              and modern AI tools to supercharge your development career.
             </motion.p>
 
             <motion.div
@@ -54,20 +65,20 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="space-y-8"
             >
-              {/* Web Technologies */}
+              {/* Core Skills */}
               <div className="flex flex-wrap items-center gap-4">
-                {FACTS.experience.web.core.map((tech, i) => (
+                {['JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 'AI Integration'].map((tech) => (
                   <span key={tech} className="text-white/50 text-sm bg-white/5 px-5 py-2.5 rounded-full whitespace-nowrap">
                     {tech}
                   </span>
                 ))}
               </div>
 
-              {/* ML Technologies */}
+              {/* Mentorship Benefits */}
               <div className="flex flex-wrap items-center gap-4">
-                {FACTS.experience.python.frameworks.map((tech, i) => (
-                  <span key={tech} className="text-white/50 text-sm bg-white/5 px-5 py-2.5 rounded-full whitespace-nowrap">
-                    {tech}
+                {['1-on-1 Sessions', 'Code Reviews', 'Pair Programming', 'AI Tools Training'].map((benefit) => (
+                  <span key={benefit} className="text-white/50 text-sm bg-white/5 px-5 py-2.5 rounded-full whitespace-nowrap">
+                    {benefit}
                   </span>
                 ))}
               </div>
@@ -78,12 +89,12 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center justify-start order-1 lg:order-2"
+            className="flex flex-col items-center justify-start order-1 lg:order-2 mt-32"
           >
             <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-[#ff2d55]">
               <img
                 src="/mark.jpg"
-                alt="Mark Tellez"
+                alt="Mark Tellez - Web Development & AI Mentor"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -93,8 +104,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-white/70 text-center text-base sm:text-lg max-w-sm mt-8 mb-24"
             >
-              {yearsOfCoding}+ years of development experience. Currently building voice AI and ML systems at {FACTS.experience.companies[0]},
-              specializing in {FACTS.experience.python.specialties.slice(0, 2).join(' and ')}.
+              AI Researcher and Sr. Software Engineer with {yearsOfCoding}+ years of experience.
+              Ranked 8th globally in AI programming contests. Let's build something amazing together.
             </motion.p>
           </motion.div>
         </div>

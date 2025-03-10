@@ -14,13 +14,18 @@ export default function AIServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-16"
         >
-          <h1 className="text-5xl font-bold text-white mb-6">
+          <h1 className="text-5xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-teal-400 to-green-400">
             AI Development & Integration Services
           </h1>
           <p className="text-xl text-white/70 mb-8">
             Expert AI development and integration services for enterprise digital transformation. Custom solutions, seamless implementation.
           </p>
-          <div className="prose prose-lg prose-invert">
+          <div className="inline-block mb-8">
+            <span className="bg-[#121212] text-green-400 px-4 py-2 rounded-full text-sm font-medium border border-green-500/20">
+              Ranked 8th in CodeGame's AI Competition • 70% Productivity Boost
+            </span>
+          </div>
+          <div className="prose prose-lg prose-invert flex flex-col gap-4">
             <p>
               As businesses race to adopt AI technologies, having an experienced AI Developer
               is crucial for successful implementation. With over {new Date().getFullYear() - 1999} years
@@ -44,9 +49,9 @@ export default function AIServicesPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white/5 border border-white/10 rounded-lg p-6"
+                className="border border-green-500/20 p-8 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a] hover:from-green-500/[0.07] hover:to-transparent transition-colors"
               >
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-green-400 mb-3">
                   {benefit.title}
                 </h3>
                 <p className="text-white/70">
@@ -75,9 +80,9 @@ export default function AIServicesPage() {
               <Link
                 key={index}
                 href={service.href}
-                className="group bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-6 transition-colors"
+                className="group border border-purple-500/20 p-8 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a] hover:from-purple-500/[0.07] hover:to-transparent transition-colors"
               >
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-purple-400 mb-3">
                   {service.title}
                 </h3>
                 <p className="text-white/70 mb-4">
@@ -99,27 +104,7 @@ export default function AIServicesPage() {
           </div>
         </div>
 
-        {/* Success Stories Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8">Success Stories</h2>
-          <div className="bg-white/5 border border-white/10 rounded-lg p-6 mb-8">
-            <h3 className="text-xl font-semibold text-white mb-3">
-              AI-Powered Customer Service Transformation
-            </h3>
-            <p className="text-white/70 mb-4">
-              Helped a mid-size company reduce customer response times by 75% through
-              custom AI model development and integration. The solution included sentiment
-              analysis, automated response generation, and intelligent ticket routing.
-            </p>
-          </div>
-          <div className="prose prose-lg prose-invert">
-            <p>
-              These results aren't just numbers – they represent real business transformation
-              through strategic AI implementation. By focusing on practical applications and
-              measurable outcomes, we ensure every AI project delivers tangible value.
-            </p>
-          </div>
-        </div>
+     
 
         {/* CTA Section */}
         <CTA
