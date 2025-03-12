@@ -5,13 +5,15 @@ export const FIVE_STAR_REVIEWS = "500+";
 export const FACTS = {
   experience: {
     year: START_YEAR,
-    companies: ["VoxBird.ai", "PayPal", "Intel", "UpperDeck", "GEICO"],
-    languages: ["JavaScript", "TypeScript", "Python"],
-    frontend: ["React", "Next.js"],
-    backend: ["Node.js", "Python"],
+    companies: ["VoxBird.ai", "PayPal", "Intel", "UpperDeck", "GEICO", "Calloway Golf"],
+    languages: ["JavaScript", "TypeScript", "Python", "C#", "C++", "Ruby"],
+    frontend: ["React", "Tailwind", "CSS"],
+    backend: ["Next.js", "Python", "Ruby on Rails"],
     databases: ["MongoDB", "PostgreSQL", "MySQL", "Vector DBs"],
     cloud: ["AWS", "Vercel"],
     specialties: ["AI/ML", "Modern Web Dev", "Full Stack", "Voice AI"],
+    gameEngines: ["Unity", "Unreal"],
+    creativeTools: ["Photoshop", "Illustrator", "Animator", "Blender"],
     python: {
       frameworks: ["PyTorch", "CUDA", "TensorFlow"],
       specialties: [

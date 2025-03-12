@@ -7,8 +7,16 @@ const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
+  recommendedConfig: true
 });
 
-const eslintConfig = [...compat.extends("next/core-web-vitals")];
-
-export default eslintConfig;
+export default [
+  ...compat.extends("next/core-web-vitals"),
+  {
+    files: ['**/*.{js,jsx,mjs}'],
+    rules: {
+      'react/no-unescaped-entities': 'off',
+      '@next/next/no-html-link-for-pages': 'off'
+    }
+  }
+];

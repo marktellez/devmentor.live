@@ -265,9 +265,9 @@ export default function CTA({
                     >
                       <option value="" className="border-0 outline-none bg-[#121212] text-white/50">Select your experience level</option>
                       {experienceLevels.map(level => (
-                        <option 
-                          key={level} 
-                          value={level} 
+                        <option
+                          key={level}
+                          value={level}
                           className="border-0 outline-none bg-[#121212] text-white"
                         >
                           {level}

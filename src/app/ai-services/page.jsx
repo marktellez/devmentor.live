@@ -20,9 +20,11 @@ export default function AIServicesPage() {
           <p className="text-xl text-white/70 mb-8">
             Expert AI development and integration services for enterprise digital transformation. Custom solutions, seamless implementation.
           </p>
-          <div className="inline-block mb-8">
-            <span className="bg-[#121212] text-green-400 px-4 py-2 rounded-full text-sm font-medium border border-green-500/20">
-              Ranked 8th in CodeGame's AI Competition • 70% Productivity Boost
+          <div className="flex justify-center mb-8">
+            <span className="bg-[#121212] text-green-400 px-4 py-2 rounded-full text-sm font-medium border border-green-500/20 flex flex-col sm:flex-row sm:items-center gap-2">
+              <span>Ranked 8th in CodeGame's AI Competition</span>
+              <span className="hidden sm:inline">•</span>
+              <span>70% Productivity Boost</span>
             </span>
           </div>
           <div className="prose prose-lg prose-invert flex flex-col gap-4">
@@ -104,7 +106,7 @@ export default function AIServicesPage() {
           </div>
         </div>
 
-     
+
 
         {/* CTA Section */}
         <CTA

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { FACTS } from '@/lib/config'
 import Stats from '@/shared/components/stats'
 
@@ -22,149 +23,148 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto px-8 py-24">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex flex-col md:flex-row items-center gap-8 mb-16"
+        >
+          <div className="flex-1">
+            <h1 className="text-5xl font-bold text-white mb-6">
+              About Me
+            </h1>
+            <p className="text-xl text-white/70 mb-8">
+              Full-stack developer specializing in AI integration and modern web development
+            </p>
+          </div>
+          <div className="w-48 h-48 md:w-64 md:h-64 relative shrink-0 rounded-full overflow-hidden mx-auto md:mx-0">
+            <Image
+              src="/mark.jpg"
+              alt="Mark Tellez"
+              fill
+              sizes="(max-width: 768px) 192px, 256px"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </motion.div>
 
-
-        <div className="mb-12">
+        <div className="mb-16">
           <Stats />
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-          <div className="w-full md:w-2/3">
-            <motion.div
-              variants={container}
-              initial="hidden"
-              animate="show"
-            >
-              <motion.h2 variants={item} className="text-3xl sm:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-teal-400 to-green-400">
-                Professional Experience
-              </motion.h2>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="space-y-8"
+        >
+          {/* Core Technology sections */}
+          <motion.div variants={item}>
+            <h3 className="text-green-400 text-xl mb-4">Languages</h3>
+            <div className="flex flex-wrap gap-2">
+              {FACTS.experience.languages.map((lang) => (
+                <span key={lang} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-green-500/20 px-3 py-1 rounded">
+                  {lang}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
-              <div className="space-y-8">
-                <motion.div variants={item}>
-                  <h3 className="text-green-400 text-xl mb-4">Languages</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {FACTS.experience.languages.map((lang) => (
-                      <span key={lang} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-green-500/20 px-3 py-1 rounded">
-                        {lang}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
+          <motion.div variants={item}>
+            <h3 className="text-purple-400 text-xl mb-4">Frontend</h3>
+            <div className="flex flex-wrap gap-2">
+              {FACTS.experience.frontend.map((tech) => (
+                <span key={tech} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-purple-500/20 px-3 py-1 rounded">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
-                <motion.div variants={item}>
-                  <h3 className="text-purple-400 text-xl mb-4">Frontend</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {FACTS.experience.frontend.map((tech) => (
-                      <span key={tech} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-purple-500/20 px-3 py-1 rounded">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
+          <motion.div variants={item}>
+            <h3 className="text-teal-400 text-xl mb-4">Backend</h3>
+            <div className="flex flex-wrap gap-2">
+              {FACTS.experience.backend.map((tech) => (
+                <span key={tech} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-teal-500/20 px-3 py-1 rounded">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
-                <motion.div variants={item}>
-                  <h3 className="text-teal-400 text-xl mb-4">Backend</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {FACTS.experience.backend.map((tech) => (
-                      <span key={tech} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-teal-500/20 px-3 py-1 rounded">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
+          <motion.div variants={item}>
+            <h3 className="text-purple-400 text-xl mb-4">Databases</h3>
+            <div className="flex flex-wrap gap-2">
+              {FACTS.experience.databases.map((db) => (
+                <span key={db} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-purple-500/20 px-3 py-1 rounded">
+                  {db}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
-                <motion.div variants={item}>
-                  <h3 className="text-purple-400 text-xl mb-4">Databases</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {FACTS.experience.databases.map((db) => (
-                      <span key={db} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-purple-500/20 px-3 py-1 rounded">
-                        {db}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
+          <motion.div variants={item}>
+            <h3 className="text-teal-400 text-xl mb-4">Cloud & DevOps</h3>
+            <div className="flex flex-wrap gap-2">
+              {FACTS.experience.cloud.map((service) => (
+                <span key={service} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-teal-500/20 px-3 py-1 rounded">
+                  {service}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
-                <motion.div variants={item}>
-                  <h3 className="text-teal-400 text-xl mb-4">Cloud & DevOps</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {FACTS.experience.cloud.map((service) => (
-                      <span key={service} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-teal-500/20 px-3 py-1 rounded">
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-
-                <motion.div variants={item}>
-                  <h3 className="text-green-400 text-xl mb-4">AI & Machine Learning</h3>
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-white/90 mb-2">Neural Architectures</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {FACTS.experience.ai_ml.architectures.map((arch) => (
-                          <span key={arch} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-green-500/20 px-3 py-1 rounded">
-                            {arch}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-white/90 mb-2">Domains</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {FACTS.experience.ai_ml.domains.map((domain) => (
-                          <span key={domain} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-green-500/20 px-3 py-1 rounded">
-                            {domain}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-white/90 mb-2">AI Specialties</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {FACTS.experience.ai_ml.specialties.map((specialty) => (
-                          <span key={specialty} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-green-500/20 px-3 py-1 rounded">
-                            {specialty}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+          <motion.div variants={item}>
+            <h3 className="text-green-400 text-xl mb-4">AI & Machine Learning</h3>
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-white/90 mb-2">Neural Architectures</h4>
+                <div className="flex flex-wrap gap-2">
+                  {FACTS.experience.ai_ml.architectures.map((arch) => (
+                    <span key={arch} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-green-500/20 px-3 py-1 rounded">
+                      {arch}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </motion.div>
-          </div>
+              <div>
+                <h4 className="text-white/90 mb-2">Domains</h4>
+                <div className="flex flex-wrap gap-2">
+                  {FACTS.experience.ai_ml.domains.map((domain) => (
+                    <span key={domain} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-green-500/20 px-3 py-1 rounded">
+                      {domain}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
-          <div className="w-full md:w-1/3">
-            <motion.div
-              variants={container}
-              initial="hidden"
-              animate="show"
-              className="sticky top-24"
-            >
-              <motion.div
-                variants={item}
-                className="mx-auto md:mx-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-purple-400/30 mb-8"
-              >
-                <img
-                  src="/mark.jpg"
-                  alt="Mark Tellez"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+          {/* Additional Skills sections */}
+          <motion.div variants={item}>
+            <h3 className="text-red-400 text-xl mb-4">Game Engines</h3>
+            <div className="flex flex-wrap gap-2">
+              {FACTS.experience.gameEngines.map((engine) => (
+                <span key={engine} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-red-500/20 px-3 py-1 rounded">
+                  {engine}
+                </span>
+              ))}
+            </div>
+          </motion.div>
 
-              <motion.div variants={item} className="bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-purple-500/20 rounded-lg p-6">
-                <h3 className="text-purple-400 text-xl mb-4">Current Focus</h3>
-                <p className="text-white/70">
-                  I'm leveraging my decades of development experience to help developers
-                  master both modern web development and AI integration. At {FACTS.experience.companies[0]},
-                  I'm building {FACTS.experience.ai_ml.current_focus.voice.join(' and ')}, while teaching others how to become
-                  AI-powered developers.
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
+          <motion.div variants={item}>
+            <h3 className="text-yellow-400 text-xl mb-4">Creative Tools</h3>
+            <div className="flex flex-wrap gap-2">
+              {FACTS.experience.creativeTools.map((tool) => (
+                <span key={tool} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-yellow-500/20 px-3 py-1 rounded">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   )

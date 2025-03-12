@@ -31,7 +31,7 @@ export default function WebDevMentorship() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -53,9 +53,9 @@ export default function WebDevMentorship() {
           <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-8">
             Join hundreds of developers who've transformed their careers through personalized mentorship. From keeping their jobs to earning promotions and raises.
           </p>
-          <a 
-            href="#cta" 
-            onClick={scrollToCta} 
+          <a
+            href="#cta"
+            onClick={scrollToCta}
             className="inline-block px-8 py-4 bg-purple-500 hover:bg-purple-600 transition-colors rounded-lg text-white font-semibold"
           >
             Start Your Journey
@@ -93,8 +93,11 @@ export default function WebDevMentorship() {
               <h3 className="text-xl font-semibold text-purple-400 mb-4">
                 From Struggling to Leading
               </h3>
-              <p className="text-white/70 text-base leading-relaxed">
+              <p className="text-white/70 text-base leading-relaxed mb-4">
                 "I was about to lose my job due to performance issues. Through mentorship, I learned modern development practices and architectural patterns. Now I'm leading my team's technical decisions and got a 35% raise."
+              </p>
+              <p className="text-sm text-white/50 italic">
+                - Michael S., Senior Software Engineer
               </p>
             </motion.div>
             <motion.div
@@ -104,8 +107,11 @@ export default function WebDevMentorship() {
               <h3 className="text-xl font-semibold text-purple-400 mb-4">
                 Breaking Through Career Plateau
               </h3>
-              <p className="text-white/70 text-base leading-relaxed">
+              <p className="text-white/70 text-base leading-relaxed mb-4">
                 "Stuck at the same level for 3 years, I couldn't seem to advance. The mentorship showed me how to write production-quality code and communicate with stakeholders. Promoted to senior in 8 months."
+              </p>
+              <p className="text-sm text-white/50 italic">
+                - David K., Lead Developer
               </p>
             </motion.div>
           </motion.div>
@@ -173,8 +179,8 @@ export default function WebDevMentorship() {
       </section>
 
       {/* Shared CTA Component */}
-      <CTA 
-        title="Ready to Transform Your Development Career?" 
+      <CTA
+        title="Ready to Transform Your Development Career?"
         context="web-dev"
       />
     </div>

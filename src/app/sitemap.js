@@ -1,7 +1,7 @@
 const SITE_URL = 'https://devmentor.live'
 
 export default function sitemap() {
-  const routes = [
+  return [
     {
       url: '/',
       lastModified: new Date(),
@@ -56,10 +56,23 @@ export default function sitemap() {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    {
+      url: '/developer-mentorship',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: '/tech-interview-prep',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: '/hire-senior-developer',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    }
   ]
-
-  return routes.map((route) => ({
-    ...route,
-    url: `${SITE_URL}${route.url}`,
-  }))
 } 
