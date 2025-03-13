@@ -25,8 +25,8 @@ export default function ContentSection() {
             Transform Your Development Career
           </h2>
           <p className="text-xl text-white/80 leading-relaxed">
-            Join hundreds of developers who have accelerated their careers through personalized mentorship. 
-            With over 26 years of experience and a perfect 5.0/5.0 rating, I'll help you master both traditional 
+            Join hundreds of developers who have accelerated their careers through personalized mentorship.
+            With over 26 years of experience and a perfect 5.0/5.0 rating, I'll help you master both traditional
             and AI-powered development techniques.
           </p>
         </motion.div>
@@ -43,12 +43,10 @@ export default function ContentSection() {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <div className="space-y-6">
-              <div className="inline-block p-3 bg-white/5 rounded-2xl mb-4">
-                <CodeBracketIcon className="w-8 h-8 text-purple-400" />
-              </div>
-              <h3 className="text-3xl font-bold">Web Development Mastery</h3>
+
+              <h3 className="text-3xl font-bold flex items-center gap-2"><CodeBracketIcon className="w-8 h-8 text-purple-400" /> Web Development Mastery</h3>
               <p className="text-lg text-white/80 leading-relaxed">
-                Since 1997, I've been crafting web applications and mentoring developers in the art of clean, 
+                Since 1997, I've been crafting web applications and mentoring developers in the art of clean,
                 functional programming. My expertise spans the entire modern web stack:
               </p>
               <ul className="grid grid-cols-2 gap-4">
@@ -71,12 +69,12 @@ export default function ContentSection() {
             <div className="lg:ml-auto">
               <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/10 p-8 rounded-2xl border border-white/10">
                 <blockquote className="text-lg text-white/80 italic flex items-center gap-2">
-                <img 
-                    src="/mark.jpg" 
-                    alt="Mark - AI Developer and Mentor" 
+                  <img
+                    src="/mark.jpg"
+                    alt="Mark - AI Developer and Mentor"
                     className="w-48 h-48 rounded-full object-cover border-2 border-purple-400/20"
                   />
-                  Whether you're building a simple web app or a complex enterprise system, 
+                  Whether you're building a simple web app or a complex enterprise system,
                   I'll help you write better code using modern best practices and industry-proven patterns.
                 </blockquote>
               </div>
@@ -103,9 +101,9 @@ export default function ContentSection() {
                   <div>
                     <h4 className="text-xl font-semibold mb-2">AI Programming Achievement</h4>
                     <p className="text-white/70">
-                      <a 
-                        href="https://www.codingame.com/multiplayer/bot-programming/fantastic-bits/leaderboard" 
-                        target="_blank" 
+                      <a
+                        href="https://www.codingame.com/multiplayer/bot-programming/fantastic-bits/leaderboard"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-green-400 hover:text-green-300 transition-colors"
                       >
@@ -138,7 +136,7 @@ export default function ContentSection() {
 
               <h3 className="text-3xl font-bold flex items-center gap-2"><RocketLaunchIcon className="w-8 h-8 text-green-400" /> AI-Powered Development Revolution</h3>
               <p className="text-lg text-white/80 leading-relaxed">
-                As an AI researcher and top-ranked programmer, I'll teach you how to leverage AI to transform 
+                As an AI researcher and top-ranked programmer, I'll teach you how to leverage AI to transform
                 your development workflow. Learn to use cutting-edge AI tools to:
               </p>
               <ul className="space-y-3">
@@ -200,9 +198,9 @@ export default function ContentSection() {
               <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
 
                 <blockquote className="text-xl text-white/80 italic mb-6 flex items-center gap-2">
-                <img 
-                    src="/mark.jpg" 
-                    alt="Mark - AI Developer and Mentor" 
+                  <img
+                    src="/mark.jpg"
+                    alt="Mark - AI Developer and Mentor"
                     className="w-48 h-48 rounded-full object-cover border-2 border-purple-400/20"
                   /> 450+ satisfied developers have transformed their careers through my mentorship program.
                 </blockquote>
@@ -232,8 +230,8 @@ export default function ContentSection() {
           >
             <h3 className="text-3xl font-bold mb-6">Ready to Level Up Your Development Career?</h3>
             <p className="text-lg text-white/80 mb-8">
-              Join the ranks of successful developers who have transformed their careers through expert mentorship. 
-              Whether you're looking to master web development, integrate AI into your workflow, or accelerate your 
+              Join the ranks of successful developers who have transformed their careers through expert mentorship.
+              Whether you're looking to master web development, integrate AI into your workflow, or accelerate your
               career growth, I'm here to guide you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

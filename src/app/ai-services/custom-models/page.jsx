@@ -1,8 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+
 import CTA from '@/shared/components/cta'
+
+export const metadata = {
+  title: "Custom AI Model Development | Expert Machine Learning Solutions",
+  description: "Expert development of custom AI models for classification, sentiment analysis, and predictive analytics. Transform your business with tailored machine learning solutions.",
+}
 
 export default function CustomModelsPage() {
   return (

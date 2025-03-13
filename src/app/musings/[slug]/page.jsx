@@ -1,22 +1,48 @@
+
 import { notFound } from 'next/navigation'
 import { getMusing, getAllMusings } from '@/data/musings'
 import ArticleContent from './article-content'
 import Script from 'next/script'
 
-// Generate static paths at build time
+export async function generateMetadata({ params }) {
+  const article = await getMusing(params.slug)
+
+  if (!article) {
+    return {
+      title: 'Article Not Found',
+      description: 'The requested article could not be found.'
+    }
+  }
+
+  return {
+    title: article.title,
+    description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      type: 'article',
+      url: `https://devmentor.live/musings/${params.slug}`,
+      images: [
+        {
+          url: article.image || '/musings.webp',
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+  }
+}
+
 export async function generateStaticParams() {
-  const musings = getAllMusings()
+  const musings = await getAllMusings()
   return musings.map((musing) => ({
     slug: musing.id,
   }))
 }
 
-export const dynamic = 'force-static'
-export const revalidate = false
-
 export default async function MusingPage({ params }) {
-  const resolvedParams = await params
-  const article = getMusing(resolvedParams.slug)
+  const article = await getMusing(params.slug)
 
   if (!article) {
     notFound()

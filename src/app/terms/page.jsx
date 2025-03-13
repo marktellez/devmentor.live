@@ -1,3 +1,9 @@
+
+export const metadata = {
+  title: "Terms of Service | Legal Information",
+  description: "Terms of service and legal information for DevmentorLive services and website usage.",
+}
+
 export default function Terms() {
   return (
     <div className="min-h-screen text-gray-300">

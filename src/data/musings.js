@@ -12,8 +12,8 @@ export const musings = [
   }
 ];
 
-export function getAllMusings() {
-  return musings.map(musing => {
+export async function getAllMusings() {
+  const musingsData = await Promise.all(musings.map(async musing => {
     try {
       const filePath = path.join(process.cwd(), 'src/data/musings', `${musing.id}.md`)
       const fileContent = fs.readFileSync(filePath, 'utf8')
@@ -49,10 +49,12 @@ export function getAllMusings() {
         }
       }
     }
-  })
+  }))
+
+  return musingsData
 }
 
-export function getMusing(id) {
+export async function getMusing(id) {
   const musing = musings.find(musing => musing.id === id)
   if (!musing) return null
 
@@ -65,7 +67,7 @@ export function getMusing(id) {
       ...musing,
       title: data.title,
       date: new Date(data.date),
-      updated: data.updated ? new Date(data.updated) : null,  // Only create Date if updated exists
+      updated: data.updated ? new Date(data.updated) : null,
       image: data.image,
       author: {
         name: data.author,

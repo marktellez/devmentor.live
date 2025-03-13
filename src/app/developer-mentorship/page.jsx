@@ -4,6 +4,11 @@ import { motion } from 'framer-motion'
 import CTA from '@/shared/components/cta'
 import { MENTORING_SESSIONS, FIVE_STAR_REVIEWS } from '@/lib/config'
 
+export const metadata = {
+  title: "1-on-1 Developer Mentorship | Accelerate Your Career",
+  description: "Get personalized developer mentorship from an expert with 26+ years of experience. Accelerate your career with targeted guidance and hands-on learning.",
+}
+
 export default function DeveloperMentorshipPage() {
   return (
     <div className="min-h-screen">
@@ -12,11 +17,11 @@ export default function DeveloperMentorshipPage() {
           <span className="bg-purple-500/10 text-purple-400 px-4 py-2 rounded-full text-sm font-medium">
             {MENTORING_SESSIONS} Sessions Completed • {FIVE_STAR_REVIEWS} 5-Star Reviews
           </span>
-          
+
           <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-white mt-8">
             Accelerate Your Developer Career With 1-on-1 Mentorship
           </h1>
-          
+
           <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-8">
             Get personalized guidance from a senior developer with 26+ years of experience. Master modern development practices, advance your career, and increase your earning potential.
           </p>
@@ -31,7 +36,7 @@ export default function DeveloperMentorshipPage() {
                 <li>• System architecture</li>
               </ul>
             </div>
-            
+
             <div className="bg-white/5 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-purple-400 mb-3">Career Growth</h3>
               <ul className="text-white/70 text-left space-y-2">
@@ -55,7 +60,7 @@ export default function DeveloperMentorshipPage() {
         </motion.div>
       </section>
 
-      <CTA 
+      <CTA
         title="Start Your Developer Growth Journey"
         context="developer-mentorship"
       />

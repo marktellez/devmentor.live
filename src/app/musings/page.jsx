@@ -1,12 +1,18 @@
+
 import { motion } from 'framer-motion'
 import { getAllMusings } from '@/data/musings'
 import ArticleCard from '@/shared/components/article-card'
 
+export const metadata = {
+  title: 'Musings on AI & Development',
+  description: 'Thoughts, insights, and lessons learned from over two decades of software development and AI integration.',
+}
+
 export const dynamic = 'force-static'
 export const revalidate = false
 
-export default function MusingsPage() {
-  const musings = getAllMusings();
+export default async function MusingsPage() {
+  const musings = await getAllMusings()
 
   return (
     <div className="min-h-screen">
