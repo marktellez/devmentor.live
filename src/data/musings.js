@@ -7,7 +7,7 @@ export const musings = [
     id: 'vibe-coding-when-intuition-becomes-your-downfall',
     excerpt: 'When I began coding in 1997, we didn\'t have trendy buzzwords like "vibe coding"—we simply called it cowboy coding. Today, this reckless approach is dressed up as a liberating, innovative method...',
     // Add SEO-friendly fields
-    canonicalUrl: 'https://devmentor.live/musings/vibe-coding-when-intuition-becomes-your-downfall',
+    canonicalUrl: `${process.env.NEXT_PUBLIC_URL}/musings/vibe-coding-when-intuition-becomes-your-downfall`,
     keywords: ['software development', 'coding practices', 'development methodology'],
   }
 ];
@@ -28,10 +28,10 @@ export async function getAllMusings() {
         author: {
           name: data.author || 'Mark Tellez',
           avatar: '/mark.jpg',
-          url: 'https://devmentor.live/about'
+          url: `${process.env.NEXT_PUBLIC_URL}/about`
         },
         tags: data.tags || [],
-        canonicalUrl: data.canonicalUrl || `https://devmentor.live/musings/${musing.id}`,
+        canonicalUrl: data.canonicalUrl || `${process.env.NEXT_PUBLIC_URL}/musings/${musing.id}`,
         keywords: data.keywords || musing.keywords || []
       }
     } catch (error) {
@@ -45,7 +45,7 @@ export async function getAllMusings() {
         author: {
           name: 'Mark Tellez',
           avatar: '/mark.jpg',
-          url: 'https://devmentor.live/about'
+          url: `${process.env.NEXT_PUBLIC_URL}/about`
         }
       }
     }
@@ -55,26 +55,27 @@ export async function getAllMusings() {
 }
 
 export async function getMusing(id) {
-  const musing = musings.find(musing => musing.id === id)
-  if (!musing) return null
-
   try {
     const filePath = path.join(process.cwd(), 'src/data/musings', `${id}.md`)
     const fileContent = fs.readFileSync(filePath, 'utf8')
     const { data, content } = matter(fileContent)
 
     return {
-      ...musing,
+      id,
+      content,
       title: data.title,
       date: new Date(data.date),
       updated: data.updated ? new Date(data.updated) : null,
       image: data.image,
+      excerpt: data.excerpt,
       author: {
-        name: data.author,
-        avatar: '/mark.jpg'
+        name: data.author || 'Mark Tellez',
+        avatar: '/mark.jpg',
+        url: `${process.env.NEXT_PUBLIC_URL}/about`
       },
       tags: data.tags || [],
-      content: fileContent
+      canonicalUrl: data.canonicalUrl || `${process.env.NEXT_PUBLIC_URL}/musings/${id}`,
+      keywords: data.keywords || []
     }
   } catch (error) {
     console.error(`Failed to load content for ${id}:`, error)

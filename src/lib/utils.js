@@ -20,5 +20,9 @@ export function slugify(text) {
   return text
     .toLowerCase()
     .replace(/[^\w ]+/g, '')
-    .replace(/ +/g, '-');
+    .replace(/ +/g, '-')
+}
+
+export function getFullUrl(path) {
+  return `${process.env.NEXT_PUBLIC_URL}${path}`
 }

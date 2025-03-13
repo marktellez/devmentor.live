@@ -31,21 +31,21 @@ export default function InterviewPreparation() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="container mx-auto max-w-4xl text-center"
         >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-teal-400 to-green-400">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6 ">
             Turn Interview Anxiety into Confidence
           </h1>
           <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-8">
             Stop wondering if you're prepared enough. Get expert guidance to help you ace technical interviews at top tech companies.
           </p>
-          <a 
-            href="#cta" 
-            onClick={scrollToCta} 
+          <a
+            href="#cta"
+            onClick={scrollToCta}
             className="inline-block px-8 py-4 bg-purple-500 hover:bg-purple-600 transition-colors rounded-lg text-white font-semibold shadow-lg"
           >
             Prepare for Success
@@ -64,10 +64,10 @@ export default function InterviewPreparation() {
           <div className="relative bg-white/[0.03] border border-white/10 rounded-2xl p-8 sm:p-12">
             <div className="absolute top-0 left-0 transform -translate-x-4 -translate-y-4">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" className="text-purple-400/40">
-                <path d="M12 20.5H6V15.5C6 10.8333 8.16667 7.5 12.5 5.5L14.5 8.5C11.8333 10.1667 10.3333 12.1667 10 14.5H12V20.5ZM26 20.5H20V15.5C20 10.8333 22.1667 7.5 26.5 5.5L28.5 8.5C25.8333 10.1667 24.3333 12.1667 24 14.5H26V20.5Z" fill="currentColor"/>
+                <path d="M12 20.5H6V15.5C6 10.8333 8.16667 7.5 12.5 5.5L14.5 8.5C11.8333 10.1667 10.3333 12.1667 10 14.5H12V20.5ZM26 20.5H20V15.5C20 10.8333 22.1667 7.5 26.5 5.5L28.5 8.5C25.8333 10.1667 24.3333 12.1667 24 14.5H26V20.5Z" fill="currentColor" />
               </svg>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row items-center gap-8">
               <div className="w-32 h-32 shrink-0">
                 <img
@@ -76,7 +76,7 @@ export default function InterviewPreparation() {
                   className="w-full h-full object-cover rounded-full border-2 border-purple-400/30"
                 />
               </div>
-              
+
               <div className="flex-1">
                 <p className="text-white/90 text-lg sm:text-xl leading-relaxed mb-6">
                   "Before I met Mark I had trouble feeling comfortable speaking in an interview. I couldn't articulate my thoughts about what I knew. I knew I could do programming as I had small client projects completed, but whiteboarding and discussing techniques was hard. After several sessions with Mark my results started to improve and I started getting offers!"
@@ -87,7 +87,7 @@ export default function InterviewPreparation() {
                     <div className="flex items-center mt-1">
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       ))}
                     </div>
@@ -108,7 +108,7 @@ export default function InterviewPreparation() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-teal-400 to-green-400">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
               Your Path to Excellence
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">
@@ -223,8 +223,8 @@ export default function InterviewPreparation() {
       </section>
 
       {/* Shared CTA Component */}
-      <CTA 
-        title="Ready to Ace Your Next Interview?" 
+      <CTA
+        title="Ready to Ace Your Next Interview?"
         context="interview-prep"
       />
     </div>

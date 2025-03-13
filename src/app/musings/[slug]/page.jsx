@@ -3,9 +3,11 @@ import { notFound } from 'next/navigation'
 import { getMusing, getAllMusings } from '@/data/musings'
 import ArticleContent from './article-content'
 import Script from 'next/script'
+import { getFullUrl } from '@/lib/utils'
 
-export async function generateMetadata({ params }) {
-  const article = await getMusing(params.slug)
+export async function generateMetadata(props) {
+  const { slug } = await props.params
+  const article = await getMusing(slug)
 
   if (!article) {
     return {
@@ -21,16 +23,22 @@ export async function generateMetadata({ params }) {
       title: article.title,
       description: article.excerpt,
       type: 'article',
-      url: `https://devmentor.live/musings/${params.slug}`,
+      url: `${process.env.NEXT_PUBLIC_URL}/musings/${slug}`,
       images: [
         {
-          url: article.image || '/musings.webp',
+          url: `/api/og?title=${encodeURIComponent(article.title)}&description=${encodeURIComponent(article.excerpt)}`,
           width: 1200,
           height: 630,
           alt: article.title,
         },
       ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: [`/api/og?title=${encodeURIComponent(article.title)}&description=${encodeURIComponent(article.excerpt)}`],
+    }
   }
 }
 
@@ -54,12 +62,12 @@ export default async function MusingPage({ params }) {
     '@type': 'BlogPosting',
     headline: article.title,
     description: article.excerpt,
-    image: article.image || 'https://devmentor.live/musings.webp',
+    image: article.image || `/api/og?title=${encodeURIComponent(article.title)}&description=${encodeURIComponent(article.excerpt)}`,
     datePublished: article.date.toISOString(),
     author: {
       '@type': 'Person',
       name: 'Mark Tellez',
-      url: 'https://devmentor.live/about'
+      url: getFullUrl('/about')
     },
     publisher: {
       '@type': 'Organization',

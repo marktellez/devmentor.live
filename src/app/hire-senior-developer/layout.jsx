@@ -1,15 +1,19 @@
 export async function generateMetadata() {
+  const title = "Hire Senior Developer & AI Expert | 26+ Years Experience"
+  const description = "Looking for a technical leader who combines deep development expertise with cutting-edge AI knowledge? Senior developer with 26+ years experience available for hire."
+  const ogImage = `/api/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`
+
   return {
-    title: "Hire Senior Developer & AI Expert | 26+ Years Experience",
-    description: "Looking for a technical leader who combines deep development expertise with cutting-edge AI knowledge? Senior developer with 26+ years experience available for hire.",
+    title,
+    description,
     openGraph: {
-      title: "Hire Senior Developer & AI Expert | 26+ Years Experience",
-      description: "Looking for a technical leader who combines deep development expertise with cutting-edge AI knowledge? Senior developer with 26+ years experience available for hire.",
+      title,
+      description,
       type: 'website',
       url: 'https://devmentor.live/hire-senior-developer',
       images: [
         {
-          url: '/web-dev.webp',
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: 'Hire Senior Developer',
@@ -18,9 +22,9 @@ export async function generateMetadata() {
     },
     twitter: {
       card: 'summary_large_image',
-      title: "Hire Senior Developer & AI Expert | 26+ Years Experience",
-      description: "Looking for a technical leader who combines deep development expertise with cutting-edge AI knowledge? Senior developer with 26+ years experience available for hire.",
-      images: ['/web-dev.webp'],
+      title,
+      description,
+      images: [ogImage],
     }
   }
 }
