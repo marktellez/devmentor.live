@@ -1,5 +1,4 @@
 
-import { motion } from 'framer-motion'
 import { getAllMusings } from '@/data/musings'
 import ArticleCard from '@/shared/components/article-card'
 

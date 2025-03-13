@@ -8,8 +8,6 @@ export default function Footer() {
 
   return (
     <footer>
-     
-
       <div className="container mx-auto px-4 py-8 sm:py-12 border-t border-gray-900">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <div>
@@ -20,21 +18,21 @@ export default function Footer() {
             </p>
           </div>
           <div className="sm:text-center lg:text-left">
-            <h3 className="text-white text-sm font-medium mb-4">Legal</h3>
+            <h3 className="text-white text-sm font-medium mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/privacy" className="text-gray-400 hover:text-accent text-sm">
-                  Privacy Policy
+                <a href="/hire-senior-developer" className="text-gray-400 hover:text-accent text-sm">
+                  Hire Senior Developer
                 </a>
               </li>
               <li>
-                <a href="/cookies" className="text-gray-400 hover:text-accent text-sm">
-                  Cookie Policy
+                <a href="/ai-services" className="text-gray-400 hover:text-accent text-sm">
+                  AI Services
                 </a>
               </li>
               <li>
-                <a href="/terms" className="text-gray-400 hover:text-accent text-sm">
-                  Terms of Service
+                <a href="/mentorship" className="text-gray-400 hover:text-accent text-sm">
+                  Developer Mentorship
                 </a>
               </li>
             </ul>
@@ -55,20 +53,6 @@ export default function Footer() {
                   GitHub
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://x.com/agenticmark"
-                  className="text-gray-400 hover:text-accent text-sm flex items-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                  X (Twitter)
-                </a>
-              </li>
-
               <li>
                 <a
                   href="https://www.codementor.io/@marktellez"
