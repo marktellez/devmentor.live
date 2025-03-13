@@ -7,7 +7,17 @@ import ArticleCTA from '@/shared/components/article-cta'
 import TableOfContents from '@/shared/components/table-of-contents'
 import matter from 'gray-matter'
 
-export default function ArticleContent({ content, title, date, updated, author, tags, image }) {
+export default function ArticleContent({
+  content,
+  title,
+  date,
+  updated,
+  author,
+  authorUrl,
+  authorAvatar,
+  tags,
+  image
+}) {
   const { content: parsedContent } = matter(content)
   const readingTime = getReadingTime(parsedContent)
 
@@ -32,7 +42,7 @@ export default function ArticleContent({ content, title, date, updated, author, 
     <div className="relative w-full px-4">
       <div className="max-w-8xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-8">
-          <article className="min-w-0"> {/* Add min-w-0 to prevent flex child overflow */}
+          <article className="min-w-0">
             {image && (
               <div className="mb-8 aspect-[21/9] overflow-hidden rounded-xl">
                 <img
@@ -53,28 +63,34 @@ export default function ArticleContent({ content, title, date, updated, author, 
                   </span>
                 ))}
               </div>
-              <h1 className="text-3xl lg:text-4xl font-bold mb-4 break-words">{title}</h1>
-              <div className="flex flex-wrap items-center gap-3 text-sm text-zinc-400">
+              <h1 className="text-4xl font-bold mb-4">{title}</h1>
+              <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
                   <img
-                    src="/mark.jpg"
+                    src={authorAvatar}
                     alt={author}
-                    className="w-8 h-8 rounded-full object-cover"
+                    className="w-6 h-6 rounded-full"
                   />
-                  <span>{author}</span>
+                  <a href={authorUrl} className="text-sm text-zinc-400 hover:text-white">
+                    {author}
+                  </a>
                 </div>
-                <span>•</span>
-                {updated ? (
-                  <time dateTime={updated} className="text-zinc-400">
-                    Updated {formatDate(new Date(updated))}
-                  </time>
-                ) : (
-                  <time dateTime={date}>
-                    {formatDate(new Date(date))}
-                  </time>
+                <span className="text-sm text-zinc-500">•</span>
+                <time className="text-sm text-zinc-400">
+                  {formatDate(date)}
+                </time>
+                <span className="text-sm text-zinc-500">•</span>
+                <span className="text-sm text-zinc-400">
+                  {readingTime} min read
+                </span>
+                {updated && (
+                  <>
+                    <span className="text-sm text-zinc-500">•</span>
+                    <time className="text-sm text-zinc-400">
+                      Updated {formatDate(updated)}
+                    </time>
+                  </>
                 )}
-                <span>•</span>
-                <span>{readingTime} min read</span>
               </div>
             </header>
 
@@ -87,8 +103,10 @@ export default function ArticleContent({ content, title, date, updated, author, 
             </div>
           </article>
 
-          <aside className="min-w-0"> {/* Add min-w-0 to prevent flex child overflow */}
-            <TableOfContents content={parsedContent} />
+          <aside className="hidden lg:block">
+            <div className="sticky top-32 ">
+              <TableOfContents content={parsedContent} />
+            </div>
           </aside>
         </div>
       </div>

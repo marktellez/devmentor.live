@@ -1,11 +1,13 @@
 
 import { getAllMusings } from '@/data/musings'
 import ArticleCard from '@/shared/components/article-card'
+import { generateMetadata as baseGenerateMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = baseGenerateMetadata({
   title: 'Musings on AI & Development',
   description: 'Thoughts, insights, and lessons learned from over two decades of software development and AI integration.',
-}
+  path: '/musings'
+})
 
 export const dynamic = 'force-static'
 export const revalidate = false

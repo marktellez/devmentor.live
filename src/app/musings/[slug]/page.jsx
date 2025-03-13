@@ -1,45 +1,29 @@
 
 import { notFound } from 'next/navigation'
 import { getMusing, getAllMusings } from '@/data/musings'
+import { generateMetadata as baseGenerateMetadata } from '@/lib/metadata'
 import ArticleContent from './article-content'
 import Script from 'next/script'
 import { getFullUrl } from '@/lib/utils'
 
 export async function generateMetadata(props) {
-  const { slug } = await props.params
-  const article = await getMusing(slug)
+  const params = await props.params
+  const article = await getMusing(params.slug)
 
   if (!article) {
-    return {
+    return baseGenerateMetadata({
       title: 'Article Not Found',
-      description: 'The requested article could not be found.'
-    }
+      description: 'The requested article could not be found.',
+      path: `/musings/${params.slug}`
+    })
   }
 
-  return {
+  return baseGenerateMetadata({
     title: article.title,
     description: article.excerpt,
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      type: 'article',
-      url: `${process.env.NEXT_PUBLIC_URL}/musings/${slug}`,
-      images: [
-        {
-          url: `/api/og?title=${encodeURIComponent(article.title)}&description=${encodeURIComponent(article.excerpt)}`,
-          width: 1200,
-          height: 630,
-          alt: article.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: article.title,
-      description: article.excerpt,
-      images: [`/api/og?title=${encodeURIComponent(article.title)}&description=${encodeURIComponent(article.excerpt)}`],
-    }
-  }
+    path: `/musings/${params.slug}`,
+    type: 'article'
+  })
 }
 
 export async function generateStaticParams() {
@@ -49,7 +33,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function MusingPage({ params }) {
+export default async function MusingPage(props) {
+  const params = await props.params
   const article = await getMusing(params.slug)
 
   if (!article) {
@@ -105,6 +90,8 @@ export default async function MusingPage({ params }) {
               date={article.date}
               updated={article.updated}
               author={article.author.name}
+              authorUrl={article.author.url}
+              authorAvatar={article.author.avatar}
               tags={article.tags}
               image={article.image}
             />
