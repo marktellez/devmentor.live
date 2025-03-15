@@ -5,6 +5,8 @@ import Header from '@/shared/components/header'
 import Footer from '@/shared/components/footer'
 import { ToastProvider } from '@/shared/components/toast'
 import { generateMetadata as baseGenerateMetadata } from '@/lib/metadata'
+import { generateWebSiteSchema } from '@/lib/schema'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +17,16 @@ export const metadata = baseGenerateMetadata({
 })
 
 export default function RootLayout({ children }) {
+  const websiteSchema = generateWebSiteSchema();
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body className={inter.className}>
         <ToastProvider>
           <Header />
