@@ -18,8 +18,19 @@ export default function ReviewsLayout({ children }) {
   const reviewSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'DevMentor Live',
+    name: 'Devmentor Live',
     url: process.env.NEXT_PUBLIC_URL,
+    image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
+    identifier: {
+      '@type': 'PropertyValue',
+      propertyID: 'sku',
+      value: 'DML-ALL'
+    },
+    additionalProperty: [{
+      '@type': 'PropertyValue',
+      propertyID: 'mpn',
+      value: 'DEVMENTOR-ALL-2025'
+    }],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: averageRating.toFixed(1),
@@ -40,18 +51,44 @@ export default function ReviewsLayout({ children }) {
         name: review.writer.name
       },
       datePublished: new Date(review.created_at * 1000).toISOString(),
-      reviewBody: review.content
+      reviewBody: review.content,
+      publisher: {
+        '@type': 'Organization',
+        name: 'Devmentor Live'
+      }
     })),
     makesOffer: [
       {
         '@type': 'Offer',
         name: 'Web Development Mentorship',
-        description: 'One-on-one web development mentorship to accelerate your career growth'
+        description: 'One-on-one web development mentorship to accelerate your career growth',
+        price: '200.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2025-12-31',
+        url: `${process.env.NEXT_PUBLIC_URL}/web-dev-mentorship`,
+        itemCondition: 'https://schema.org/NewCondition',
+        seller: {
+          '@type': 'Organization',
+          name: 'Devmentor Live',
+          image: `${process.env.NEXT_PUBLIC_URL}/logo.png`
+        }
       },
       {
         '@type': 'Offer',
         name: 'AI Development Services',
-        description: 'Expert AI integration and development services for modern applications'
+        description: 'Expert AI integration and development services for modern applications',
+        price: '500.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2025-12-31',
+        url: `${process.env.NEXT_PUBLIC_URL}/ai-services`,
+        itemCondition: 'https://schema.org/NewCondition',
+        seller: {
+          '@type': 'Organization',
+          name: 'Devmentor Live',
+          image: `${process.env.NEXT_PUBLIC_URL}/logo.png`
+        }
       }
     ]
   }

@@ -1,4 +1,7 @@
 import { generateMetadata as baseGenerateMetadata } from '@/lib/metadata'
+import Script from 'next/script'
+import reviews from '@/data/reviews.json'
+import { generateCustomModelsSchema } from '@/lib/schema'
 
 export const metadata = baseGenerateMetadata({
   title: "Custom AI Model Development Services",
@@ -7,5 +10,23 @@ export const metadata = baseGenerateMetadata({
 })
 
 export default function CustomModelsLayout({ children }) {
-  return children
+  const modelReviews = reviews.filter(review => 
+    review.content.toLowerCase().includes('model') ||
+    review.content.toLowerCase().includes('custom') ||
+    review.content.toLowerCase().includes('ml') ||
+    review.content.toLowerCase().includes('machine learning')
+  )
+
+  const serviceSchema = generateCustomModelsSchema(modelReviews)
+
+  return (
+    <>
+      <Script
+        id="custom-models-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {children}
+    </>
+  )
 }

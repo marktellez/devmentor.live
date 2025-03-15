@@ -1,4 +1,7 @@
 import { generateMetadata as baseGenerateMetadata } from '@/lib/metadata'
+import Script from 'next/script'
+import reviews from '@/data/reviews.json'
+import { generateVoiceAISchema } from '@/lib/schema'
 
 export const metadata = baseGenerateMetadata({
   title: "Voice AI Development & Integration Services",
@@ -7,5 +10,23 @@ export const metadata = baseGenerateMetadata({
 })
 
 export default function VoiceAILayout({ children }) {
-  return children
+  const voiceReviews = reviews.filter(review => 
+    review.content.toLowerCase().includes('voice') ||
+    review.content.toLowerCase().includes('speech') ||
+    review.content.toLowerCase().includes('audio') ||
+    review.content.toLowerCase().includes('conversation')
+  )
+
+  const serviceSchema = generateVoiceAISchema(voiceReviews)
+
+  return (
+    <>
+      <Script
+        id="voice-ai-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {children}
+    </>
+  )
 }

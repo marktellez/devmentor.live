@@ -1,3 +1,7 @@
+import Script from 'next/script'
+import reviews from '@/data/reviews.json'
+import { generateSeniorDevSchema } from '@/lib/schema'
+
 export async function generateMetadata() {
   const title = "Hire Senior Developer & AI Expert | 26+ Years Experience"
   const description = "Looking for a technical leader who combines deep development expertise with cutting-edge AI knowledge? Senior developer with 26+ years experience available for hire."
@@ -30,5 +34,23 @@ export async function generateMetadata() {
 }
 
 export default function HireDeveloperLayout({ children }) {
-  return children
+  const seniorDevReviews = reviews.filter(review => 
+    review.content.toLowerCase().includes('senior') ||
+    review.content.toLowerCase().includes('expert') ||
+    review.content.toLowerCase().includes('experienced') ||
+    review.content.toLowerCase().includes('leadership')
+  )
+
+  const serviceSchema = generateSeniorDevSchema(seniorDevReviews)
+
+  return (
+    <>
+      <Script
+        id="senior-dev-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {children}
+    </>
+  )
 }
