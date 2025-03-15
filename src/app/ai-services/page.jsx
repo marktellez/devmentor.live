@@ -3,8 +3,15 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import CTA from '@/shared/components/cta'
+import { useRef } from 'react'
 
 export default function AIServicesPage() {
+  const ctaRef = useRef(null)
+
+  const scrollToCta = (e) => {
+    e.preventDefault()
+    ctaRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <div className="min-h-screen">
       <div className="max-w-5xl mx-auto px-8 py-24">
@@ -14,19 +21,21 @@ export default function AIServicesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-16"
         >
-          <h1 className="text-5xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-teal-400 to-green-400">
-            AI Development & Integration Services
-          </h1>
-          <p className="text-xl text-white/70 mb-8">
-            Expert AI development and integration services for enterprise digital transformation. Custom solutions, seamless implementation.
-          </p>
-          <div className="flex justify-center mb-8">
+                    <div className="flex justify-center mb-8">
             <span className="bg-[#121212] text-green-400 px-4 py-2 rounded-full text-sm font-medium border border-green-500/20 flex flex-col sm:flex-row sm:items-center gap-2">
               <span>Ranked 8th in CodeGame's AI Competition</span>
               <span className="hidden sm:inline">•</span>
               <span>70% Productivity Boost</span>
             </span>
           </div>
+          <h1 className="text-5xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-teal-400 to-green-400">
+            AI Development & Integration Services
+          </h1>
+          <p className="text-xl text-white/70 mb-8">
+            Expert AI development and integration services for enterprise digital transformation. Custom solutions, seamless implementation.
+          </p>
+
+
           <div className="prose prose-lg prose-invert flex flex-col gap-4">
             <p>
               As businesses race to adopt AI technologies, having an experienced AI Developer
@@ -41,6 +50,18 @@ export default function AIServicesPage() {
             </p>
           </div>
         </motion.div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <button
+              onClick={scrollToCta}
+              className="px-8 py-4 bg-green-500/10 hover:bg-green-500/20 text-green-400 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2 group"
+            >
+              Start Your AI Journey
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
+          </div>
 
         {/* Why Choose an AI Specialist Section */}
         <div className="mb-16">
@@ -71,6 +92,19 @@ export default function AIServicesPage() {
             </p>
           </div>
         </div>
+
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <button
+              onClick={scrollToCta}
+              className="px-8 py-4 bg-green-500/10 hover:bg-green-500/20 text-green-400 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2 group"
+            >
+              Start Your AI Journey
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
+          </div>
 
         {/* Services Section */}
         <div className="mb-16">
@@ -109,10 +143,12 @@ export default function AIServicesPage() {
 
 
         {/* CTA Section */}
-        <CTA
-          context="ai-services"
-          title="Ready to Transform Your Business with AI?"
-        />
+        <div ref={ctaRef}>
+          <CTA
+            context="ai-services"
+            title="Don't Let Your Competition Get Ahead with AI"
+          />
+        </div>
       </div>
     </div>
   )

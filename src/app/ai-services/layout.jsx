@@ -23,45 +23,55 @@ export default function AIServicesLayout({ children }) {
 
   const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': 'Product',
     name: 'AI Development & Integration Services',
     description: 'Expert AI development and integration services for enterprise digital transformation, including custom model development, voice AI, and automation solutions.',
-    provider: {
-      '@type': 'Person',
-      name: 'Mark Tellez',
-      description: 'Senior developer with 26+ years of experience specializing in AI integration',
-      url: process.env.NEXT_PUBLIC_URL + '/about'
+    brand: {
+      '@type': 'Brand',
+      name: 'DevMentor Live'
     },
+    provider: {
+      '@type': 'Organization',
+      name: 'DevMentor Live',
+      url: process.env.NEXT_PUBLIC_URL,
+      sameAs: [
+        'https://github.com/marktellez',
+        'https://linkedin.com/in/marktellez'
+      ]
+    },
+    category: 'AI Development Services',
     offers: [
       {
         '@type': 'Offer',
         name: 'Custom AI Models',
         description: 'Development of custom AI models tailored to your business needs',
+        price: '500.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2025-12-31',
         url: process.env.NEXT_PUBLIC_URL + '/ai-services/custom-models'
       },
       {
         '@type': 'Offer',
         name: 'Voice AI Solutions',
         description: 'Integration of voice AI capabilities into your applications',
+        price: '750.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2025-12-31',
         url: process.env.NEXT_PUBLIC_URL + '/ai-services/voice-ai'
       },
       {
         '@type': 'Offer',
         name: 'AI Automation',
         description: 'Business process automation using AI technologies',
+        price: '1000.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2025-12-31',
         url: process.env.NEXT_PUBLIC_URL + '/ai-services/automation'
       }
     ],
-    serviceType: 'AI Development',
-    areaServed: {
-      '@type': 'Country',
-      name: 'Worldwide'
-    },
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Enterprises and Businesses'
-    },
-    termsOfService: process.env.NEXT_PUBLIC_URL + '/terms',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: averageRating.toFixed(1),
@@ -82,7 +92,11 @@ export default function AIServicesLayout({ children }) {
         name: review.writer.name
       },
       datePublished: new Date(review.created_at * 1000).toISOString(),
-      reviewBody: review.content
+      reviewBody: review.content,
+      publisher: {
+        '@type': 'Organization',
+        name: 'DevMentor Live'
+      }
     }))
   }
 

@@ -32,9 +32,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex items-center space-x-4"
             >
-              <span className="bg-green-500/10 text-green-400 px-4 py-2 rounded-full text-sm font-medium">
+              <a href="/reviews" className="bg-green-500/10 hover:bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer">
                 5.0/5.0 Rating • 450+ Reviews
-              </span>
+              </a>
             </motion.div>
 
             <motion.h1

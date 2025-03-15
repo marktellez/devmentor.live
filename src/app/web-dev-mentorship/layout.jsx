@@ -23,32 +23,31 @@ export default function WebDevMentorshipLayout({ children }) {
 
   const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': 'Product',
     name: 'Web Development Mentorship',
     description: 'Expert web development mentorship program focusing on modern frameworks, best practices, and real-world development skills.',
+    brand: {
+      '@type': 'Brand',
+      name: 'DevMentor Live'
+    },
     provider: {
-      '@type': 'Person',
-      name: 'Mark Tellez',
-      description: 'Senior developer with 26+ years of experience in web development',
-      url: process.env.NEXT_PUBLIC_URL + '/about'
+      '@type': 'Organization',
+      name: 'DevMentor Live',
+      url: process.env.NEXT_PUBLIC_URL,
+      sameAs: [
+        'https://github.com/marktellez',
+        'https://linkedin.com/in/marktellez'
+      ]
     },
     offers: {
       '@type': 'Offer',
-      price: '250',
+      price: '250.00',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
-      priceValidUntil: '2025-12-31'
+      priceValidUntil: '2025-12-31',
+      url: process.env.NEXT_PUBLIC_URL + '/web-dev-mentorship'
     },
-    serviceType: 'Professional Development',
-    areaServed: {
-      '@type': 'Country',
-      name: 'Worldwide'
-    },
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Web Developers'
-    },
-    termsOfService: process.env.NEXT_PUBLIC_URL + '/terms',
+    category: 'Professional Development Services',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: averageRating.toFixed(1),
@@ -69,7 +68,11 @@ export default function WebDevMentorshipLayout({ children }) {
         name: review.writer.name
       },
       datePublished: new Date(review.created_at * 1000).toISOString(),
-      reviewBody: review.content
+      reviewBody: review.content,
+      publisher: {
+        '@type': 'Organization',
+        name: 'DevMentor Live'
+      }
     }))
   }
 

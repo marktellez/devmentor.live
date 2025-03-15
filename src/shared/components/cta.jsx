@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 export default function CTA({
   title = "Let's Find Your Path to AI-Powered Development",
   context = '', // e.g., 'custom-models', 'voice-ai', etc.
+  id = 'cta'
 }) {
   const { showToast } = useToast()
   const pathname = usePathname()
@@ -179,15 +180,17 @@ export default function CTA({
   const getContextualPlaceholder = () => {
     switch (context) {
       case 'custom-models':
-        return "Tell me about the type of AI model you need and your data situation..."
+        return "Share your vision for AI - what unique challenges can we solve together?"
       case 'voice-ai':
-        return "Tell me about your voice AI needs (custom voices, text-to-speech, etc)..."
+        return "How would voice AI transform your user experience? Let's explore the possibilities..."
       case 'integration':
-        return "Tell me about your existing systems and AI integration goals..."
+        return "What's holding your systems back? Let's unlock their full potential with AI..."
       case 'automation':
-        return "Tell me about the processes you'd like to automate with AI..."
+        return "Which repetitive tasks are draining your team's creativity? AI can help..."
+      case 'ai-services':
+        return "What's your biggest business challenge? Let's solve it with AI..."
       default:
-        return "Tell me about what you'd like to achieve..."
+        return "Tell me about your vision - what would you like to achieve?"
     }
   }
 
@@ -195,10 +198,11 @@ export default function CTA({
     if (!context) return title
 
     const titles = {
-      'custom-models': 'Ready to Build Your Custom AI Model?',
-      'voice-ai': 'Ready to Give Your Application a Voice?',
-      'integration': 'Ready to Integrate AI Into Your Systems?',
-      'automation': 'Ready to Automate with AI?'
+      'custom-models': 'Ready to Build Your Game-Changing AI Model?',
+      'voice-ai': 'Ready to Give Your App a Voice That Connects?',
+      'integration': 'Ready to Supercharge Your Systems with AI?',
+      'automation': 'Ready to Free Your Team from Repetitive Tasks?',
+      'ai-services': 'Ready to Lead Your Industry with AI Innovation?'
     }
 
     return titles[context] || title
@@ -344,10 +348,10 @@ export default function CTA({
                   <button
                     type="submit"
                     disabled={isSubmitting || !isFormValid()}
-                    className={`w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-lg transition-colors 
+                    className={`w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 rounded-lg transition-colors
                       ${(isSubmitting || !isFormValid()) ? 'opacity-50 cursor-not-allowed bg-gray-500 hover:bg-gray-500' : ''}`}
                   >
-                    {isSubmitting ? 'Sending...' : 'Start Your Journey'}
+                    {isSubmitting ? 'Sending...' : context === 'ai-services' ? 'Get Your AI Advantage Now' : 'Start Your Journey'}
                   </button>
                 </form>
               ) : (

@@ -43,13 +43,12 @@ export default function InterviewPreparation() {
           <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-8">
             Stop wondering if you're prepared enough. Get expert guidance to help you ace technical interviews at top tech companies.
           </p>
-          <a
-            href="#cta"
+          <button
             onClick={scrollToCta}
             className="inline-block px-8 py-4 bg-purple-500 hover:bg-purple-600 transition-colors rounded-lg text-white font-semibold shadow-lg"
           >
             Prepare for Success
-          </a>
+          </button>
         </motion.div>
       </section>
 
@@ -223,10 +222,12 @@ export default function InterviewPreparation() {
       </section>
 
       {/* Shared CTA Component */}
-      <CTA
-        title="Ready to Ace Your Next Interview?"
-        context="interview-prep"
-      />
+      <div ref={ctaRef}>
+        <CTA
+          title="Ready to Ace Your Next Interview?"
+          context="interview-prep"
+        />
+      </div>
     </div>
   )
 } 

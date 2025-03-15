@@ -17,15 +17,18 @@ export const metadata = baseGenerateMetadata({
 })
 
 export default function RootLayout({ children }) {
-  const websiteSchema = generateWebSiteSchema();
+  const schemaItems = generateWebSiteSchema();
 
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
+        {schemaItems.map((schema, index) => (
+          <script
+            key={`schema-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
       </head>
       <body className={inter.className}>
         <ToastProvider>

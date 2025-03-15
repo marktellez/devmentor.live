@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Github } from 'lucide-react'
 
 export default function Header() {
   const pathname = usePathname()
@@ -25,9 +25,10 @@ export default function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Interview Preparation', href: '/interview-preparation' },
-    { name: 'Web Dev Mentorship', href: '/web-dev-mentorship' },
-    { name: 'AI Mentorship', href: '/ai-services' },
+    { name: 'Coding Mentorship', href: '/web-dev-mentorship' },
+    { name: 'AI/ML Services', href: '/ai-services' },
+    { name: 'Interview Prep', href: '/interview-preparation' },
+
     {
       name: 'Musings',
       href: '/musings',
@@ -73,6 +74,14 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
+            <a
+              href="https://github.com/marktellez"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-400 hover:text-white border-[1px] border-purple-500 hover:border-white hover:bg-purple-500 transition-all rounded-full p-2"
+            >
+              <Github size={16}  />
+            </a>
           </nav>
         </div>
 
@@ -94,6 +103,15 @@ export default function Header() {
                   {item.name}
                 </a>
               ))}
+              <a
+                href="https://github.com/marktellez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-white border-[1px] border-purple-500 hover:border-white hover:bg-purple-500 transition-all rounded-lg px-4 py-2 flex items-center gap-2 mx-4 w-fit"
+              >
+                <Github size={16} />
+                <span>GitHub</span>
+              </a>
             </div>
           </nav>
         )}

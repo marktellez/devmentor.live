@@ -53,13 +53,12 @@ export default function WebDevMentorship() {
           <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-8">
             Join hundreds of developers who've transformed their careers through personalized mentorship. From keeping their jobs to earning promotions and raises.
           </p>
-          <a
-            href="#cta"
+          <button
             onClick={scrollToCta}
             className="inline-block px-8 py-4 bg-purple-500 hover:bg-purple-600 transition-colors rounded-lg text-white font-semibold"
           >
             Start Your Journey
-          </a>
+          </button>
         </motion.div>
       </section>
 
@@ -179,10 +178,12 @@ export default function WebDevMentorship() {
       </section>
 
       {/* Shared CTA Component */}
-      <CTA
-        title="Ready to Transform Your Development Career?"
-        context="web-dev"
-      />
+      <div ref={ctaRef}>
+        <CTA
+          title="Ready to Transform Your Development Career?"
+          context="web-dev"
+        />
+      </div>
     </div>
   )
 } 
