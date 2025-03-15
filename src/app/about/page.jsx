@@ -35,7 +35,7 @@ export default function AboutPage() {
               About Me
             </h1>
             <p className="text-xl text-white/70 mb-8">
-              Full-stack developer specializing in AI integration and modern web development
+              Senior full-stack developer and tech mentor with over 26 years of experience, specializing in AI integration, modern web development, and transforming developers' careers through personalized mentorship.
             </p>
           </div>
           <div className="w-48 h-48 md:w-64 md:h-64 relative shrink-0 rounded-full overflow-hidden mx-auto md:mx-0">
@@ -53,6 +53,99 @@ export default function AboutPage() {
         <div className="mb-16">
           <Stats />
         </div>
+
+      
+
+        {/* Professional Journey Section */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="mb-16 space-y-6 prose prose-lg prose-invert mt-32"
+        >
+          <motion.h2 variants={item} className="text-3xl font-bold text-white">
+            Professional Journey
+          </motion.h2>
+          <motion.p variants={item}>
+            With over two decades in software development, I've evolved from a passionate programmer to a
+            seasoned tech leader and mentor. My journey began in the late 90s, working with early web technologies
+            and witnessing the transformation of the digital landscape firsthand.
+          </motion.p>
+          <motion.p variants={item}>
+            Throughout my career, I've led development teams at startups and enterprises, architected
+            mission-critical systems, and helped countless developers advance their careers. My experience
+            spans from building high-performance web applications to implementing cutting-edge AI solutions.
+          </motion.p>
+          <motion.p variants={item}>
+           I pride myself in not just being a "coder" but understanding the importance of efficience and revenue generation.
+           I can work fluently in photoshop, illustrator, animator, blender, and many other creative tools and apps.
+          </motion.p>
+          <motion.p variants={item}>
+            I can code web, desktop, systems, ai models, and more. I am far more than a full stack developer or a one
+            trick pony. I am like a guided missile, point me at your biggest problem and I will find clever ways of
+            solving it.
+            </motion.p>
+        </motion.div>
+
+       
+
+        {/* Impact & Achievements Section */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="mb-16 space-y-6"
+        >
+          <motion.h2 variants={item} className="text-3xl font-bold text-white mb-8">
+            Impact & Achievements
+          </motion.h2>
+          <motion.div variants={item} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="border border-blue-500/20 p-6 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a]">
+              <h3 className="text-xl font-semibold text-blue-400 mb-3">Competitive AI</h3>
+              <p className="text-white/70">
+                Placed 8th at CodeGame.com's AI competition, outperforming over 1,000 developers using an innovative
+                hybrid of neural networks and genetic algorithms.
+              </p>
+            </div>
+            <div className="border border-purple-500/20 p-6 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a]">
+              <h3 className="text-xl font-semibold text-purple-400 mb-3">Career Transformations</h3>
+              <p className="text-white/70">
+                Helped over 500 developers secure promotions and raises through personalized mentorship
+                and career guidance, with an average salary increase of 16%.
+              </p>
+            </div>
+            <div className="border border-teal-500/20 p-6 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a]">
+              <h3 className="text-xl font-semibold text-teal-400 mb-3">Enterprise Database Architecture</h3>
+              <p className="text-white/70">
+                Led Uber's migration of 100+ PostgreSQL servers to a single MongoDB cluster, resulting in a 65% throughput
+                gain and significantly simplified development process.
+              </p>
+            </div>
+            <div className="border border-purple-500/20 p-6 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a]">
+              <h3 className="text-xl font-semibold text-purple-400 mb-3">Legacy Systems</h3>
+              <p className="text-white/70">
+                Contributed to YouTube's original comment system pre-Google acquisition, developing a phpBB-based
+                solution that laid the foundation for one of the internet's largest community platforms.
+              </p>
+            </div>
+            <div className="border border-green-500/20 p-6 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a]">
+              <h3 className="text-xl font-semibold text-green-400 mb-3">AI & Voice Synthesis</h3>
+              <p className="text-white/70">
+                Built VoxBird.ai's specialized voice synthesis model capable of recreating almost any voice,
+                along with an innovative AI concierge bot for automated customer service.
+              </p>
+            </div>
+            <div className="border border-yellow-500/20 p-6 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a]">
+              <h3 className="text-xl font-semibold text-yellow-400 mb-3">Medical AI Innovation</h3>
+              <p className="text-white/70">
+                Developed a medical diagnosis model using RecurrentResNet architecture that rivals a 2019 PhD research paper
+                in diagnosing and classifying diseases from chest X-rays.
+              </p>
+            </div>
+
+
+          </motion.div>
+        </motion.div>
 
         <motion.div
           variants={container}
@@ -165,6 +258,9 @@ export default function AboutPage() {
             </div>
           </motion.div>
         </motion.div>
+
+
+       
       </div>
     </div>
   )

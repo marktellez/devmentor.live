@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { START_YEAR, MENTORING_SESSIONS, FIVE_STAR_REVIEWS } from '@/lib/config'
 
 export default function Stats() {
