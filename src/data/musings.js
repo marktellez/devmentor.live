@@ -2,56 +2,80 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-export const musings = [
-  {
-    id: 'vibe-coding-when-intuition-becomes-your-downfall',
-    excerpt: 'When I began coding in 1997, we didn\'t have trendy buzzwords like "vibe coding"—we simply called it cowboy coding. Today, this reckless approach is dressed up as a liberating, innovative method...',
-    // Add SEO-friendly fields
-    canonicalUrl: `${process.env.NEXT_PUBLIC_URL}/musings/vibe-coding-when-intuition-becomes-your-downfall`,
-    keywords: ['software development', 'coding practices', 'development methodology'],
-  }
-];
+// Static excerpts for articles that need them
+const MANUAL_EXCERPTS = {
+  'vibe-coding-when-intuition-becomes-your-downfall': 'When I began coding in 1997, we didn\'t have trendy buzzwords like "vibe coding"—we simply called it cowboy coding. Today, this reckless approach is dressed up as a liberating, innovative method...'
+}
 
 export async function getAllMusings() {
-  const musingsData = await Promise.all(musings.map(async musing => {
-    try {
-      const filePath = path.join(process.cwd(), 'src/data/musings', `${musing.id}.md`)
-      const fileContent = fs.readFileSync(filePath, 'utf8')
-      const { data } = matter(fileContent)
+  try {
+    // Read all files from the musings directory
+    const musingsDir = path.join(process.cwd(), 'src/data/musings')
+    const files = fs.readdirSync(musingsDir)
+    
+    // Filter for markdown files and process each one
+    const musingsData = await Promise.all(
+      files
+        .filter(filename => filename.endsWith('.md'))
+        .map(async filename => {
+          try {
+            const id = filename.replace(/\.md$/, '')
+            const filePath = path.join(musingsDir, filename)
+            const fileContent = fs.readFileSync(filePath, 'utf8')
+            const { data } = matter(fileContent)
 
-      return {
-        ...musing,
-        title: data.title,
-        date: new Date(data.date),
-        updated: data.updated ? new Date(data.updated) : null,
-        image: data.image,
-        author: {
-          name: data.author || 'Mark Tellez',
-          avatar: '/mark.jpg',
-          url: `${process.env.NEXT_PUBLIC_URL}/about`
-        },
-        tags: data.tags || [],
-        canonicalUrl: data.canonicalUrl || `${process.env.NEXT_PUBLIC_URL}/musings/${musing.id}`,
-        keywords: data.keywords || musing.keywords || []
-      }
-    } catch (error) {
-      console.error(`Failed to load content for ${musing.id}:`, error)
-      return {
-        ...musing,
-        title: musing.id,
-        date: new Date(),
-        updated: new Date(),
-        tags: [],
-        author: {
-          name: 'Mark Tellez',
-          avatar: '/mark.jpg',
-          url: `${process.env.NEXT_PUBLIC_URL}/about`
-        }
-      }
-    }
-  }))
+            // Parse date strings into Date objects, ensuring UTC consistency
+            const date = new Date(data.date)
+            const updated = data.updated ? new Date(data.updated) : null
 
-  return musingsData
+            // Use manual excerpt if available, otherwise use frontmatter excerpt
+            const excerpt = MANUAL_EXCERPTS[id] || data.excerpt
+
+            return {
+              id,
+              title: data.title,
+              date,
+              updated,
+              image: data.image,
+              excerpt,
+              author: {
+                name: data.author || 'Mark Tellez',
+                avatar: '/mark.jpg',
+                url: `${process.env.NEXT_PUBLIC_URL}/about`
+              },
+              tags: data.tags || [],
+              canonicalUrl: data.canonicalUrl || `${process.env.NEXT_PUBLIC_URL}/musings/${id}`,
+              keywords: data.keywords || []
+            }
+          } catch (error) {
+            console.error(`Failed to process musing ${filename}:`, error)
+            return null
+          }
+        })
+    )
+
+    // Filter out any failed processing and sort by date
+    const sortedMusings = musingsData
+      .filter(musing => musing !== null)
+      .sort((a, b) => {
+        // Ensure we're comparing actual dates
+        const dateA = a.date instanceof Date ? a.date : new Date(a.date)
+        const dateB = b.date instanceof Date ? b.date : new Date(b.date)
+        // Reverse the comparison to get newest first
+        return dateA.getTime() - dateB.getTime()
+      })
+
+    // Debug log the sorting
+    console.log('Sorted musings:', sortedMusings.map(m => ({
+      title: m.title,
+      date: m.date.toISOString()
+    })))
+
+    return sortedMusings
+  } catch (error) {
+    console.error('Failed to read musings directory:', error)
+    return []
+  }
 }
 
 export async function getMusing(id) {
@@ -60,6 +84,9 @@ export async function getMusing(id) {
     const fileContent = fs.readFileSync(filePath, 'utf8')
     const { data, content } = matter(fileContent)
 
+    // Use manual excerpt if available, otherwise use frontmatter excerpt
+    const excerpt = MANUAL_EXCERPTS[id] || data.excerpt
+
     return {
       id,
       content,
@@ -67,7 +94,7 @@ export async function getMusing(id) {
       date: new Date(data.date),
       updated: data.updated ? new Date(data.updated) : null,
       image: data.image,
-      excerpt: data.excerpt,
+      excerpt,
       author: {
         name: data.author || 'Mark Tellez',
         avatar: '/mark.jpg',
