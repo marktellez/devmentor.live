@@ -2,15 +2,14 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import CopyrightYear from './copyright-year'
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
   return (
     <footer>
       <div className="container mx-auto px-4 py-8 sm:py-12 border-t border-gray-900">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+          <div className="lg:col-span-2">
             <h3 className="text-white text-sm font-medium mb-4">About</h3>
             <p className="text-gray-400 text-sm">
               I help developers become AI-powered full-stack engineers through 1-on-1 mentoring.
@@ -31,7 +30,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/mentorship" className="text-gray-400 hover:text-accent text-sm">
+                <a href="/web-dev-mentorship" className="text-gray-400 hover:text-accent text-sm">
                   Developer Mentorship
                 </a>
               </li>
@@ -114,9 +113,19 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-900 pt-8">
-          <p className="text-gray-500 text-sm text-center">
-            © {currentYear} DevmentorLive. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-sm text-center">
+              © <CopyrightYear /> DevmentorLive. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <a href="/privacy" className="text-gray-500 hover:text-accent text-sm">
+                Privacy Policy
+              </a>
+              <a href="/terms" className="text-gray-500 hover:text-accent text-sm">
+                Terms of Service
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

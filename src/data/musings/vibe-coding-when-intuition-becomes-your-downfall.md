@@ -1,12 +1,13 @@
 ---
 title: "Vibe Coding: When Intuition Becomes Your Downfall"
-date: "2025-03-12"
+date: "2024-03-12"
 author: "Mark Tellez"
 image: /musings/boy-pulling-his-hair-out-with-frustration.webp
 tags: 
   - Vibe Coding
   - AI Development
   - Technical Debt
+excerpt: "Vibe coding - the trendy new term for letting AI generate code based on intuition rather than engineering principles - is simply cowboy coding with a new hat. In 1997, we called it cowboy coding. In 2010, it was move fast and break things. Now, it's vibe coding with AI as the cowboy. Different decade, same expensive mistakes."
 ---
 
 "Vibe coding" - the trendy new term for letting AI generate code based on intuition rather than engineering principles - is simply cowboy coding with a new hat. In 1997, we called it cowboy coding. In 2010, it was "move fast and break things." Now, it's "vibe coding" with AI as the cowboy. Different decade, same expensive mistakes.
