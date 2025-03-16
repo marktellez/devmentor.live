@@ -116,7 +116,7 @@ export function generateInterviewPrepSchema(reviews = []) {
     name: 'Technical Interview Preparation',
     description: 'Expert technical interview preparation service focusing on algorithms, system design, and real-world problem-solving skills.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('TIP-001', 'DEVMENTOR-TIP-2025'),
+    ...generateProductIdentifier('DML-TIP', 'DEVMENTOR-TIP-2025'),
     brand: {
       '@type': 'Brand',
       name: 'Devmentor Live'
@@ -145,7 +145,7 @@ export function generateSeniorDevSchema(reviews = []) {
     name: 'Senior Developer Services',
     description: 'Hire a senior developer with 26+ years of experience in web development and AI integration. Expert technical leadership and implementation.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('SDS-001', 'DEVMENTOR-SDS-2025'),
+    ...generateProductIdentifier('DML-SDS', 'DEVMENTOR-SDS-2025'),
     brand: {
       '@type': 'Brand',
       name: 'Devmentor Live'
@@ -174,7 +174,7 @@ export function generateAIAutomationSchema(reviews = []) {
     name: 'AI Process Automation',
     description: 'Transform your business operations with intelligent automation solutions. From document processing to workflow automation.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('AIA-001', 'DEVMENTOR-AIA-2025'),
+    ...generateProductIdentifier('DML-AIA', 'DEVMENTOR-AIA-2025'),
     brand: {
       '@type': 'Brand',
       name: 'Devmentor Live'
@@ -203,7 +203,7 @@ export function generateCustomModelsSchema(reviews = []) {
     name: 'Custom AI Models Development',
     description: 'Custom AI model development tailored to your specific business needs. From data preparation to deployment.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('AIM-001', 'DEVMENTOR-AIM-2025'),
+    ...generateProductIdentifier('DML-AIM', 'DEVMENTOR-AIM-2025'),
     brand: {
       '@type': 'Brand',
       name: 'Devmentor Live'
@@ -232,7 +232,7 @@ export function generateVoiceAISchema(reviews = []) {
     name: 'Voice AI Solutions',
     description: 'Integrate advanced voice AI capabilities into your applications. Natural language processing and voice interaction.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('VAI-001', 'DEVMENTOR-VAI-2025'),
+    ...generateProductIdentifier('DML-VAI', 'DEVMENTOR-VAI-2025'),
     brand: {
       '@type': 'Brand',
       name: 'Devmentor Live'
@@ -260,7 +260,7 @@ export function generateWebDevMentorshipSchema(reviews) {
     name: 'Web Development Mentorship',
     description: 'Expert web development mentorship program focusing on modern frameworks, best practices, and real-world development skills.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('WDM-001', 'DEVMENTOR-WDM-2025'),
+    ...generateProductIdentifier('DML-WDM', 'DEVMENTOR-WDM-2025'),
     brand: {
       '@type': 'Brand',
       name: 'Devmentor Live'
@@ -287,7 +287,7 @@ export function generateAIServicesSchema(reviews) {
     name: 'AI Development & Integration Services',
     description: 'Expert AI development and integration services for enterprise digital transformation, including custom model development, voice AI, and automation solutions.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('AIS-001', 'DEVMENTOR-AIS-2025'),
+    ...generateProductIdentifier('DML-AIS', 'DEVMENTOR-AIS-2025'),
     brand: {
       '@type': 'Brand',
       name: 'Devmentor Live'
