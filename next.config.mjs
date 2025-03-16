@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const config = {
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
+  // Enable production optimizations
+  productionBrowserSourceMaps: false,
+  compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
   async headers() {
     return [
       {
@@ -31,9 +36,29 @@ const nextConfig = {
             value: 'strict-origin-when-cross-origin'
           }
         ]
+      },
+      {
+        // Cache all static assets in /_next/static
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          }
+        ]
+      },
+      {
+        // Cache all static files in /public
+        source: '/:path*.(jpg|jpeg|png|webp|gif|ico|svg|woff2|woff)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=2592000, stale-while-revalidate=86400'
+          }
+        ]
       }
     ]
   }
-};
+}
 
-export default nextConfig;
+export default config
