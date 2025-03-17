@@ -50,7 +50,7 @@ const staticRoutes = [
     priority: 0.3,
   },
   {
-    url: `${SITE_URL}/developer-mentorship`,
+    url: `${SITE_URL}/web-dev-mentorship`,
     changefreq: 'weekly',
     priority: 0.9,
   },

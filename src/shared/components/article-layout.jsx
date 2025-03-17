@@ -34,7 +34,7 @@ export default function ArticleLayout({ children, title, date, content }) {
               Let's work together to turn these insights into practical improvements in your code.
             </p>
             <Link
-              href="/developer-mentorship"
+              href="/web-dev-mentorship"
               className="inline-block px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors no-underline"
             >
               Explore Mentorship Options
