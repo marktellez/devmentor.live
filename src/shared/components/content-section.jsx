@@ -1,26 +1,11 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { CodeBracketIcon, RocketLaunchIcon, AcademicCapIcon, ChartBarIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 
 export default function ContentSection() {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  }
-
   return (
     <section className="py-24 sm:py-32">
       <div className="container mx-auto px-4">
         {/* Hero Content Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          variants={fadeIn}
-          className="max-w-4xl mx-auto text-center mb-20"
-        >
+        <div className="max-w-4xl mx-auto text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
             Transform Your Development Career
           </h2>
@@ -29,21 +14,13 @@ export default function ContentSection() {
             With over 26 years of experience and a perfect 5.0/5.0 rating, I'll help you master both traditional
             and AI-powered development techniques.
           </p>
-        </motion.div>
+        </div>
 
         {/* Main Content Sections */}
         <div className="space-y-32">
           {/* Web Development Mastery */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            variants={fadeIn}
-            className="grid lg:grid-cols-2 gap-12 items-center"
-          >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-
               <h3 className="text-3xl font-bold flex items-center gap-2"><CodeBracketIcon className="w-8 h-8 text-purple-400" /> Web Development Mastery</h3>
               <p className="text-lg text-white/80 leading-relaxed">
                 Since 1997, I've been crafting web applications and mentoring developers in the art of clean,
@@ -79,17 +56,10 @@ export default function ContentSection() {
                 </blockquote>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* AI-Powered Development */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            variants={fadeIn}
-            className="grid lg:grid-cols-2 gap-12 items-center"
-          >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="bg-gradient-to-br from-green-500/10 to-purple-500/10 p-8 rounded-2xl border border-white/10">
                 <div className="flex items-start space-x-4 mb-6">
@@ -133,7 +103,6 @@ export default function ContentSection() {
               </div>
             </div>
             <div className="order-1 lg:order-2 space-y-6">
-
               <h3 className="text-3xl font-bold flex items-center gap-2"><RocketLaunchIcon className="w-8 h-8 text-green-400" /> AI-Powered Development Revolution</h3>
               <p className="text-lg text-white/80 leading-relaxed">
                 As an AI researcher and top-ranked programmer, I'll teach you how to leverage AI to transform
@@ -155,19 +124,11 @@ export default function ContentSection() {
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </div>
 
           {/* Personalized Learning */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            variants={fadeIn}
-            className="grid lg:grid-cols-2 gap-12 items-center"
-          >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-
               <h3 className="text-3xl font-bold flex items-center gap-2"><UserGroupIcon className="w-8 h-8 text-purple-400" /> Personalized Learning Journey</h3>
               <p className="text-lg text-white/80 leading-relaxed">
                 My mentorship approach is tailored to your goals and learning style. Get hands-on guidance through:
@@ -196,7 +157,6 @@ export default function ContentSection() {
             </div>
             <div>
               <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
-
                 <blockquote className="text-xl text-white/80 italic mb-6 flex items-center gap-2">
                   <img
                     src="/mark.jpg"
@@ -217,17 +177,10 @@ export default function ContentSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Final CTA Section */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            variants={fadeIn}
-            className="max-w-3xl mx-auto text-center"
-          >
+          <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-3xl font-bold mb-6">Ready to Level Up Your Development Career?</h3>
             <p className="text-lg text-white/80 mb-8">
               Join the ranks of successful developers who have transformed their careers through expert mentorship.
@@ -245,7 +198,7 @@ export default function ContentSection() {
                 </svg>
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+
 
 export default function PageLayout({
   children,
@@ -12,7 +12,7 @@ export default function PageLayout({
   return (
     <div className="min-h-screen">
       <section className="pt-32 pb-16 px-4">
-        <motion.div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-4xl">
           {(badge || title || subtitle) && (
             <div className="text-center">
               {badge && (
@@ -38,7 +38,7 @@ export default function PageLayout({
           <div className={className}>
             {children}
           </div>
-        </motion.div>
+        </div>
       </section>
     </div>
   )

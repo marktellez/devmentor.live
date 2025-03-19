@@ -2,7 +2,6 @@
 title: "Vibe Coding: When Intuition Becomes Your Downfall"
 date: "2024-03-12"
 author: "Mark Tellez"
-image: /musings/boy-pulling-his-hair-out-with-frustration.webp
 tags: 
   - Vibe Coding
   - AI Development

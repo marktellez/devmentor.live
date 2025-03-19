@@ -57,7 +57,7 @@ export async function getAllMusings() {
               title: data.title,
               date,
               updated,
-              image: data.image,
+              image: `/musings/${id}.webp`,
               excerpt,
               author: {
                 name: data.author || 'Mark Tellez',
@@ -108,7 +108,7 @@ export async function getMusing(id) {
       title: data.title,
       date: new Date(data.date),
       updated: data.updated ? new Date(data.updated) : null,
-      image: data.image,
+      image: `/musings/${id}.webp`,
       excerpt,
       author: {
         name: data.author || 'Mark Tellez',

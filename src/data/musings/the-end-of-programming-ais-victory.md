@@ -2,7 +2,6 @@
 title: "The End of Programming: AI's Victory and the Uncertain Future"
 date: "2025-03-20"
 author: "Mark Tellez"
-image: /musings/the-end-of-coding-careers.webp
 tags: 
   - AI Development
   - Career

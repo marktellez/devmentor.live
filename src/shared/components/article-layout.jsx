@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { formatDate, getReadingTime } from '@/lib/utils'
 
@@ -10,11 +9,7 @@ export default function ArticleLayout({ children, title, date, content }) {
   return (
     <div className="min-h-screen">
       <div className="max-w-3xl mx-auto px-8 py-24">
-        <motion.article
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="prose prose-lg prose-invert"
-        >
+        <article className="prose prose-lg prose-invert opacity-0 animate-fade-in">
           <Link href="/musings" className="text-purple-400 hover:text-purple-300 no-underline mb-8 block">
             ← Back to Musings
           </Link>
@@ -40,7 +35,7 @@ export default function ArticleLayout({ children, title, date, content }) {
               Explore Mentorship Options
             </Link>
           </div>
-        </motion.article>
+        </article>
       </div>
     </div>
   )

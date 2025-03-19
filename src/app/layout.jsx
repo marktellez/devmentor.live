@@ -2,7 +2,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/shared/components/header'
 import Footer from '@/shared/components/footer'
-import { ToastProvider } from '@/shared/components/toast'
 import { generateMetadata as baseGenerateMetadata } from '@/lib/metadata'
 import { generateWebSiteSchema } from '@/lib/schema'
 import { Analytics } from '@vercel/analytics/react'
@@ -31,11 +30,9 @@ export default function RootLayout({ children }) {
         ))}
       </head>
       <body className={inter.className}>
-        <ToastProvider>
           <Header />
           <main>{children}</main>
           <Footer />
-        </ToastProvider>
         <Analytics />
       </body>
     </html>

@@ -35,6 +35,7 @@ export default function Header() {
       current: pathname === '/musings' || pathname.startsWith('/musings/')
     },
     { name: 'About', href: '/about' },
+    { name: 'Hire Me', href: '/hire-senior-developer' },
     { name: 'Reviews', href: '/reviews', special: true },
   ]
 

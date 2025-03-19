@@ -1,16 +1,8 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import reviews from '@/data/reviews.json'
 import featuredReviews from '@/data/featured.json'
 import { MENTORING_SESSIONS, FIVE_STAR_REVIEWS } from '@/lib/config'
 
-const ITEMS_PER_PAGE = 10
-
 export default function ReviewsPage() {
-  const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE)
-  const [showScrollTop, setShowScrollTop] = useState(false)
   const averageRating = reviews.reduce((acc, review) => acc + (review.rating || 5), 0) / reviews.length
 
   // Get more featured reviews - take top rated ones
@@ -24,86 +16,39 @@ export default function ReviewsPage() {
     .slice(0, 4)
   extendedFeaturedReviews.push(...additionalFeatured)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 1000) {
-        setDisplayCount(prev => Math.min(prev + ITEMS_PER_PAGE, reviews.length))
-      }
-      setShowScrollTop(window.scrollY > 400)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  }
-
   return (
     <div className="min-h-screen bg-black">
       <div className="max-w-5xl mx-auto px-8 py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-20"
-        >
+        <div className="mb-20">
           <h1 className="text-5xl font-bold text-white mb-4">Client Reviews</h1>
           <p className="text-zinc-400 text-lg">
             Over {new Date().getFullYear() - 1999} years of helping developers solve their toughest challenges.
           </p>
-        </motion.div>
+        </div>
 
         {/* Stats */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16"
-        >
-          <motion.div variants={item} className="text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
+          <div className="text-center">
             <div className="text-4xl font-light text-green-400 mb-2">{MENTORING_SESSIONS}</div>
             <div className="text-zinc-500 text-sm">MENTORING SESSIONS</div>
-          </motion.div>
-          <motion.div variants={item} className="text-center">
+          </div>
+          <div className="text-center">
             <div className="text-4xl font-light text-green-400 mb-2">{FIVE_STAR_REVIEWS}</div>
             <div className="text-zinc-500 text-sm">5★ REVIEWS ON CODEMENTOR</div>
-          </motion.div>
-          <motion.div variants={item} className="text-center">
+          </div>
+          <div className="text-center">
             <div className="text-4xl font-light text-green-400 mb-2">{averageRating.toFixed(1)}</div>
             <div className="text-zinc-500 text-sm">AVERAGE RATING</div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Featured Reviews */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="mb-20"
-        >
+        <div className="mb-20">
           <h2 className="text-2xl font-bold text-white mb-12">Featured Reviews</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {extendedFeaturedReviews.map((review, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={item}
                 className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6"
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -123,23 +68,18 @@ export default function ReviewsPage() {
                   </div>
                 </div>
                 <p className="text-zinc-400">{review.content}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* All Reviews */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
+        <div>
           <h2 className="text-2xl font-bold text-white mb-12">All Reviews</h2>
           <div className="space-y-12">
-            {reviews.slice(0, displayCount).map((review, index) => (
-              <motion.div
+            {reviews.map((review, index) => (
+              <div
                 key={index}
-                variants={item}
                 className="border-l border-purple-400/20 pl-6"
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -161,38 +101,11 @@ export default function ReviewsPage() {
                   </div>
                 </div>
                 <p className="text-zinc-300">{review.content}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
-
-      <AnimatePresence>
-        {showScrollTop && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-green-400 hover:bg-green-300 text-zinc-900 flex items-center justify-center shadow-lg transition-colors"
-            aria-label="Scroll to top"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 10l7-7m0 0l7 7m-7-7v18"
-              />
-            </svg>
-          </motion.button>
-        )}
-      </AnimatePresence>
     </div>
   )
 } 

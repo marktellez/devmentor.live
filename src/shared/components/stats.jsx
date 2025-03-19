@@ -1,19 +1,8 @@
-'use client'
-
-import { useState, useEffect } from 'react'
 import { START_YEAR, MENTORING_SESSIONS, FIVE_STAR_REVIEWS } from '@/lib/config'
 
 export default function Stats() {
-  const [yearsOfCoding, setYearsOfCoding] = useState(0)
-
-  useEffect(() => {
-    const calculateYears = () => {
-      const startYear = START_YEAR
-      const currentYear = new Date().getFullYear()
-      setYearsOfCoding(currentYear - startYear)
-    }
-    calculateYears()
-  }, [])
+  const currentYear = new Date().getFullYear()
+  const yearsOfCoding = currentYear - START_YEAR
 
   const stats = [
     { label: 'YEARS CODING', value: yearsOfCoding },
