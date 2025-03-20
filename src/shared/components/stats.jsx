@@ -12,7 +12,7 @@ export default function Stats() {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-16 sm:gap-8 py-8 sm:py-0">
+      <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-16 sm:gap-8 py-8 sm:py-0 my-32">
         {stats.map(stat => (
           <div key={stat.label} className="text-center">
             <div className="text-5xl sm:text-5xl lg:text-6xl font-light text-white mb-4 sm:mb-3">{stat.value}</div>

@@ -4,6 +4,7 @@ import ContentSection from '@/shared/components/content-section'
 import CTAWrapper from '@/shared/components/contact-form-wrapper'
 import Stats from '@/shared/components/stats'
 import LatestMusing from '@/shared/components/latest-musing'
+import AIAdvantage from '@/shared/components/ai-advantage'
 import { generateMetadata as baseGenerateMetadata } from '@/lib/metadata'
 import { sharedData } from '@/lib/data'
 
@@ -13,20 +14,22 @@ export const revalidate = false
 
 // Generate metadata at build time
 export const metadata = baseGenerateMetadata({
-  title: "Web Development & AI Mentorship | Expert Guidance",
-  description: `Transform your development career with expert mentorship in modern web development and AI integration. Learn from a senior developer with ${sharedData.stats.yearsExperience}+ years experience.`,
+  title: "React & TypeScript Mentorship | ChatGPT & Next.js Expert | JavaScript Coach",
+  description: `Learn React, TypeScript, and Next.js from an expert developer. Master ChatGPT integration and Cursor AI tools with hands-on JavaScript mentorship. ${sharedData.stats.yearsExperience}+ years experience in modern web development.`,
+  keywords: "React mentorship, TypeScript coaching, Next.js development, ChatGPT integration, JavaScript expert, Cursor AI development",
   path: '/'
 })
 
 export default function HomePage() {
   return (
-    <>
+    <main itemScope itemType="https://schema.org/ProfessionalService">
       <Hero />
       <Stats data={sharedData.stats} />
+      <AIAdvantage />
       <LatestMusing data={sharedData.latestMusing} />
       <Services />
       <ContentSection />
       <CTAWrapper context="home" />
-    </>
+    </main>
   )
 } 
