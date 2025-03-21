@@ -8,8 +8,9 @@ export const revalidate = false
 
 // Generate metadata at build time
 export const metadata = baseGenerateMetadata({
-  title: "AI Development & Integration Services | Custom AI Solutions",
-  description: "Expert AI development and integration services. From custom models to enterprise-wide AI implementation, get the expertise you need to succeed with AI.",
+  title: "Custom AI Development & Integration Services – Enterprise AI Solutions",
+  description: "Accelerate your business growth with my custom AI development and integration services. Get expert guidance on building custom AI models, voice AI, and intelligent process automation to drive real results.",
+  keywords: "AI development services, custom AI solutions, AI integration, enterprise AI, voice AI development, process automation",
   path: '/ai-services'
 })
 

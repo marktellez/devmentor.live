@@ -18,7 +18,7 @@ export default function Terms() {
             <h2 className="text-2xl font-semibold mb-4">1. Agreement to Terms</h2>
             <p>
               By accessing or using DevmentorLive's website and services, you agree to be bound by these Terms of Service. 
-              If you disagree with any part of these terms, you may not access our services.
+              If you disagree with any part of these terms, you may not access my services.
             </p>
           </section>
 
@@ -49,7 +49,7 @@ export default function Terms() {
             <h2 className="text-2xl font-semibold mb-4">4. Payment Terms</h2>
             <p>
               Payment is required for certain services. All fees are non-refundable unless otherwise specified. 
-              We reserve the right to modify our pricing with notice to our users.
+              We reserve the right to modify my pricing with notice to my users.
             </p>
             <h3 className="text-xl font-medium mt-4 mb-3">Cancellation Policy</h3>
             <ul className="list-disc pl-6">
@@ -62,7 +62,7 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">5. Intellectual Property</h2>
             <p>
-              All content, features, and functionality of our services are owned by DevmentorLive 
+              All content, features, and functionality of my services are owned by DevmentorLive 
               and are protected by international copyright, trademark, and other intellectual property laws.
             </p>
           </section>
@@ -71,14 +71,14 @@ export default function Terms() {
             <h2 className="text-2xl font-semibold mb-4">6. Limitation of Liability</h2>
             <p>
               DevmentorLive shall not be liable for any indirect, incidental, special, consequential, 
-              or punitive damages resulting from your use or inability to use our services.
+              or punitive damages resulting from your use or inability to use my services.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">7. Service Modifications</h2>
             <p>
-              We reserve the right to modify, suspend, or discontinue any part of our services 
+              We reserve the right to modify, suspend, or discontinue any part of my services 
               at any time without notice. We shall not be liable to you or any third party for any 
               modification, suspension, or discontinuation.
             </p>
@@ -87,7 +87,7 @@ export default function Terms() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">8. Termination</h2>
             <p>
-              We may terminate or suspend your access to our services immediately, without prior 
+              We may terminate or suspend your access to my services immediately, without prior 
               notice, for conduct that we believe violates these Terms or is harmful to other users, 
               us, or third parties, or for any other reason.
             </p>

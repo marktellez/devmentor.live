@@ -24,11 +24,11 @@ const data = {
   capabilities: [
     {
       title: "Custom Voice Models",
-      description: "Create unique, branded voices for your applications with our advanced voice cloning technology. Perfect for maintaining brand consistency across all voice interactions."
+      description: "Create unique, branded voices for your applications with my advanced voice cloning technology. Perfect for maintaining brand consistency across all voice interactions."
     },
     {
       title: "Text-to-Speech Integration",
-      description: "Implement natural-sounding text-to-speech capabilities using either custom voice models or our integration with ElevenLabs' premium voices."
+      description: "Implement natural-sounding text-to-speech capabilities using either custom voice models or my integration with ElevenLabs' premium voices."
     },
     {
       title: "Voice-Enabled Agents",
@@ -42,7 +42,7 @@ const data = {
   technologies: [
     {
       title: "Voxbird AI",
-      description: "Our proprietary voice AI platform for creating custom voice models and natural-sounding speech synthesis."
+      description: "My proprietary voice AI platform for creating custom voice models and natural-sounding speech synthesis."
     },
     {
       title: "ElevenLabs Integration",

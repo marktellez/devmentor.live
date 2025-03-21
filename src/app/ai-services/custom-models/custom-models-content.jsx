@@ -26,7 +26,7 @@ export default function CustomModelsContent({ data }) {
             <p>
               From data preparation to deployment, we develop custom AI models that solve
               your unique business challenges. Whether you need classification, prediction,
-              or specialized AI capabilities, our expertise ensures you get precise,
+              or specialized AI capabilities, my expertise ensures you get precise,
               production-ready solutions.
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function CustomModelsContent({ data }) {
 
           <div>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Our Development Process
+              My Development Process
             </h2>
             <div className="space-y-8">
               {data.process.map((step, index) => (

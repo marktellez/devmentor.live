@@ -26,7 +26,7 @@ export default function VoiceAIContent({ data }) {
             <p>
               From custom voice models to intelligent voice agents, we help businesses
               create natural and engaging voice experiences. Whether you need a unique
-              brand voice or a complete voice-enabled application, our expertise in
+              brand voice or a complete voice-enabled application, my expertise in
               voice AI technology ensures exceptional results.
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function VoiceAIContent({ data }) {
 
           <div>
             <h2 className="text-3xl font-bold text-white mb-8">
-              Our Voice AI Technology Stack
+              My Voice AI Technology Stack
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {data.technologies.map((tech, index) => (

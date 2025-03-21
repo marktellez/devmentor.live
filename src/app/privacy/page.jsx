@@ -2,7 +2,7 @@ import { generateMetadata as baseGenerateMetadata } from '@/lib/metadata'
 
 export const metadata = baseGenerateMetadata({
   title: "Privacy Policy | DevmentorLive",
-  description: "Learn how DevmentorLive protects and handles your data with our comprehensive privacy policy.",
+  description: "Learn how DevmentorLive protects and handles your data with my comprehensive privacy policy.",
   path: '/privacy'
 })
 
@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
             <p>
               At DevmentorLive, we take your privacy seriously. This Privacy Policy explains how we collect, 
-              use, and protect your personal information when you use our website and services.
+              use, and protect your personal information when you use my website and services.
             </p>
           </section>
 
@@ -42,8 +42,8 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">How We Use Your Information</h2>
             <ul className="list-disc pl-6">
-              <li>To provide and improve our services</li>
-              <li>To communicate with you about our services</li>
+              <li>To provide and improve my services</li>
+              <li>To communicate with you about my services</li>
               <li>To process payments and maintain accounts</li>
               <li>To analyze website performance and user behavior</li>
               <li>To comply with legal obligations</li>

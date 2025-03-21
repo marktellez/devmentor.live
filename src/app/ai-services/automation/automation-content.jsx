@@ -20,7 +20,7 @@ export default function AutomationContent({ data }) {
           <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-white">AI-Powered Process Automation</h1>
           
           <div className="text-white/70 text-lg sm:text-xl space-y-4">
-            <p>Transform your business operations with intelligent automation that thinks, learns, and adapts. Our AI-powered solutions reduce manual tasks, eliminate errors, and help you operate more efficiently.</p>
+            <p>Transform your business operations with intelligent automation that thinks, learns, and adapts. My AI-powered solutions reduce manual tasks, eliminate errors, and help you operate more efficiently.</p>
             
             <p>With over {data.stats.yearsExperience} years of experience in AI and automation, we've helped hundreds of businesses streamline their operations and achieve remarkable efficiency gains.</p>
           </div>
@@ -61,7 +61,7 @@ export default function AutomationContent({ data }) {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold mb-8 text-white">Our Process</h2>
+            <h2 className="text-3xl font-bold mb-8 text-white">My Process</h2>
             <div className="grid sm:grid-cols-2 gap-8">
               {data.process.map((step, index) => (
                 <div key={index} className="bg-white/5 p-6 rounded-lg">

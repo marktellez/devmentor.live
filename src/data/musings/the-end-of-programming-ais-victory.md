@@ -7,7 +7,7 @@ tags:
   - Career
   - Industry Trends
   - Future of Programming
-excerpt: "After 27 years in software development, I'm witnessing the twilight of traditional programming careers. Unless you're in ML or systems programming, AI is rapidly making our profession obsolete. It's time for some hard truths about our industry's future."
+excerpt: "After 27 years in software development, I'm witnessing the twilight of traditional programming careers. Unless you're in ML or systems programming, AI is rapidly making my profession obsolete. It's time for some hard truths about my industry's future."
 ---
 
 I've been writing code since 1997. I've weathered the dot-com crash, rode the mobile app wave, and adapted through countless framework cycles. But nothing in my 27-year career has shaken me like the current AI revolution. We're not just facing another technological shift – we're witnessing the end of programming as a viable career path for most developers.

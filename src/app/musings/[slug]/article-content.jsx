@@ -127,7 +127,7 @@ export default function ArticleContent({
                   Contact me
                 </a> to develop a strategy that ensures your AI tools enhance, rather than undermine,
                 your engineering practices. I work with teams of all sizes. My goal is to have AI improve
-                our lives, not replace us or destroy our human value.
+                my lives, not replace us or destroy my human value.
               </p>
               <div className="mt-16 p-8 bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-white/10 rounded-2xl">
                 <h2 className="text-2xl font-bold mb-4 text-center">Let's Build Better Systems Together</h2>

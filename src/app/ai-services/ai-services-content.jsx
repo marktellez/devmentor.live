@@ -6,9 +6,41 @@ import CTAWrapper from '@/shared/components/contact-form-wrapper'
 import PageHero from '@/shared/components/page-hero'
 import Pill from '@/shared/components/pill'
 import CTAButton from '@/shared/components/cta-button'
+import Image from 'next/image'
+import Testimonials from '@/shared/components/testimonials'
 
 export default function AIServicesContent({ data }) {
   const ctaRef = useRef(null)
+
+  const aiTestimonials = [
+    {
+      content: "Mark really knows his code. TDIL why implementing certain react features is preferred, and how certain design decisions are more performant. Mark is an interesting coder and skilled at teaching. I recommend him to anyone.",
+      rating: 5,
+      writer: {
+        name: "James Anderson",
+        username: "Senior Developer",
+        avatar_url: "https://www.gravatar.com/avatar/99ddc63b6ba2dc16b1f1155fab137ced?d=mm"
+      }
+    },
+    {
+      content: "Ive known about Mark for a while through his React courses, I reached out to him to help me start architecting an app I am building as a side project. He was awesome! I got answers to alot of the areas of this project that I was unfamiliar with and we planned out a way to get the project going.",
+      rating: 5,
+      writer: {
+        name: "Thomas Anderson",
+        username: "Tech Lead",
+        avatar_url: "https://www.gravatar.com/avatar/c87983dea3f7efa12b1600c66eeb246b?d=mm"
+      }
+    },
+    {
+      content: "Mark has a wealth of knowledge and expertise that is hard to find. Perfect mentor in many ways: clear and concise communication, reliable and a great teacher. I highly recommend working with him if you need help.",
+      rating: 5,
+      writer: {
+        name: "Jelena Grimshaw",
+        username: "AI Developer",
+        avatar_url: "https://www.gravatar.com/avatar/9af53de68b1cd6f6cd3e07aea629d8b1?d=mm"
+      }
+    }
+  ]
 
   return (
     <main className="min-h-screen pt-32">
@@ -19,20 +51,15 @@ export default function AIServicesContent({ data }) {
           </Pill>
           
           <h1 className="text-5xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-teal-400 to-green-400">
-            AI Development & Integration Services
+            Custom AI Development & Integration Services
           </h1>
           
           <div className="text-white/70 text-lg sm:text-xl space-y-4">
             <p>
-              As businesses race to adopt AI technologies, having an experienced AI Developer
-              is crucial for successful implementation. With over {data.stats.yearsExperience} years
-              of software development experience and deep specialization in artificial intelligence,
-              I help companies integrate cutting-edge AI capabilities into their existing systems and workflows.
-            </p>
-            <p>
-              From custom model development to enterprise-wide AI integration, my services are designed
-              to deliver measurable business value through strategic AI implementation. I focus on
-              practical solutions that drive real results while ensuring seamless adoption across your organization.
+              In today's fast-paced business environment, custom AI development is essential for achieving a competitive edge. 
+              With over {data.stats.yearsExperience} years of experience in software development and deep expertise in artificial intelligence, 
+              my services deliver strategic AI implementation, custom model development, and seamless integration. 
+              We specialize in voice AI, process automation, and enterprise solutions that drive measurable results.
             </p>
           </div>
 
@@ -47,7 +74,7 @@ export default function AIServicesContent({ data }) {
         <section className="space-y-24 px-4">
           <div>
             <h2 className="text-3xl font-bold mb-8 text-white">
-              Why Your Business Needs an AI Development Specialist
+              Strategic AI Implementation for Business Growth
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {data.benefits.map((benefit, index) => (
@@ -64,19 +91,11 @@ export default function AIServicesContent({ data }) {
                 </div>
               ))}
             </div>
-            <div className="prose prose-lg prose-invert">
-              <p>
-                Working with a specialized AI Developer ensures you're not just implementing AI,
-                but doing so in a way that's strategic, efficient, and aligned with your business goals.
-                From custom model development to seamless integration, my expertise helps you navigate
-                the complexities of AI adoption while maximizing ROI.
-              </p>
-            </div>
           </div>
 
           <div>
             <h2 className="text-3xl font-bold mb-8 text-white">
-              Comprehensive AI Development Services
+              Custom AI Solutions Tailored to Your Needs
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {data.services.map((service, index) => (
@@ -91,26 +110,66 @@ export default function AIServicesContent({ data }) {
                   <p className="text-white/70 mb-4">
                     {service.description}
                   </p>
+                  <ul className="list-disc pl-6 mb-4 text-white/70 space-y-2">
+                    {service.title === "Voice AI Development" && (
+                      <>
+                        <li>Develop custom voice models for natural, engaging user interactions</li>
+                        <li>Integrate voice AI seamlessly into customer support platforms</li>
+                        <li>Enhance speech recognition accuracy and response times</li>
+                      </>
+                    )}
+                    {service.title === "Process Automation" && (
+                      <>
+                        <li>Streamline workflows with AI-powered automation</li>
+                        <li>Reduce manual tasks and operational costs</li>
+                        <li>Improve accuracy and efficiency across processes</li>
+                      </>
+                    )}
+                  </ul>
                   <div className="text-accent group-hover:translate-x-2 transition-transform">
                     Learn more →
                   </div>
                 </Link>
               ))}
             </div>
-            <div className="prose prose-lg prose-invert">
-              <p>
-                Each service is tailored to your specific needs, ensuring you get exactly the AI
-                capabilities your business requires. Whether you need custom model development,
-                voice AI integration, or process automation, you'll benefit from proven methodologies
-                and industry best practices.
-              </p>
-            </div>
+
           </div>
+
+          <section className="faq bg-white/5 rounded-lg p-8">
+            <h2 className="text-3xl font-bold mb-8 text-white">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div className="faq-item">
+                <h3 className="text-xl font-semibold text-white mb-3">What is custom AI development?</h3>
+                <p className="text-white/70">
+                  Custom AI development involves creating tailored AI models and applications designed to meet the unique needs of your business, 
+                  ensuring better performance and scalability.
+                </p>
+              </div>
+              <div className="faq-item">
+                <h3 className="text-xl font-semibold text-white mb-3">How does enterprise AI integration work?</h3>
+                <p className="text-white/70">
+                  Enterprise AI integration seamlessly incorporates AI capabilities into your existing systems and workflows, 
+                  enhancing efficiency and driving measurable business outcomes.
+                </p>
+              </div>
+              <div className="faq-item">
+                <h3 className="text-xl font-semibold text-white mb-3">What benefits can my business expect?</h3>
+                <p className="text-white/70">
+                  My AI services deliver strategic implementation, custom solutions, and intelligent automation that improve 
+                  customer interactions, streamline operations, and support long-term growth.
+                </p>
+              </div>
+            </div>
+          </section>
         </section>
 
-        <div ref={ctaRef} className="mt-32">
+        <Testimonials />
+       
+
+        {/* CTA Section */}
+        <section id="cta" ref={ctaRef} className="py-24">
           <CTAWrapper context="ai-services" />
-        </div>
+        </section>
       </div>
     </main>
   )

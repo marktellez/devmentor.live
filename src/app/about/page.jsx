@@ -32,7 +32,7 @@ export default function AboutPage() {
               spans from building high-performance web applications to implementing cutting-edge AI solutions.
             </p>
             <p>
-              I pride myself in not just being a "coder" but understanding the importance of efficience and revenue generation.
+              I pride myself in not just being a "coder" but understanding the importance of efficiency and revenue generation.
               I can work fluently in photoshop, illustrator, animator, blender, and many other creative tools and apps.
             </p>
             <p>
