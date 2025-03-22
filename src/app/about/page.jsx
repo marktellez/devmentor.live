@@ -143,7 +143,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-teal-400 text-xl mb-4">Cloud & DevOps</h3>
               <div className="flex flex-wrap gap-2">
-                {FACTS.experience.cloud.map((service) => (
+                {FACTS.experience.devops.map((service) => (
                   <span key={service} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-teal-500/20 px-3 py-1 rounded">
                     {service}
                   </span>
@@ -179,11 +179,11 @@ export default function AboutPage() {
 
             {/* Additional Skills sections */}
             <div>
-              <h3 className="text-red-400 text-xl mb-4">Game Engines</h3>
+              <h3 className="text-teal-400 text-xl mb-4">Cloud & DevOps</h3>
               <div className="flex flex-wrap gap-2">
-                {FACTS.experience.gameEngines.map((engine) => (
-                  <span key={engine} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-red-500/20 px-3 py-1 rounded">
-                    {engine}
+                {FACTS.experience.devops.map((service) => (
+                  <span key={service} className="text-white/70 bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-teal-500/20 px-3 py-1 rounded">
+                    {service}
                   </span>
                 ))}
               </div>
