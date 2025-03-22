@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { START_YEAR, FACTS } from '@/lib/config'
+import Image from 'next/image'
 
 export default function DynamicHero() {
   const [yearsOfCoding, setYearsOfCoding] = useState(0)
@@ -61,11 +62,13 @@ export default function DynamicHero() {
 
           <div className="flex flex-col items-center justify-start order-1 lg:order-2 mt-32">
             <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-[#ff2d55]">
-              <img
+              <Image
                 src="/mark.jpg"
                 alt="Mark Tellez - Web Development & AI Mentor"
+                width={256}
+                height={256}
                 className="w-full h-full object-cover"
-                loading="eager" // Hero image should load eagerly
+                priority // Hero image should load with priority
               />
             </div>
             <p className="text-white/70 text-center text-base sm:text-lg max-w-sm mt-8 mb-24">

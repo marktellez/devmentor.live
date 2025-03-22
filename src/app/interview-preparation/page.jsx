@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import CTAWrapper from '@/shared/components/contact-form-wrapper'
 import PageHero from '@/shared/components/page-hero'
+import Image from 'next/image'
 
 export default function InterviewPreparation() {
   const ctaRef = useRef(null)
@@ -47,9 +48,11 @@ export default function InterviewPreparation() {
 
               <div className="flex flex-col sm:flex-row items-center gap-8">
                 <div className="w-32 h-32 shrink-0">
-                  <img
+                  <Image
                     src="https://uploads-ssl.webflow.com/5fd95c1bf859c7d008ff93f4/62e32587bb39a11f0fa8fd71_chris.jpeg"
                     alt="Chris Loggins"
+                    width={128}
+                    height={128}
                     className="w-full h-full object-cover rounded-full border-2 border-purple-400/30"
                   />
                 </div>

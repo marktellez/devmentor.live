@@ -6,6 +6,7 @@ import { formatDate, getReadingTime } from '@/lib/utils'
 import CTAWrapper from '@/shared/components/contact-form-wrapper'
 import TableOfContents from '@/shared/components/table-of-contents'
 import matter from 'gray-matter'
+import Image from 'next/image'
 
 export default function ArticleContent({
   content,
@@ -45,9 +46,11 @@ export default function ArticleContent({
           <article className="min-w-0">
             {image && (
               <div className="mb-8 aspect-[21/9] overflow-hidden rounded-xl">
-                <img
+                <Image
                   src={image}
                   alt={title}
+                  width={1200}
+                  height={514}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -66,9 +69,11 @@ export default function ArticleContent({
               <h1 className="text-4xl font-bold mb-4">{title}</h1>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
                     src={authorAvatar}
                     alt={author}
+                    width={24}
+                    height={24}
                     className="w-6 h-6 rounded-full"
                   />
                   <a href={authorUrl} className="text-sm text-zinc-400 hover:text-white">

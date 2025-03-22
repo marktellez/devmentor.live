@@ -1,4 +1,5 @@
 import { CodeBracketIcon, RocketLaunchIcon, AcademicCapIcon, ChartBarIcon, UserGroupIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 export default function ContentSection() {
   return (
@@ -46,9 +47,11 @@ export default function ContentSection() {
             <div className="lg:ml-auto">
               <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/10 p-8 rounded-2xl border border-white/10">
                 <blockquote className="text-lg text-white/80 italic flex items-center gap-2">
-                  <img
+                  <Image
                     src="/mark.jpg"
                     alt="Mark - AI Developer and Mentor"
+                    width={192}
+                    height={192}
                     className="w-48 h-48 rounded-full object-cover border-2 border-purple-400/20"
                   />
                   Whether you're building a simple web app or a complex enterprise system,
@@ -158,9 +161,11 @@ export default function ContentSection() {
             <div>
               <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
                 <blockquote className="text-xl text-white/80 italic mb-6 flex items-center gap-2">
-                  <img
+                  <Image
                     src="/mark.jpg"
                     alt="Mark - AI Developer and Mentor"
+                    width={192}
+                    height={192}
                     className="w-48 h-48 rounded-full object-cover border-2 border-purple-400/20"
                   /> 450+ satisfied developers have transformed their careers through my mentorship program.
                 </blockquote>

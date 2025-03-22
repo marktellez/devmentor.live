@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function LatestMusing({ data }) {
   return (
@@ -15,9 +16,11 @@ export default function LatestMusing({ data }) {
             <div className="grid md:grid-cols-5 gap-8">
               <div className="md:col-span-2">
                 <div className="aspect-[4/3] rounded-lg overflow-hidden bg-purple-500/10">
-                  <img
+                  <Image
                     src={`/musings/${data.slug}.webp`}
                     alt={data.title}
+                    width={400}
+                    height={300}
                     className="w-full h-full object-cover"
                   />
                 </div>
