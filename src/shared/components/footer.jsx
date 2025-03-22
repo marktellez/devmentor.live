@@ -44,11 +44,7 @@ export default function Footer() {
                   Reviews
                 </a>
               </li>
-              <li>
-                <a href="/faq" className="text-white/70 hover:text-white transition-colors">
-                  FAQ
-                </a>
-              </li>
+              
             </ul>
           </div>
 
@@ -73,21 +69,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="mailto:mark@devmentor.live" className="text-white/70 hover:text-white transition-colors">
-                  mark@devmentor.live
-                </a>
-              </li>
-              <li>
-                <a href="/schedule" className="text-white/70 hover:text-white transition-colors">
-                  Schedule a Call
-                </a>
-              </li>
-            </ul>
-          </div>
+         
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/50">
