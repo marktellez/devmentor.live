@@ -12,7 +12,6 @@ export const FACTS = {
     databases: ["MongoDB", "PostgreSQL", "MySQL", "Vector DBs"],
     DevOps: ["AWS", "Vercel", "Linux", "Docker", "Bash Wizard"],
     specialties: ["AI/ML", "Modern Web Dev", "Full Stack", "Voice AI"],
-    gameEngines: ["Unity", "Unreal"],
     creativeTools: ["Photoshop", "Illustrator", "Animator", "Blender"],
     python: {
       frameworks: ["PyTorch", "CUDA", "TensorFlow"],
