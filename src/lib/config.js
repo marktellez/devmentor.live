@@ -10,7 +10,7 @@ export const FACTS = {
     frontend: ["React", "Tailwind", "CSS"],
     backend: ["Next.js", "Python", "Ruby on Rails"],
     databases: ["MongoDB", "PostgreSQL", "MySQL", "Vector DBs"],
-    cloud: ["AWS", "Vercel"],
+    DevOps: ["AWS", "Vercel", "Linux", "Docker", "Bash Wizard"],
     specialties: ["AI/ML", "Modern Web Dev", "Full Stack", "Voice AI"],
     gameEngines: ["Unity", "Unreal"],
     creativeTools: ["Photoshop", "Illustrator", "Animator", "Blender"],
