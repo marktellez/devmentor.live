@@ -174,6 +174,37 @@ export default function HireDeveloperContent() {
           </div>
         </section>
 
+        {/* Resume Downloads */}
+        <div className="mt-16 px-4">
+          <div className="border border-purple-500/20 p-6 rounded-lg bg-gradient-to-br from-[#121212] to-[#1a1a1a]">
+            <h2 className="text-2xl font-bold text-white mb-4">Download My Resume</h2>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/mark-tellez-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 rounded-lg transition-colors"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download Full Resume
+              </a>
+              <a
+                href="/mark-tellez-ai-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 rounded-lg transition-colors"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download AI Resume
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div ref={ctaRef} className="mt-32">
           <CTAWrapper context="hire-senior" />
         </div>
