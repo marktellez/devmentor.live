@@ -121,7 +121,6 @@ export function generateInterviewPrepSchema(reviews = []) {
       '@type': 'Brand',
       name: 'Devmentor Live'
     },
-    provider: generateOrganizationSchema(),
     offers: [generateOffer({
       name: 'Technical Interview Preparation',
       description: 'One-on-one interview preparation to help you succeed in technical interviews',
@@ -150,7 +149,6 @@ export function generateSeniorDevSchema(reviews = []) {
       '@type': 'Brand',
       name: 'Devmentor Live'
     },
-    provider: generateOrganizationSchema(),
     offers: [generateOffer({
       name: 'Senior Developer Services',
       description: 'Expert technical leadership and implementation services',
@@ -179,7 +177,6 @@ export function generateAIAutomationSchema(reviews = []) {
       '@type': 'Brand',
       name: 'Devmentor Live'
     },
-    provider: generateOrganizationSchema(),
     offers: [generateOffer({
       name: 'AI Process Automation',
       description: 'Custom AI automation solutions for your business processes',
@@ -208,7 +205,6 @@ export function generateCustomModelsSchema(reviews = []) {
       '@type': 'Brand',
       name: 'Devmentor Live'
     },
-    provider: generateOrganizationSchema(),
     offers: [generateOffer({
       name: 'Custom AI Models',
       description: 'Development of custom AI models tailored to your business needs',
@@ -237,7 +233,6 @@ export function generateVoiceAISchema(reviews = []) {
       '@type': 'Brand',
       name: 'Devmentor Live'
     },
-    provider: generateOrganizationSchema(),
     offers: [generateOffer({
       name: 'Voice AI Integration',
       description: 'Integration of voice AI capabilities into your applications',

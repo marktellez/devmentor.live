@@ -17,10 +17,15 @@ export default function ReviewsLayout({ children }) {
   // Create review schema
   const reviewSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Devmentor Live',
+    '@type': 'Product',
+    name: 'Devmentor Live Services',
+    description: 'Expert web development mentorship and AI integration services',
     url: process.env.NEXT_PUBLIC_URL,
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
+    brand: {
+      '@type': 'Brand',
+      name: 'Devmentor Live'
+    },
     identifier: {
       '@type': 'PropertyValue',
       propertyID: 'sku',
@@ -57,7 +62,7 @@ export default function ReviewsLayout({ children }) {
         name: 'Devmentor Live'
       }
     })),
-    makesOffer: [
+    offers: [
       {
         '@type': 'Offer',
         name: 'Web Development Mentorship',
