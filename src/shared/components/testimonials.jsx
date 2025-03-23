@@ -5,13 +5,19 @@ import Image from 'next/image'
 
 const MIN_REVIEW_LENGTH = 60
 
-// Helper to check if URL is valid
-const isValidUrl = (url) => {
+// Helper to check if URL is valid and decode it
+const processUrl = (url) => {
   try {
-    new URL(url)
-    return true
+    // First decode any unicode escape sequences
+    const decodedUrl = url.replace(/\\u[\dA-F]{4}/gi, match =>
+      String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16))
+    )
+    // Then decode URI components
+    const processedUrl = decodeURIComponent(decodedUrl)
+    new URL(processedUrl) // Validate URL
+    return processedUrl
   } catch {
-    return false
+    return null
   }
 }
 
@@ -59,7 +65,7 @@ export default function Testimonials() {
         role: review.writer.username,
         quote: review.content,
         rating: review.rating || 5,
-        avatar: review.writer.avatar_url
+        avatar: review.writer.avatar_url ? processUrl(review.writer.avatar_url) : null
       }))
     
     setRandomReviews(selectedReviews)
@@ -75,7 +81,7 @@ export default function Testimonials() {
         {randomReviews.map((testimonial, index) => (
           <div key={index} className="bg-white/5 p-6 rounded-lg">
             <div className="flex items-center gap-4 mb-4">
-              {testimonial.avatar && isValidUrl(testimonial.avatar) && !failedAvatars.has(testimonial.avatar) ? (
+              {testimonial.avatar && !failedAvatars.has(testimonial.avatar) ? (
                 <div className="relative w-6 h-6 rounded-full overflow-hidden">
                   <Image
                     src={testimonial.avatar}

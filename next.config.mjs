@@ -32,7 +32,7 @@ const config = {
       },
       {
         protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
+        hostname: '*.googleusercontent.com',
         pathname: '/**',
       },
       {
@@ -45,6 +45,12 @@ const config = {
         hostname: 'media.licdn.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.stack.imgur.com',
+        pathname: '/**',
+      },
+
     ],
   },
   // Enable production optimizations

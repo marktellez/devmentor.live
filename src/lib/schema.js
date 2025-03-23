@@ -248,26 +248,27 @@ export function generateVoiceAISchema(reviews = []) {
 // Main schema generators
 export function generateWebDevMentorshipSchema(reviews) {
   const averageRating = reviews.reduce((acc, review) => acc + (review.rating || 5), 0) / reviews.length;
+  const person = generatePersonSchema();
 
   return {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'Service',
     name: 'Web Development Mentorship',
     description: 'Expert web development mentorship program focusing on modern frameworks, best practices, and real-world development skills.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('DML-WDM', 'DEVMENTOR-WDM-2025'),
-    brand: {
-      '@type': 'Brand',
-      name: 'Devmentor Live'
+    provider: {
+      '@type': 'Person',
+      name: person.name,
+      url: person.url,
+      image: person.image
     },
-    provider: generateOrganizationSchema(),
     offers: [generateOffer({
       name: 'Web Development Mentorship',
       description: 'One-on-one web development mentorship to accelerate your career growth',
       price: '250.00',
       url: '/web-dev-mentorship'
     })],
-    category: 'Professional Development Services',
+    serviceType: 'Professional Development Services',
     aggregateRating: generateAggregateRating(averageRating, reviews.length),
     review: generateReviews(reviews)
   };
@@ -275,19 +276,20 @@ export function generateWebDevMentorshipSchema(reviews) {
 
 export function generateAIServicesSchema(reviews) {
   const averageRating = reviews.reduce((acc, review) => acc + (review.rating || 5), 0) / reviews.length;
+  const person = generatePersonSchema();
 
   return {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'Service',
     name: 'AI Development & Integration Services',
     description: 'Expert AI development and integration services for enterprise digital transformation, including custom model development, voice AI, and automation solutions.',
     image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-    ...generateProductIdentifier('DML-AIS', 'DEVMENTOR-AIS-2025'),
-    brand: {
-      '@type': 'Brand',
-      name: 'Devmentor Live'
+    provider: {
+      '@type': 'Person',
+      name: person.name,
+      url: person.url,
+      image: person.image
     },
-    provider: generateOrganizationSchema(),
     offers: [
       generateOffer({
         name: 'Custom AI Models',
@@ -308,7 +310,7 @@ export function generateAIServicesSchema(reviews) {
         url: '/ai-services/automation'
       })
     ],
-    category: 'AI Development Services',
+    serviceType: 'AI Development Services',
     aggregateRating: generateAggregateRating(averageRating, reviews.length),
     review: generateReviews(reviews)
   };
@@ -328,6 +330,9 @@ export function generateArticleSchema({ title, description, publishDate, url, im
 }
 
 export function generateWebSiteSchema() {
+  const organization = generateOrganizationSchema();
+  const person = generatePersonSchema();
+  
   return [
     {
       '@context': 'https://schema.org',
@@ -335,7 +340,7 @@ export function generateWebSiteSchema() {
       name: 'Devmentor Live',
       description: 'Expert web development mentorship and AI integration services',
       url: process.env.NEXT_PUBLIC_URL,
-      publisher: generateOrganizationSchema(),
+      publisher: organization,
       potentialAction: {
         '@type': 'SearchAction',
         target: `${process.env.NEXT_PUBLIC_URL}/search?q={search_term_string}`,
@@ -344,16 +349,16 @@ export function generateWebSiteSchema() {
     },
     {
       '@context': 'https://schema.org',
-      '@type': 'Product',
+      '@type': 'Service',
       name: 'Devmentor Live Services',
       description: 'Professional web development mentorship and AI integration services',
       image: `${process.env.NEXT_PUBLIC_URL}/logo.png`,
-      ...generateProductIdentifier('DML-ALL', 'DEVMENTOR-ALL-2025'),
-      brand: {
-        '@type': 'Brand',
-        name: 'Devmentor Live'
+      provider: {
+        '@type': 'Person',
+        name: person.name,
+        url: person.url,
+        image: person.image
       },
-      provider: generateOrganizationSchema(),
       offers: [
         generateOffer({
           name: 'Web Development Mentorship',
@@ -368,6 +373,7 @@ export function generateWebSiteSchema() {
           url: '/ai-services'
         })
       ],
+      serviceType: 'Professional Services',
       aggregateRating: generateAggregateRating(5.0, 1000)
     }
   ];
