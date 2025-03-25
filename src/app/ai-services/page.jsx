@@ -8,7 +8,7 @@ export const revalidate = false
 
 // Generate metadata at build time
 export const metadata = {
-  title: 'AI Development & Integration Services | Expert AI Consultant',
+  title: 'Professional AI Development & Integration Services | DevmentorLive',
   description: 'Custom AI development, integration, and consulting services from an experienced AI researcher. Specializing in LLMs, ChatGPT integration, and enterprise AI solutions.',
   keywords: [
     'ai development services',

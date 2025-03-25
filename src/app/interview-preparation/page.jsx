@@ -4,6 +4,10 @@ import { useRef } from 'react'
 import CTAWrapper from '@/shared/components/contact-form-wrapper'
 import PageHero from '@/shared/components/page-hero'
 import Image from 'next/image'
+import { sharedData } from '@/lib/data'
+
+// Remove the metadata export from this client component
+// The metadata should be defined in the layout.jsx file instead
 
 export default function InterviewPreparation() {
   const ctaRef = useRef(null)
@@ -20,7 +24,7 @@ export default function InterviewPreparation() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
             Turn Interview Anxiety into Confidence
           </h1>
-          
+
           <div className="text-white/70 text-lg sm:text-xl space-y-4">
             <p>
               Stop wondering if you're prepared enough. Get expert guidance to help you ace technical interviews at top tech companies.

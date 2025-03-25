@@ -7,7 +7,7 @@ export const revalidate = false
 
 // Generate metadata at build time
 export const metadata = {
-  title: 'Web Development & AI Mentorship | Expert Coding Mentor',
+  title: 'Web Development & AI Mentorship Programs | DevmentorLive',
   description: 'Accelerate your development career with personalized mentorship from a 26+ year industry veteran. Expert guidance in web development, JavaScript, React, Next.js, and AI development.',
   keywords: 'web development mentor, web dev mentor, javascript mentor, typescript mentor, react mentor, nextjs mentor, ai development mentor, coding mentor, web development tutor, javascript tutor, typescript tutor, react tutor, nextjs tutor, ai development tutor, coding tutor, web development coaching, career mentor, coding career coach, software development mentor, web developer mentor, tech mentor, learn web development with mentor, one on one coding mentor, private web development tutor, online web development mentor, project based web development mentor, ai integration mentor, machine learning mentor, llm development mentor'
 }

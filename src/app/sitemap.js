@@ -55,11 +55,6 @@ const staticRoutes = [
     priority: 0.9,
   },
   {
-    url: `${SITE_URL}/tech-interview-prep`,
-    changefreq: 'weekly',
-    priority: 0.9,
-  },
-  {
     url: `${SITE_URL}/hire-senior-developer`,
     changefreq: 'weekly',
     priority: 0.9,

@@ -1,7 +1,5 @@
 'use client'
 
-
-
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -31,7 +29,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/interview-preparation" className="text-gray-400 hover:text-accent text-sm">
-                  Interview Preperation
+                  Interview Preparation
                 </a>
               </li>
               <li>
@@ -106,7 +104,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 3L1 9l11 6l9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+                    <path d="M12 3L1 9l11 6l9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
                   </svg>
                   Codementor
                 </a>
@@ -130,6 +128,12 @@ export default function Footer() {
         <div className="border-t border-gray-900 pt-8">
           <p className="text-gray-500 text-sm text-center">
             © {currentYear} DevmentorLive. All rights reserved.
+            <span className="mx-2">•</span>
+            <a href="/terms" className="hover:text-accent">Terms</a>
+            <span className="mx-2">•</span>
+            <a href="/privacy" className="hover:text-accent">Privacy</a>
+            <span className="mx-2">•</span>
+            <a href="/cookies" className="hover:text-accent">Cookies</a>
           </p>
         </div>
       </div>

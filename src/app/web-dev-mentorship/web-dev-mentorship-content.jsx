@@ -202,67 +202,50 @@ export default function WebDevMentorshipContent({ data }) {
               </div>
 
               {/* Expertise Section */}
-              <div>
-                <div className="flex flex-col sm:flex-row items-start gap-12 mb-12">
-                  <div>
-                    <h3 className="text-3xl font-bold flex items-center gap-2 mb-6">
-                      <CodeBracketIcon className="w-8 h-8 text-purple-400" />
-                      Expert Mentorship Areas
-                    </h3>
-                    <p className="text-lg text-white/80 leading-relaxed mb-8">
-                      Comprehensive guidance across all aspects of modern web development and AI.
-                    </p>
+              <section className="mb-32">
+                <h2 className="text-3xl font-bold mb-16 text-center">Areas of Expertise</h2>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="bg-gray-900/50 p-8 rounded-xl">
+                    <h3 className="text-2xl font-bold mb-4">{data.expertise.webdev.title}</h3>
+                    <p className="text-white/70 mb-6">{data.expertise.webdev.description}</p>
+                    <ul className="space-y-2">
+                      {data.expertise.webdev.points.map((point, index) => (
+                        <li key={index} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
+                          <span className="text-white/70">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                </div>
-                <div className="grid sm:grid-cols-2 gap-6 mb-12">
-                  {Object.values(data.expertise).map((item, index) => (
-                    <div key={index} className="bg-[#0A0A0A] p-6 rounded-lg">
-                      <h4 className="text-purple-400 font-medium mb-3">{item.title}</h4>
-                      <p className="text-white/70 mb-4">{item.description}</p>
-                      <ul className="space-y-2">
-                        {item.points.map((point, pointIndex) => (
-                          <li key={pointIndex} className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
-                            <span className="text-white/70">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-                <div className="bg-[#0F0F1A] p-8 rounded-2xl">
-                  <blockquote className="text-lg text-white/80 italic mb-6">
-                    "Mark is a great mentor! He's super knowledgable and as a student I appreciate his ability to explain concepts clearly. I can tell he really cares about my learning and progress."
-                    <div className="mt-4 text-sm text-white/60">
-                      - Isabella Martinez
-                    </div>
-                  </blockquote>
-                  <div className="flex justify-center mt-8">
-                    <a href="#contact-form" className="inline-flex items-center px-6 py-3 bg-purple-500 hover:bg-purple-600 transition-colors rounded-lg text-white font-medium">
-                      Book Your First Session →
-                    </a>
+                  <div className="bg-gray-900/50 p-8 rounded-xl">
+                    <h3 className="text-2xl font-bold mb-4">{data.expertise.ai.title}</h3>
+                    <p className="text-white/70 mb-6">{data.expertise.ai.description}</p>
+                    <ul className="space-y-2">
+                      {data.expertise.ai.points.map((point, index) => (
+                        <li key={index} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
+                          <span className="text-white/70">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              </div>
+              </section>
 
               {/* Mentorship Programs Section */}
-              <div>
-                <h3 className="text-3xl font-bold flex items-center gap-2 mb-6">
-                  <UserGroupIcon className="w-8 h-8 text-green-400" />
-                  Mentorship Programs
-                </h3>
-                <p className="text-lg text-white/80 leading-relaxed mb-8">
-                  Choose the program that best fits your learning style and goals.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-6 mb-12">
-                  {data.mentorship?.programs?.map((program, index) => (
-                    <div key={index} className="bg-[#0A0A0A] p-6 rounded-lg">
-                      <h4 className="text-green-400 font-medium mb-3">{program.title}</h4>
-                      <p className="text-white/70 mb-4">{program.description}</p>
+              <section className="mb-32">
+                <h2 className="text-3xl font-bold mb-16 text-center">Mentorship Programs</h2>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  {data.mentorship.programs.map((program, index) => (
+                    <div key={index} className="bg-gray-900/50 p-8 rounded-xl">
+                      <h3 className="text-2xl font-bold mb-4">{program.title}</h3>
+                      <p className="text-white/70 mb-6">{program.description}</p>
                       <ul className="space-y-2">
-                        {program.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center gap-2">
+                        {program.features.map((feature, index) => (
+                          <li key={index} className="flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
                             <span className="text-white/70">{feature}</span>
                           </li>
@@ -271,15 +254,7 @@ export default function WebDevMentorshipContent({ data }) {
                     </div>
                   ))}
                 </div>
-                <div className="bg-[#0F0F1A] p-8 rounded-2xl">
-                  <blockquote className="text-lg text-white/80 italic mb-6">
-                    "I've used Mark a couple times. He is awesome! I've been using Rails, etc for 7+ years but I still get hung up once in a while...Mark knows his $h!. I won't search for mentors anymore...I'll just use Mark."
-                    <div className="mt-4 text-sm text-white/60">
-                      - Adam Stockland
-                    </div>
-                  </blockquote>
-                </div>
-              </div>
+              </section>
 
               {/* Learning Paths Section */}
               <div>

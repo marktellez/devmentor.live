@@ -1,7 +1,6 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import LoadingWrapper from './dynamic/loading-wrapper'
 
 const DynamicHero = dynamic(
   () => import('./dynamic/hero'),
