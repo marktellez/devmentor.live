@@ -117,9 +117,9 @@ export default function ArticleContent({
                 <li>Leverage AI without accumulating technical debt</li>
               </ul>
               <p className="text-white/70 mb-8">
-                <a href="#cta" onClick={(e) => {
+                <a href="#contact-form" onClick={(e) => {
                   e.preventDefault()
-                  const ctaElement = document.getElementById('cta')
+                  const ctaElement = document.getElementById('contact-form')
                   if (ctaElement) {
                     const elementPosition = ctaElement.getBoundingClientRect().top
                     const offsetPosition = elementPosition + window.pageYOffset - 100
