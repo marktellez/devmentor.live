@@ -7,9 +7,9 @@ export const revalidate = false
 
 // Generate metadata at build time
 export const metadata = {
-  title: 'Hire a Senior Developer & AI Expert | DevmentorLive',
-  description: 'Get results-driven technical leadership and advanced AI integration from a revenue-centric entrepreneur with 26+ years of experience in web development, systems programming, and custom AI solutions.',
-  keywords: 'senior developer for hire, AI consultant, hire an AI expert, web development and AI solutions, custom AI model development, LLM expert, AI-powered automation, AI consultant for startups, custom AI model development for business, senior full-stack developer for AI projects'
+  title: 'Web Development & AI Mentorship | Expert Coding Mentor',
+  description: 'Accelerate your development career with personalized mentorship from a 26+ year industry veteran. Expert guidance in web development, JavaScript, React, Next.js, and AI development.',
+  keywords: 'web development mentor, web dev mentor, javascript mentor, typescript mentor, react mentor, nextjs mentor, ai development mentor, coding mentor, web development tutor, javascript tutor, typescript tutor, react tutor, nextjs tutor, ai development tutor, coding tutor, web development coaching, career mentor, coding career coach, software development mentor, web developer mentor, tech mentor, learn web development with mentor, one on one coding mentor, private web development tutor, online web development mentor, project based web development mentor, ai integration mentor, machine learning mentor, llm development mentor'
 }
 
 // This data will be used at build time
@@ -21,120 +21,212 @@ const data = {
     reviews: sharedData.stats.reviews
   },
   intro: {
-    title: "Hire a Senior Developer & AI Expert",
-    subtitle: "Bringing unparalleled web development, systems programming, and AI innovation to companies of every size.",
+    title: "Web Development & AI Mentorship",
+    subtitle: "Accelerate your development career with personalized mentorship from a 26+ year industry veteran.",
     description: [
-      `With ${sharedData.stats.yearsExperience}+ years of hands-on experience in web and systems programming, I provide architecture design and implementation tailored for modern business needs.`,
-      "Unlike typical developers, I focus on revenue-driven decision-making, ensuring code quality and technical strategies that accelerate business growth while delivering results on time."
+      `With ${sharedData.stats.yearsExperience}+ years of hands-on experience in web development and AI, I provide personalized mentorship to help you master modern development skills.`,
+      "Whether you're just starting out or looking to advance your career, I offer tailored guidance to help you achieve your goals."
     ]
   },
   expertise: {
-    technical: {
-      title: 'Technical Leadership',
-      description: `With ${sharedData.stats.yearsExperience}+ years of hands-on experience in web and systems programming, I provide architecture design and implementation tailored for modern business needs. Unlike typical developers, I focus on revenue-driven decision-making, ensuring code quality and technical strategies that accelerate business growth while delivering results on time.`,
+    webdev: {
+      title: 'Web Development Mentorship',
+      description: 'Master modern web development with personalized guidance. Learn industry best practices, architecture patterns, and advanced techniques from an experienced mentor.',
       points: [
-        'Architecture design & implementation',
-        'Team mentorship & growth',
-        'Code quality & best practices',
-        'Technical decision making'
-      ]
-    },
-    ai: {
-      title: 'AI Expertise',
-      description: 'I specialize in cutting-edge AI solutions, including AI-powered automation, LLM implementation, and custom AI model development. My AI innovations have fooled professionals, won awards, and placed in top-tier competitions. Whether integrating AI into existing systems or developing models from scratch, I ensure businesses get AI solutions that actually work.',
-      points: [
-        'AI integration strategies',
-        'Custom AI model development',
-        'LLM implementation',
-        'AI-powered automation'
-      ]
-    },
-    fullstack: {
-      title: 'Full-Stack Development',
-      description: 'Expert in modern web technologies and systems programming, delivering scalable solutions that drive business growth.',
-      points: [
-        'React & Next.js applications',
-        'Node.js & Python backends',
-        'Cloud architecture & DevOps',
+        'JavaScript & TypeScript mastery',
+        'React & Next.js development',
+        'Web architecture & patterns',
         'Performance optimization'
       ]
     },
-    systems: {
-      title: 'Systems Programming',
-      description: 'Deep expertise in building robust, high-performance systems that scale.',
+    ai: {
+      title: 'AI Development Mentorship',
+      description: 'Learn to build and integrate AI solutions into your applications. From basic concepts to advanced implementations, get expert guidance in AI development.',
       points: [
-        'Distributed systems design',
-        'Microservices architecture',
-        'Real-time processing systems',
-        'High-performance computing'
+        'AI integration strategies',
+        'LLM implementation',
+        'Machine learning basics',
+        'AI best practices'
+      ]
+    },
+    career: {
+      title: 'Career Development',
+      description: 'Get guidance on building a successful development career. Learn about industry trends, job opportunities, and how to stand out in the tech industry.',
+      points: [
+        'Career path planning',
+        'Portfolio development',
+        'Interview preparation',
+        'Industry networking'
+      ]
+    },
+    projects: {
+      title: 'Project-Based Learning',
+      description: 'Learn by doing with real-world projects. Get hands-on experience and detailed code reviews to improve your skills.',
+      points: [
+        'Real-world projects',
+        'Code review sessions',
+        'Best practices',
+        'Problem-solving skills'
       ]
     }
   },
-  achievements: {
-    title: "Key Achievements",
-    items: [
+  mentorship: {
+    title: "Mentorship Programs",
+    programs: [
       {
-        title: "Award-Winning AI Innovations",
-        description: "Developed an award-winning text-to-speech model that fooled BossLade (Snoop Dogg's wife) by generating audio indistinguishable from the real thing."
+        title: "One-on-One Mentorship",
+        description: "Personalized guidance tailored to your goals and learning style. Regular sessions with focused attention on your development journey.",
+        features: [
+          "Weekly 1:1 sessions",
+          "Personalized learning plan",
+          "Code reviews",
+          "Career guidance"
+        ]
       },
       {
-        title: "Global AI Agent Contest",
-        description: "Placed 8th worldwide out of 5,000+ participants in an AI agent contest, building a Harry Potter-style battle agent using a small neural network and a genetic algorithm."
+        title: "Group Mentorship",
+        description: "Learn alongside peers in a collaborative environment. Share experiences and learn from others while getting expert guidance.",
+        features: [
+          "Small group sessions",
+          "Peer learning",
+          "Group projects",
+          "Community support"
+        ]
       },
       {
-        title: "Zooly AI Integration",
-        description: "Developed an AI-powered agent for Zooly, capable of using tools, retrieving company data via RAG, and replacing traditional form-heavy UIs with natural language interactions."
+        title: "Code Review Sessions",
+        description: "Get detailed feedback on your code and learn best practices. Improve your coding skills with expert guidance.",
+        features: [
+          "Detailed code reviews",
+          "Best practices",
+          "Performance optimization",
+          "Security considerations"
+        ]
       }
     ]
   },
-  technologies: {
-    frontend: {
-      title: 'Frontend Technologies',
-      list: 'React, Next.js, TypeScript, Tailwind CSS, Web Components'
-    },
-    backend: {
-      title: 'Backend Stack',
-      list: 'Node.js, Python, PostgreSQL, Redis, GraphQL'
-    },
-    ai: {
-      title: 'AI Development Tools',
-      list: 'OpenAI GPT-4, GitHub Copilot, LangChain, Vector DBs, RAG Systems'
-    },
-    devops: {
-      title: 'Cloud & DevOps',
-      list: 'AWS, Docker, Kubernetes, CI/CD, Monitoring'
-    }
+  learning: {
+    title: "Learning Paths",
+    paths: [
+      {
+        title: "Web Development Fundamentals",
+        description: "Master the basics of web development with a structured learning path.",
+        topics: [
+          "HTML & CSS",
+          "JavaScript basics",
+          "Web fundamentals",
+          "Development tools"
+        ]
+      },
+      {
+        title: "Advanced JavaScript/TypeScript",
+        description: "Deep dive into modern JavaScript and TypeScript development.",
+        topics: [
+          "ES6+ features",
+          "TypeScript mastery",
+          "Design patterns",
+          "Testing"
+        ]
+      },
+      {
+        title: "React & Next.js",
+        description: "Learn modern frontend development with React and Next.js.",
+        topics: [
+          "React fundamentals",
+          "Next.js features",
+          "State management",
+          "Performance"
+        ]
+      },
+      {
+        title: "AI Development",
+        description: "Master AI development and integration into web applications.",
+        topics: [
+          "AI basics",
+          "LLM integration",
+          "Machine learning",
+          "AI tools"
+        ]
+      }
+    ]
   },
   process: {
-    title: "How I Work With Clients",
+    title: "Mentorship Process",
     steps: [
       {
-        title: "Initial Consultation",
-        description: "Meet virtually with the client to understand requirements and wishlist."
+        title: "Initial Assessment",
+        description: "We'll discuss your goals, current skills, and learning style to create a personalized plan."
       },
       {
-        title: "Research & Planning",
-        description: "Perform deep technical research and project planning."
+        title: "Learning Plan Creation",
+        description: "Develop a structured learning path tailored to your goals and timeline."
       },
       {
-        title: "Client Review",
-        description: "Present the plan to ensure alignment before execution."
+        title: "Regular Sessions",
+        description: "Weekly sessions with focused learning, code reviews, and progress tracking."
       },
       {
-        title: "Development Begins",
-        description: "Execute work in iterative cycles with weekly updates."
+        title: "Project Work",
+        description: "Apply your learning through real-world projects and exercises."
       },
       {
-        title: "Weekly Progress Reviews",
-        description: "Demo progress to maintain client alignment."
+        title: "Progress Tracking",
+        description: "Regular assessments and adjustments to ensure you're meeting your goals."
+      }
+    ]
+  },
+  benefits: {
+    title: "Why Choose Me as Your Mentor",
+    items: [
+      {
+        title: "26+ Years Experience",
+        description: "Learn from someone who has been in the industry for over two decades, working with cutting-edge technologies and solving complex problems.",
+        icon: "AcademicCapIcon"
       },
       {
-        title: "Refinement & Testing",
-        description: "Fine-tune, optimize, and validate final results."
+        title: "Personalized Learning Path",
+        description: "Get a custom learning plan that matches your goals, experience level, and learning style. No one-size-fits-all approach.",
+        icon: "ChartBarIcon"
       },
       {
-        title: "Final Deliverables",
-        description: "Work is released progressively upon each payment."
+        title: "Real-World Projects",
+        description: "Work on actual projects that you can add to your portfolio. Learn by doing, not just by watching.",
+        icon: "CodeBracketIcon"
+      },
+      {
+        title: "Career Guidance",
+        description: "Get insights into industry trends, job opportunities, and how to stand out in the tech industry.",
+        icon: "RocketLaunchIcon"
+      },
+      {
+        title: "Code Reviews & Feedback",
+        description: "Receive detailed feedback on your code, helping you improve your skills and learn best practices.",
+        icon: "DocumentCheckIcon"
+      },
+      {
+        title: "Flexible Learning Schedule",
+        description: "Learn at your own pace with flexible scheduling. Sessions are conducted online, making it convenient for you.",
+        icon: "ClockIcon"
+      }
+    ]
+  },
+  success: {
+    title: "Success Stories",
+    items: [
+      {
+        title: "From Beginner to Professional",
+        description: "Many of my mentees have gone from learning the basics to landing their first development jobs.",
+        icon: "UserGroupIcon"
+      },
+      {
+        title: "Career Advancement",
+        description: "Developers have advanced their careers, moving from junior to senior positions with my guidance.",
+        icon: "ArrowTrendingUpIcon"
+      },
+      {
+        title: "Portfolio Development",
+        description: "Build a strong portfolio of projects that showcase your skills to potential employers.",
+        icon: "FolderIcon"
       }
     ]
   },
@@ -142,28 +234,28 @@ const data = {
     title: "Frequently Asked Questions",
     questions: [
       {
-        question: "What industries do you work with?",
-        answer: "I work with a wide range of industries, including SaaS, AI startups, enterprise tech, and automation-heavy businesses."
+        question: "What experience level is required?",
+        answer: "I mentor developers of all experience levels, from beginners to advanced practitioners. We'll create a plan that matches your current skills and goals."
       },
       {
-        question: "Do you only work with AI projects?",
-        answer: "No, I also specialize in full-stack development, systems programming, and web applications."
+        question: "How long is the mentorship program?",
+        answer: "Programs are flexible and can range from a few months to ongoing mentorship. We'll discuss your goals and create a timeline that works for you."
       },
       {
-        question: "How long does a typical project take?",
-        answer: "It depends on scope, but I prioritize speed and efficiency while maintaining quality. Expect initial results within weeks, not months."
+        question: "What topics can I learn?",
+        answer: "I cover web development, JavaScript/TypeScript, React/Next.js, AI development, and career guidance. We'll focus on the topics most relevant to your goals."
       },
       {
-        question: "What's your approach to technical leadership?",
-        answer: `With ${sharedData.stats.yearsExperience}+ years of experience, I focus on revenue-driven decision-making and ensuring code quality that accelerates business growth. I provide clear technical direction while mentoring team members.`
+        question: "How do sessions work?",
+        answer: "Sessions are conducted online via video call. We'll have regular meetings, code reviews, and project work between sessions."
       },
       {
-        question: "How do you handle project communication?",
-        answer: "I maintain transparent communication through weekly demos, progress updates, and regular check-ins. You'll always know exactly where your project stands."
+        question: "What's your teaching style?",
+        answer: "I believe in hands-on learning with real-world projects. You'll learn by doing, with guidance and feedback to help you improve."
       },
       {
-        question: "What makes your AI solutions different?",
-        answer: "My AI solutions are built for real-world business impact. I've developed award-winning models and placed in global competitions, bringing that expertise to every AI project."
+        question: "Do you offer group mentorship?",
+        answer: "Yes, I offer both one-on-one and group mentorship programs. Group sessions provide additional benefits of peer learning and collaboration."
       }
     ]
   },
@@ -184,11 +276,11 @@ const data = {
     }
   ],
   cta: {
-    primary: "Work With Me",
+    primary: "Start Your Journey",
     secondary: "Book a Consultation",
     consultation: {
-      title: "Ready to Build Something Amazing?",
-      description: "Book a consultation to discuss your project and see how we can work together"
+      title: "Ready to Accelerate Your Development Career?",
+      description: "Book a consultation to discuss your goals and see how we can work together"
     }
   }
 }

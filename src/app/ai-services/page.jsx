@@ -7,12 +7,27 @@ export const dynamic = 'force-static'
 export const revalidate = false
 
 // Generate metadata at build time
-export const metadata = baseGenerateMetadata({
-  title: "Custom AI Development & Integration Services – Enterprise AI Solutions",
-  description: "Accelerate your business growth with my custom AI development and integration services. Get expert guidance on building custom AI models, voice AI, and intelligent process automation to drive real results.",
-  keywords: "AI development services, custom AI solutions, AI integration, enterprise AI, voice AI development, process automation",
-  path: '/ai-services'
-})
+export const metadata = {
+  title: 'AI Development & Integration Services | Expert AI Consultant',
+  description: 'Custom AI development, integration, and consulting services from an experienced AI researcher. Specializing in LLMs, ChatGPT integration, and enterprise AI solutions.',
+  keywords: [
+    'ai development services',
+    'ai integration specialist',
+    'custom ai solutions',
+    'enterprise ai consulting',
+    'ai automation services',
+    'machine learning expert',
+    'chatgpt integration',
+    'llm development',
+    'ai workflow automation',
+    'ai system architecture',
+    'ai tools development',
+    'ai project consulting',
+    'ai implementation expert',
+    'ai development mentor',
+    'machine learning services'
+  ]
+}
 
 // This data will be used at build time
 const data = {
@@ -50,6 +65,11 @@ const data = {
       title: "Process Automation",
       description: "Automate repetitive tasks and workflows with intelligent AI-powered solutions.",
       href: "/ai-services/automation"
+    },
+    {
+      title: "Custom AI Model Development",
+      description: "Tailored AI models for classification, sentiment analysis, and specific business needs.",
+      href: "/ai-services/custom-models"
     }
   ]
 }

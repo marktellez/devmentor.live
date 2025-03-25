@@ -2,15 +2,16 @@
 
 import { useState, useRef, useEffect } from 'react'
 
-export default function DynamicCTA({ 
-  context = '', 
+export default function DynamicCTA({
+  context = '',
   heading,
   subheading,
-  step = 'form', 
-  onSubmit, 
-  onVerify, 
+  step = 'form',
+  onSubmit,
+  onVerify,
   pendingCode,
-  isFromEmailLink
+  isFromEmailLink,
+  email // Receive email as a prop
 }) {
   const [formData, setFormData] = useState({
     experience: '',
@@ -22,7 +23,7 @@ export default function DynamicCTA({
   const [verificationCode, setVerificationCode] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
-  const digitRefs = useRef([])
+  const digitRefs = useRef([...Array(6)].map(() => useRef(null)))
   const [verificationDigits, setVerificationDigits] = useState(['', '', '', '', '', ''])
 
   const experienceLevels = [
@@ -42,8 +43,11 @@ export default function DynamicCTA({
 
   useEffect(() => {
     if (pendingCode && /^\d{6}$/.test(pendingCode)) {
-      setVerificationDigits(pendingCode.split(''))
+      const digits = pendingCode.split('')
+      setVerificationDigits(digits)
       setVerificationCode(pendingCode)
+      // Focus the last input
+      digitRefs.current[5]?.current?.focus()
     }
   }, [pendingCode])
 
@@ -67,7 +71,7 @@ export default function DynamicCTA({
     setError('')
 
     try {
-      await onVerify(verificationCode)
+      await onVerify(verificationCode, email)
     } catch (err) {
       setError('Failed to verify code. Please try again.')
     } finally {
@@ -96,14 +100,14 @@ export default function DynamicCTA({
   const handleDigitPaste = (index, e) => {
     e.preventDefault()
     const pastedData = e.clipboardData.getData('text').trim()
-    
+
     // If it's a 6-digit number, distribute it across fields
     if (/^\d{6}$/.test(pastedData)) {
       const digits = pastedData.split('')
       setVerificationDigits(digits)
       setVerificationCode(pastedData)
       // Focus the last input
-      digitRefs[5].current?.focus()
+      digitRefs.current[5]?.current?.focus()
     }
   }
 
@@ -129,7 +133,7 @@ export default function DynamicCTA({
 
   if (step === 'verification') {
     return (
-      <form onSubmit={handleVerificationSubmit} className="space-y-6 mb-32 max-w-2xl mx-auto">
+      <form onSubmit={handleVerificationSubmit} className="space-y-6 max-w-4xl mx-auto">
         <div>
           <label className="block text-sm font-medium mb-2">Enter Verification Code</label>
           {pendingCode ? (
@@ -142,17 +146,17 @@ export default function DynamicCTA({
             </p>
           )}
           <div className="flex gap-2 justify-center">
-            {[0,1,2,3,4,5].map((index) => (
+            {[0, 1, 2, 3, 4, 5].map((index) => (
               <input
                 key={index}
-                ref={digitRefs[index]}
+                ref={digitRefs.current[index]}
                 type="text"
                 maxLength={1}
                 value={verificationDigits[index]}
                 onChange={(e) => handleDigitChange(index, e.target.value)}
                 onKeyDown={(e) => handleDigitKeyDown(index, e)}
                 onPaste={(e) => handleDigitPaste(index, e)}
-                className="w-12 h-12 text-center text-lg font-bold bg-[#121212] border border-white/10 rounded-lg focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                className="w-12 h-12 text-center text-lg font-bold bg-[#121212] border border-white/10 rounded-lg focus:border-green-400 focus:ring-1 focus:ring-green-400"
                 required
                 inputMode="numeric"
                 pattern="\d*"
@@ -169,20 +173,23 @@ export default function DynamicCTA({
         <button
           type="submit"
           disabled={isSubmitting || verificationDigits.some(d => !d)}
-          className="w-full py-4 rounded-lg bg-purple-500 hover:bg-purple-600 text-white font-medium transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className={`w-full py-4 rounded-lg font-medium transition-colors duration-200 ${isSubmitting || verificationDigits.some(d => !d)
+            ? 'bg-[#121212] border border-white/10 text-white/50 cursor-not-allowed'
+            : 'bg-purple-500 hover:bg-purple-600 text-white'
+            }`}
         >
           {isSubmitting ? 'Verifying...' : 'Verify Code'}
         </button>
 
         <p className="text-center text-white/50 text-sm">
-          Didn't receive the code? <button type="button" onClick={() => window.location.reload()} className="text-purple-400 hover:text-purple-300">Try again</button>
+          Didn't receive the code? <button type="button" onClick={() => window.location.reload()} className="text-green-400 hover:text-green-300">Try again</button>
         </p>
       </form>
     )
   }
 
   return (
-    <form onSubmit={handleInitialSubmit} className="space-y-6 mb-32 max-w-2xl mx-auto">
+    <form onSubmit={handleInitialSubmit} className="space-y-6 max-w-4xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-2xl font-bold mb-2">{heading}</h2>
         <p className="text-white/70">{subheading}</p>
@@ -196,11 +203,10 @@ export default function DynamicCTA({
               key={level}
               type="button"
               onClick={() => setFormData({ ...formData, experience: level })}
-              className={`p-3 text-sm rounded-lg border transition-colors duration-200 ${
-                formData.experience === level
-                  ? 'border-purple-500 bg-purple-500/10 text-purple-400'
-                  : 'border-white/10 hover:border-white/20'
-              }`}
+              className={`p-3 text-sm rounded-lg transition-colors duration-200 ${formData.experience === level
+                ? 'bg-purple-500 border border-purple-400 text-white'
+                : 'bg-[#121212] border border-white/10 text-white/70 hover:bg-white/5'
+                }`}
             >
               {level}
             </button>
@@ -221,11 +227,10 @@ export default function DynamicCTA({
                   : [...formData.interests, area]
                 setFormData({ ...formData, interests })
               }}
-              className={`p-3 text-sm rounded-lg border transition-colors duration-200 ${
-                formData.interests.includes(area)
-                  ? 'border-purple-500 bg-purple-500/10 text-purple-400'
-                  : 'border-white/10 hover:border-white/20'
-              }`}
+              className={`p-3 text-sm rounded-lg transition-colors duration-200 ${formData.interests.includes(area)
+                ? 'bg-purple-500 border border-purple-400 text-white'
+                : 'bg-[#121212] border border-white/10 text-white/70 hover:bg-white/5'
+                }`}
             >
               {area}
             </button>
@@ -239,7 +244,7 @@ export default function DynamicCTA({
           value={formData.goals}
           onChange={(e) => setFormData({ ...formData, goals: e.target.value })}
           placeholder="What's your biggest business challenge? Let's solve it with AI..."
-          className="w-full p-3 bg-[#121212] border border-white/10 rounded-lg focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+          className="w-full p-3 bg-[#121212] border border-white/10 rounded-lg focus:border-purple-400 focus:ring-1 focus:ring-purple-400"
           rows={4}
         />
       </div>
@@ -251,19 +256,22 @@ export default function DynamicCTA({
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           placeholder="you@example.com"
-          className="w-full p-3 bg-[#121212] border border-white/10 rounded-lg focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+          className="w-full p-3 bg-[#121212] border border-white/10 rounded-lg focus:border-purple-400 focus:ring-1 focus:ring-purple-400"
           required
         />
       </div>
 
+      {error && (
+        <div className="text-red-400 text-sm text-center">{error}</div>
+      )}
+
       <button
         type="submit"
-        disabled={isSubmitting || !isFormValid()}
-        className={`w-full py-4 rounded-lg transition-colors duration-200 font-medium ${
-          isFormValid() 
-            ? 'bg-purple-500 hover:bg-purple-600 text-white' 
-            : 'bg-gray-600 opacity-50 cursor-not-allowed text-gray-300'
-        }`}
+        disabled={!isFormValid() || isSubmitting}
+        className={`w-full py-4 rounded-lg font-medium transition-colors duration-200 ${!isFormValid() || isSubmitting
+          ? 'bg-[#6b21a8] border border-white/10 text-white/50 cursor-not-allowed'
+          : 'bg-purple-500 hover:bg-purple-600 text-white'
+          }`}
       >
         {isSubmitting ? 'Sending...' : 'Get Started'}
       </button>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import CTAWrapper from '@/shared/components/contact-form-wrapper'
 import PageHero from '@/shared/components/page-hero'
 import Pill from '@/shared/components/pill'
@@ -15,7 +16,7 @@ export default function VoiceAIContent({ data }) {
           <Pill color="purple-500">
             {data.stats.yearsExperience}+ Years Experience • {data.stats.sessions}+ Sessions • {data.stats.rating}/5.0 Rating
           </Pill>
-          
+
           <h1 className="text-5xl font-bold text-white mb-6">
             Voice AI Development & Integration
           </h1>
@@ -72,6 +73,36 @@ export default function VoiceAIContent({ data }) {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold text-white mb-8">
+              Related AI Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  Custom AI Model Development
+                </h3>
+                <p className="text-white/70 mb-4">
+                  Tailored AI models for classification, sentiment analysis, and specific business needs.
+                </p>
+                <Link href="/ai-services/custom-models" className="text-purple-400 hover:text-purple-300">
+                  Learn more →
+                </Link>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  Process Automation
+                </h3>
+                <p className="text-white/70 mb-4">
+                  Automate repetitive tasks and workflows with intelligent AI-powered solutions.
+                </p>
+                <Link href="/ai-services/automation" className="text-purple-400 hover:text-purple-300">
+                  Learn more →
+                </Link>
+              </div>
             </div>
           </div>
         </section>

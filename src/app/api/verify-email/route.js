@@ -41,7 +41,6 @@ export async function POST(req) {
           <h2>Verify Your Email</h2>
           <p>Click the button below to verify your email and complete your submission:</p>
           <p><a href="${verificationUrl}" style="display: inline-block; background: #9333ea; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none;">Verify Email</a></p>
-          <p>Or enter this code: <strong>${verificationCode}</strong></p>
           <p>This code will expire in 10 minutes.</p>
         `,
         MessageStream: "outbound",
