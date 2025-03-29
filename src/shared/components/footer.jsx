@@ -134,6 +134,15 @@ export default function Footer() {
             <a href="/privacy" className="hover:text-accent">Privacy</a>
             <span className="mx-2">•</span>
             <a href="/cookies" className="hover:text-accent">Cookies</a>
+            <span className="mx-2">•</span>
+            <a
+              href="https://marktellez.com"
+              className="hover:text-accent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hire an Expert Programmer and AI Developer
+            </a>
           </p>
         </div>
       </div>
